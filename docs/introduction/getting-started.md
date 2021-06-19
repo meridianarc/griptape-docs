@@ -33,12 +33,14 @@ import App from './App.vue'
 // Default styling
 import '~/@stakeordie/griptape-vue.js/dist/style.css';
 
+// Import `gripVueJsApp`
 import { gripVueJsApp } from '@stakeordie/griptape-vue.js'
 
 const conf = {
   restUrl: 'https://api.holodeck.stakeordie.com'
 }
 
+// Grip your app
 gripVueJsApp(conf, App)
 ```
 

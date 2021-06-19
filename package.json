@@ -1,0 +1,19 @@
+{
+  "name": "griptape-docs",
+  "version": "0.0.1",
+  "description": "Documentation for griptape.js",
+  "main": "index.js",
+  "author": "Luis Espinoza",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "sass": "^1.35.1",
+    "vitepress": "^0.15.3"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "dependencies": {}
+}

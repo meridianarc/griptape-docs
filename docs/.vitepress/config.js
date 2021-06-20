@@ -44,8 +44,8 @@ module.exports = {
               link: '/core-features/components.html'
             },
             {
-              text: 'Stores',
-              link: '/core-features/stores.html',
+              text: 'State',
+              link: '/core-features/state.html',
             },
             {
               text: 'Contracts',

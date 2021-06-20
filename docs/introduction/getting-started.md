@@ -24,7 +24,7 @@ Griptape is written using [vite](https://vitejs.dev/). All examples shown in
 this docs are using vite.
 
 Griptape takes care of managing your application for you, by gripping it.
-Usually this done in the `main.js|ts` file:
+Usually this done in the `main.*` file:
 
 ```js
 // Root app component
@@ -40,7 +40,7 @@ const conf = {
   restUrl: 'https://api.holodeck.stakeordie.com'
 }
 
-// Grip your app
+// Grip your app, you are now ready to develop your application
 gripVueJsApp(conf, App)
 ```
 

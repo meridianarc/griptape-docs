@@ -148,7 +148,9 @@ const secretCounter = {
 
 ## SNIP-20 contracts
 
-> As in version 0.2.17, `createViewingKey` and `getBalance` methods are implemented as part of the beta version.
+::: warning
+As in version 0.2.17, `createViewingKey` and `getBalance` methods are implemented as part of the beta version.
+:::
 
 Griptape has a special method for creating [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md)
 contracts. `createSnip20Contract` is a helper method that creates a SNIP-20 compliant instance (that means, it contains

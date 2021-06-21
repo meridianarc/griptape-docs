@@ -51,7 +51,7 @@ const conf = {
 }
 
 // Grip your app, you are now ready to develop your application
-gripVueJsApp(conf, App)
+gripVueJsApp(conf, App, (app, pinia) => {})
 ```
 
 That's it! You are now ready to go!

@@ -2,9 +2,12 @@
 
 This section will go step by step setting up a new Griptape-vue app from scratch. You can skip this by using the starter project from the [Setup your app Page](https://docs.griptapejs.com/introduction/getting-started), however we recommend you follow along at least once so you can see the differences between a plain vue.js app setup and griptape-vue.
 
+# Yarn
 # Install
 
 First create a new vite app
+
+@vitejs/app requires node ">=10.16.0 <=14.x.x"
 
 Open a terminal and enter
 ```bash
@@ -13,12 +16,12 @@ yarn create @vitejs/app griptape-auctions
 
 When prompted, select `vue` for both options. (you are free to `vue.ts` as it is supported, but doing that will result in code that differs from this tutorial)
 
-First things first, let's add the griptape module
+🛹 GRIPTAPE 🛹
 ```bash
 yarn add @stakeordie/griptape-vue.js
 ```
 
-And then make some small but important changes to the core application files:
+Open the project in your favorite editor and make some some small but important changes to the core application files:
 
 **vite.config.js**
 ```javascript {4,9-14}

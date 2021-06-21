@@ -31,20 +31,14 @@ gripVueJsApp(conf, App, (app, pinia) => {})
 
 And add some markup to `/src/App.vue`
 
-```{html, path=web/src/pages/AboutPage/AboutPage.js}
+```html
 <template>
   <div>
-
     <header>
-
       <div class="logo">Secret Auctions</div>
-
     </header>
-
     <main>
-
     </main>
-
   </div>
 </template>
 

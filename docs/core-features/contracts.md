@@ -3,7 +3,7 @@
 Contracts are essential when working with dApps. Secret Network has also its own challenges when doing interacting with
 contracts. For that, we created a uniform, yet known way of interacting with contracts.
 
-## Contract anatomy
+## Anatomy of a contract
 
 To interact with a contract in Griptape, you need first to create its definition:
 
@@ -35,7 +35,6 @@ const secretCounter = {
     reset() { ... }
   },
 
-
   queries: {
     getCount() { ... }
   }
@@ -45,7 +44,8 @@ const secretCounter = {
 ## Instantiating contracts
 
 
-Once you have a contract definition, you can _instantiate_ the contract by using the `createContract` helper method:
+Once you have a contract definition, you can create an _instaciator_ of the contract by using the `createContract`
+helper method:
 
 ```js
 import { createContract } from '@stakeordie/griptape-vue.js'
@@ -56,11 +56,16 @@ const secretCounterAddress = 'secret1lqdx8va86f9cff5dsz28l97x20z67qv7d4npj8'
 // The contract definiton for `secret-counter`
 const secretCounter = { ... }
 
-const instance = createContract('anId', secretCounterAddress, secretCounter)
+const useSecretCounter = createContract('anId', secretCounterAddress, secretCounter)
+
+// In any component
+const contract = useSecretCounter()
 ```
 
 In order to create a contract you need to provide a unique id for that contract, an address for that specific instance
 of the contract and the contract definition.
+
+Under the hood, `createContract` is a pinia store, and has all the characteristics attached to it.
 
 ## Implicit state
 
@@ -139,4 +144,19 @@ const secretCounter = {
     }
   }
 }
+```
+
+## SNIP-20 contracts
+
+> As in version 0.2.17, `createViewingKey` and `getBalance` methods are implemented as part of the beta version.
+
+Griptape has a special method for creating [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md)
+contracts. `createSnip20Contract` is a helper method that creates a SNIP-20 compliant instance (that means, it contains
+an implementation of all of those defined in the specification).
+
+Here is an example of how to create an SNIP-20 compliant contract instance:
+
+```js
+const SSCRTAddress = 'secret1s7c6xp9wltthk5r6mmavql4xld5me3g37guhsx'
+const useSSCRT = createSnip20Contract('sscrt', SSCRTAddress)
 ```

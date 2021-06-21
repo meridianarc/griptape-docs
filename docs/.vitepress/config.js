@@ -71,6 +71,10 @@ module.exports = {
               link: '/tutorial/installation-and-setup'
             },
             {
+              text: 'Some Styles',
+              link: '/tutorial/styling-to-make-pretty'
+            },
+            {
               text: 'Add Wallet & Test Reactivity',
               link: '/tutorial/wallet-support'
             },

@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap";
 
 :root {
   --c-brand: #00e2ac;
@@ -7,6 +8,9 @@
   --font-family-base: "Source Sans Pro", apple-system, BlinkMacSystemFont, Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  --font-family-mono: 'Inconsolata', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  --code-font-size: 16px;
 }
 
 .nav-bar-title {

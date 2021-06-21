@@ -6,13 +6,6 @@ module.exports = {
   ],
   themeConfig: {
     logo: '/favicon.png',
-    nav: [
-      { text: 'Getting Started', link: '/introduction/getting-started' },
-      { text: 'Github', link: 'https://github.com/stakeordie/griptape.js' },
-      { text: 'Secret Network', link: 'https://scrt.network/' },
-    ],
-    editLinks: true,
-    editLinkText: 'Suggest changes to this page',
     sidebar: {
       '/': [
         {

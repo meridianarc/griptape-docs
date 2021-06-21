@@ -71,20 +71,8 @@ module.exports = {
               link: '/tutorial/installation-and-setup'
             },
             {
-              text: 'Welcome to Griptape',
-              link: '/tutorial/welcome-to-griptape'
-            },
-            {
-              text: 'Welcome to Griptape',
-              link: '/tutorial/welcome-to-griptape'
-            },
-            {
-              text: 'Welcome to Griptape',
-              link: '/tutorial/welcome-to-griptape'
-            },
-            {
-              text: 'Welcome to Griptape',
-              link: '/tutorial/welcome-to-griptape'
+              text: 'Add Wallet & Test Reactivity',
+              link: '/tutorial/wallet-support'
             },
             {
               text: 'Old',

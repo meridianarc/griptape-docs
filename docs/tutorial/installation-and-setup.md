@@ -5,24 +5,22 @@ This section will go step by step setting up a new Griptape-vue app from scratch
 # Install
 
 First create a new vite app
+
+Open a terminal and enter
 ```bash
 yarn create @vitejs/app griptape-auctions
 ```
-Select "vue" for both options
 
-<video style="width: 100%" autoplay>
-  <source src="/.vitepress/assets/vite-cli.mp4" type="video/mp4">
-</video>
+When prompted, select `vue` for both options. (you are free to `vue.ts` as it is supported, but doing that will result in code that differs from this tutorial)
 
-First things first, add the griptape module
-
+First things first, let's add the griptape module
 ```bash
 yarn add @stakeordie/griptape-vue.js
 ```
 
-Next lets make some small but important changes to some core application files:
+And then make some small but important changes to the core application files:
 
-vite.config.js
+**vite.config.js**
 ```javascript {4,9-14}
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -40,7 +38,8 @@ export default defineConfig({
   }
 })
 ```
-index.html
+
+**index.html**
 ```html {11}
 <!DOCTYPE html>
 <html lang="en">
@@ -57,8 +56,11 @@ index.html
   </body>
 </html>
 ```
-App.vue (Strip out everything leaving a blank Vue component)
-```javascript
+
+Strip out everything from the App component
+
+**/src/App.vue**
+```html
 <template>
 
 </template>
@@ -72,13 +74,12 @@ App.vue (Strip out everything leaving a blank Vue component)
 </style>
 
 ```
-And finally /src/main.js
+And finally
+
+**/src/main.js**
 ```javascript {5,8,10-12,15}
 // Root app component
 import App from './App.vue'
-
-// Default styling
-import '~/@stakeordie/griptape-vue.js/dist/style.css';
 
 // Import `gripVueJsApp`
 import { gripVueJsApp } from '@stakeordie/griptape-vue.js'

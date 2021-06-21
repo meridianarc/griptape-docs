@@ -70,11 +70,14 @@ remove `import { createApp } from 'vue'`
 
 add `import { gripVueJsApp } from '@stakeordie/griptape-vue.js'` after `import App from './App.vue'`
 
-add ```javascript
+add
+```javascript
 // Griptape config
 const conf = {
   restUrl: 'https://api.holodeck.stakeordie.com/'
-}```
+}
+```
+
 after
 `import { gripVueJsApp } from '@stakeordie/griptape-vue.js'\`
 

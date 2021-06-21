@@ -7,7 +7,6 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "sass": "^1.35.1",
     "vitepress": "^0.15.3"
   },
   "scripts": {
@@ -15,5 +14,8 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^4.4.5",
+    "@fontsource/source-sans-pro": "^4.4.5"
+  }
 }

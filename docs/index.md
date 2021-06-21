@@ -4,7 +4,9 @@ title: Home
 
 # What is griptape.js?
 
-> This docs are for the beta release of griptape.js and griptape-vue.js
+::: warning
+This docs are for the *beta* release of griptape.js and griptape-vue.js
+:::
 
 griptape.js is an opinionated, web application front-end library for developing dApps for Secret Network.
 

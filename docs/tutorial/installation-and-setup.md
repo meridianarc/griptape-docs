@@ -1,6 +1,6 @@
 # Installation & Setup
 
-This section will go step by step setting up a new Griptape-vue app from scratch. You can skip this by using the starter project from the [Setup your app Page](https://docs.griptapejs.com/introduction/getting-started), however we recommend you follow along at least once so you can see the differences between a plain vue.js app setup and griptape-vue.
+This section will go step by step setting up a new Griptape-vue app from scratch. You can skip this by using the starter project from the [Setup your app Page](/introduction/getting-started), however we recommend you follow along at least once so you can see the differences between a plain vue.js app setup and griptape-vue.
 
 # Yarn
 # Install
@@ -69,7 +69,9 @@ Strip out everything from the App component
 </template>
 
 <script>
-
+  export default {
+    
+  }
 </script>
 
 <style>

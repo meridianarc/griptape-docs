@@ -14,8 +14,6 @@ should be installed in order to griptape boostrap your application.
 The gripped app then have the ability to access some information provided by the Keplr extension, such the address
 and the balance.
 
-### Wallet Info
-
 The `<wallet-info>` component shows the address and the balance of the user. It is **fully reactive**, that means,
 whenever you change your wallet in Keplr, the component and the whole application state will update too:
 
@@ -47,3 +45,5 @@ and non-SNIP-20 contracts:
 
 `contractAddress` is just a string that represents the contracts address which this instance of the
 `viewing-key-manager` can create viewing keys for.
+
+![viewing keys showcase](/viewing-keys-showcase.png)

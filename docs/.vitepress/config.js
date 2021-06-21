@@ -79,8 +79,32 @@ module.exports = {
               link: '/tutorial/wallet-support'
             },
             {
-              text: 'Old',
-              link: '/tutorial/tutorial'
+              text: 'The Contract',
+              link: '/tutorial/the-contract'
+            },
+          ]
+        },
+        {
+          text:'Tutorial (Coming Soon)',
+          children: [
+            {
+              text: 'Viewing Key Support',
+
+            },
+            {
+              text: 'Private State',
+
+            },
+            {
+              text: 'wSecretJS & the scrtClient',
+              
+            },
+            {
+              text: 'Messages'
+
+            },
+            {
+              text: 'Condutor: Reactivity & Orchestration'
             }
           ]
         }

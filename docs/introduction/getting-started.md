@@ -13,10 +13,20 @@ npm install @stakeordie/griptape-vue.js
 ```
 
 Or use our starter project:
-
 ```bash
-degit https://github.com/stakeordie/griptape-vue-starter
+degit https://github.com/stakeordie/griptape-vue-starter my-griptape-starter
 ```
+
+If you got an error you may need to install degit
+```bash
+yarn global add degit
+
+//or with npm
+
+npm install -g degit
+```
+
+
 
 ## Setup your app
 

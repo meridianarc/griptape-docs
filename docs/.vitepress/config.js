@@ -25,10 +25,6 @@ module.exports = {
             {
               text: 'Getting Started',
               link: '/introduction/getting-started.html',
-            },
-            {
-              text: 'Step by step tutorial',
-              link: '/introduction/tutorial.html',
             }
           ],
         },
@@ -56,6 +52,43 @@ module.exports = {
               link: '/core-features/utilities.html',
             }
           ],
+        },
+        {
+          text: 'Tutorial',
+          children: [
+            {
+              text: 'Welcome to Griptape',
+              link: '/tutorial/welcome-to-griptape.html'
+            },
+            {
+              text: 'Prerequisites',
+              link: '/tutorial/prerequisites.html'
+            },
+            {
+              text: 'Installation & Setup',
+              link: '/tutorial/installation-and-setup.html'
+            },
+            {
+              text: 'Welcome to Griptape',
+              link: '/tutorial/welcome-to-griptape.html'
+            },
+            {
+              text: 'Welcome to Griptape',
+              link: '/tutorial/welcome-to-griptape.html'
+            },
+            {
+              text: 'Welcome to Griptape',
+              link: '/tutorial/welcome-to-griptape.html'
+            },
+            {
+              text: 'Welcome to Griptape',
+              link: '/tutorial/welcome-to-griptape.html'
+            },
+            {
+              text: 'Old',
+              link: '/tutorial/tutorial.html'
+            }
+          ]
         }
       ]
     }

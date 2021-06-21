@@ -1,7 +1,6 @@
 module.exports = {
   title: 'griptape.js',
   description: 'griptape.js is a library for developing Secret Apps on Secret Network',
-  base: '/docs/',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }]
   ],

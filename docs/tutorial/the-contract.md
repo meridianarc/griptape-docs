@@ -1,12 +1,12 @@
 # The Contract
 
-Something something contract.
+For most dApps on Secret Network, Secret Contracts are the core. We took that to heart and build Griptape in a way that, as best as possible, tried to bring the contract to the front-end. Analogous to the way that contract
 
 The first thing we will do is create the contract folder. This is where all `contract definiition files` will live.
 
 Contract definitiion files are just vanilla js objects that map the messages, queries and state of contacts on the blockchain. But to use them, they need to be instantiated in to a pinia store.
 
-##Index.js
+## Index.js
 
 The `index.js` file is where is were contract definition files will be turned into contracts that we can use in our app.
 
@@ -74,7 +74,7 @@ export const auctionsFactory = createContract(
 
 Now, just like useWalletStore, we have our a custom pinia store that mirrors the contract on chain. Lets try it out.
 
-##Display Auctions
+## Display Auctions
 
 As with the useWalletStore, we are going to mapState useAuctionsFactory, and ask for the auctions state object.
 

@@ -92,7 +92,7 @@ const conf = {
 }
 
 // Grip your app, you are now ready to develop your application
-gripVueJsApp(conf, App)
+gripVueJsApp(conf, App, (app, pinia) => {})
 ```
 With these changes made you can run the app with `yarn dev` and right away, keplr should popup and ask you to authorized.
 

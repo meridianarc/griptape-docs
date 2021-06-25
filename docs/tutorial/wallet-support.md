@@ -104,14 +104,12 @@ Now we can get access to the Wallet Store. To do that we will create a computed 
   </script>
 ```
 *Note
-```text
-That `...mapState()` is a common pattern used to access the state of a Pinia Store. Later we will use `...mapActions()` to access Pinia Actions that mutate the state, among other things
-```
+`...mapState()` is a common pattern used to access the state of a Pinia Store. Later we will use `...mapActions()` to access Pinia Actions that mutate the state, among other things.
 
 Now that we have the balance we can just render it in the template.
 
 **/src/App.vue**
-```javascript
+```javascript {8}
   <template>
     <div>
       <header>

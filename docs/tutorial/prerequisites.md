@@ -2,13 +2,15 @@
 
 ## High Level
 
-This tutorial assumes that you are familiar with basic web technologies (HTML/CSS) and Javascript. Knowing Vue.js would be a big help, but you can probably follow along with out it. Who knows, maybe you will like what you see and decide to learn more. Additionally we don't assume you have worked with SecretJS before or even built a blockchain app before, however, this isn't a tutorial in blockchain, or even really in whats going on under the hood with SecretJS or Secret Network more broadly. It's here to get you building fast to show you what the potential is.
+This tutorial assumes that you are familiar with basic web technologies (HTML/CSS) and Javascript. Knowing Vue.js would be a big help, but you can probably follow along without it. Who knows, maybe you will like what you see and decide to learn more.
+
+Additionally we don't assume you have worked with SecretJS before or even built any blockchain apps before. However, this isn't a tutorial in blockchain, or even really in whats going on under the hood with SecretJS or Secret Network more broadly. It's here to get you building fast to show you what the potential is. So if things confuse you, we are sorry.
 
 ## Required Software
 
 **Node.js and NVM/NVS**: 
 
-You will need to install Node.js and NVM (Unix/Mac) or NVS (Windows) is also a good idea. To install both we recommend these links:
+You will need to install Node.js. We also recommend NVM (Unix/Mac) or NVS (Windows). They let you switch between Node.js versions. To install both we recommend these links:
 - [https://nodejs.org/en/download/package-manager/#nvm](https://nodejs.org/en/download/package-manager/#nvm) for Unix/Mac
 - [https://nodejs.org/en/download/package-manager/#nvs](https://nodejs.org/en/download/package-manager/#nvs) for Windows
 
@@ -31,4 +33,15 @@ v15.0.1
 ```
 Got something like that, you are good to go!
 
+Well, actually you will need to switch Node versions, good thing we install NVM!
 
+```bash
+nvm use 14 ↵
+Now using node v14.16.1 (npm v6.14.12)
+```
+or
+```bash
+nvm use 14
+```
+
+Now you're go to go!

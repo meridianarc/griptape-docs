@@ -10,9 +10,9 @@ import App from './App.vue'
 
 import { gripVueJsApp } from '@stakeordie/griptape-vue.js'
 
-import '@/assets/styles/index.scss'
-
 import "~/@stakeordie/griptape-vue.js/dist/style.css"
+
+import '@/assets/styles/index.scss'
 
 // Griptape config
 const conf = {

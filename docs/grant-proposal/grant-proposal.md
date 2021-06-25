@@ -1,11 +1,9 @@
 ## Project Description
 Griptape.js is a framework built to get Secret Network UI developers off the ground quickly. With a feature set, and opinionated design methodology, Griptape.js allows UI developers to focus on building what makes their app unique, not what every other app shares in common.
 
-## Detailed Project Description
-
 The challenges of developing contracts on Secret Network are well understood. Less well understood and arguably underappreciated, are the challenges of developing user interfaces for these applications. Whether it’s the current need for every developer to build the same features independently, the amount of boiler plate code required to be written for each task, or the fact that design decisions around viewing keys and state management, if done incorrectly, can lead to network wide performance issues; the need for a unified set of tools is clear. Today, with Griptape.js, we take the first step in providing those tools, and we ask for support moving forward.
 
-## Detailed Project Description
+## Detailed Description
 For a detailed description, and to test out the current public beta, please visit [griptapejs.com](https://griptapejs.com) & [docs.vue.griptapejs.com](https://docs.vue.griptapejs.com).
 
 ## Problem / Solution

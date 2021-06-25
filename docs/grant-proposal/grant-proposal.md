@@ -63,7 +63,7 @@ We are requesting 81,500 SCRT ($89,400 USD based on 1 week trailing average). Th
 | Senior Full Stack Developer   | 12      |  $               35.00  | 80               |  $   33,600.00   |
 | Senior Full Stack Develope    | 12      |  $               35.00  | 80               |  $   33,600.00   |
 | 1 QA Engineer (80 Hours)      | 12      |  $               27.00  | 60               |  $   19,440.00   |
-| 1 Technical Writer (20 Hours) | 12      |  $               25.00  | 10               |  $     3,000.00  |
+| 1 Technical Writer (20 Hours) | 12      |  $               25.00  | 10               |  $    3,000.00   |
 | Total                         |         |                         | 230              |  $   89,640.00   |
 
 In addition to these hours we have provided, and will provide, a significant amount of work and services for no charge. They include:

@@ -12,7 +12,7 @@ For a detailed description, and to test out the current public beta, please visi
 **Solution:** Griptape makes application development significantly easier by providing common components, utilities, and preconfigured libraries by default. In addition the framework gives you a structured way to organize the different parts of the application so that you don't need to think about... And the way it structures the application is an extremely intuitive one that has the amazing effect of getting front end and back end devs speaking the same language.
 
 ## Value capture for Secret Network Ecosystem
-For better or worse web development is the entry point for the vast majority of young developers. JS tools like React, Vue, Svelte, and others have made developing for the web easier and easier. As these developers discover the power of a decentralized future, they are eager to find their place in it. We feel strongly that the growth of Secret Network depends in part on attracting these folks. If intuitive enough, they can learn to build on Secret Network quickly and stick around, if however the barrier of entry is too high, they will go elsewhere. That is why we are building Griptape.js, o make building UIs fun and intuitive, but also to make Secret Network sticky. If we succeed, this tool will help grow our ranks with the people we need to build our product, and in turn build our network.
+For better or worse web development is the entry point for the vast majority of young developers. JS tools like React, Vue, Svelte, and others have made developing for the web easier and easier. As these developers discover the power of a decentralized future, they are eager to find their place in it. We feel strongly that the growth of Secret Network depends in part on attracting these folks. If intuitive enough, they can learn to build on Secret Network quickly and stick around, if however the barrier of entry is too high, they will go elsewhere. That is why we are building Griptape.js, to make building UIs fun and intuitive, but also to make Secret Network sticky with builders. If we succeed, this tool will help grow our ranks with the people we need to build our product, and in turn build our network.
 
 
 ## Team Members
@@ -43,8 +43,8 @@ Before describing the roadmap I have good news, the project is live right now. T
 - Griptape-vue - v1.0.0
 - Griptape-react - v1.0.0
 - Poser - (Mock Library)
-- Skateshop-cli - (Scaffold and Schema to Contract Def Builder)
-- Conduct - (State Orchestration)
+- Skateshop-cli - (app scaffold and schema-to-contract-defintion builder)
+- Joystick - (State Orchestration)
 - Prodigy - (Server)
 
 - Full Documention
@@ -53,7 +53,7 @@ Before describing the roadmap I have good news, the project is live right now. T
 - Public Release Meetings/Demos
 - 3 Hackathons
 ### Process
-The development will be done using Agile development methodology. Progress will be made in 2 week sprints will working releases at the end of each. Our budget calls for 12 sprints (24 weeks) of development
+The development will be done using Agile Development Methodology. Progress will be made in 2 week sprints will working releases at the end of each. Our budget calls for 13 sprints (26 weeks) of development
 
 ## Grant request
 We are requesting 81,500 SCRT ($89,400 USD based on 1 week trailing average). This will pay for 12 Sprints (two weeks each). Below is the rate and position table:
@@ -64,7 +64,7 @@ We are requesting 81,500 SCRT ($89,400 USD based on 1 week trailing average). Th
 | Senior Full Stack Develope    | 13      |  $               37.50  | 80               |  $   39,000.00   |
 | 1 QA Engineer (80 Hours)      | 13      |  $               28.00  | 60               |  $   21,840.00   |
 | 1 Technical Writer (20 Hours) | 13      |  $               25.00  | 15               |  $    4,875.00   |
-| Total                         |         |                         | 235              |  $   104,715.00   |
+| Total                         |         |                         | 235              |  $   104,715.00  |
 
 In addition to these hours we have provided, and will provide, a significant amount of work and services for no charge. They include:
 

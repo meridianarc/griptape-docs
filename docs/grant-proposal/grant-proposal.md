@@ -17,13 +17,13 @@ For better or worse web development is the entry point for the vast majority of 
 
 ## Team Members
 Stake or Die
-  Sandy Corsillo
-  Victor Valle
-  Luis Espinoza
-  David Rodriguez
-  Others to be assigned
+  - Sandy Corsillo
+  - Victor Valle
+  - Luis Espinoza
+  - David Rodriguez
+  - Others to be assigned
 Community
-  The project will be open source and we will welcome and encourage anyone who wants to contribute.
+  - The project will be open source and we will welcome and encourage anyone who wants to contribute.
 
 
 ## Development Roadmap

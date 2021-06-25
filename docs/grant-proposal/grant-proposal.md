@@ -69,5 +69,5 @@ In addition to these hours we have provided, and will provide, a significant amo
 - The initial 2 Months of development it took to get the project where it is today.
 - 1-2 hours (depending on participation) of office hours in which Sandy and Luis will be available for support, feedback, and ideation with the community
 - 1 hour bi-weekly live release/demo meetings at the conclusion of each sprint
-- 3 bi-monthly "Hackathons", sponsored by Stake or Die, in which a common contract will be used to develop multiple UIs and prizes awarded.
+- 3 bi-monthly "Hackathons", sponsored by Stake or Die, in which a common contract will be used to develop multiple UIs.
 - Free video tutorials demonstrating solutions to common issues.

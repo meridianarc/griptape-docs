@@ -57,7 +57,7 @@ Before describing the roadmap I have good news, the project is live right now. T
 The development will be done using Agile Development Methodology. Progress will be made in 2 week sprints will working releases at the end of each. Our budget calls for 13 sprints (26 weeks) of development
 
 ## Grant request
-We are requesting 81,500 SCRT ($89,400 USD based on 1 week trailing average). This will pay for 12 Sprints (two weeks each). Below is the rate and position table:
+We are requesting $96,958.33 SCRT ($104,715.00 USD based on 1 week trailing average). This will pay for 13 Sprints (two weeks each). Below is the rate and position table:
 
 | Billables                     | Sprints | Rate                    | Hours Per Sprint | Total            |
 |-------------------------------|---------|-------------------------|------------------|------------------|

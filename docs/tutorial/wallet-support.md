@@ -170,9 +170,37 @@ So that worked, but it's not so easy to read. We added a utility function called
 
 That's much nicer. **coinConvert** accepts `(value, decimals, 'humanm|machine', roundedToXDecimals)
 
-Now for the fun part, go ahead and change your wallet and you will see the balance change in both locations.
+We don't need that balance there so we will just delete the whole thing. But we'll leave coinConvert import as we will need that later for sure.
 
-One last thing. We recommend that you install Vue DevTools to inspect you app in development. Here is what you will find if you open it and select Pinia
+**/src/App.vue**
+```javascript {8, 15, 21-23}
+  <template>
+    <div>
+      <header>
+        <div class="logo">Secret Auctions</div>
+        <wallet-info></wallet-info>
+      </header>
+      <main>
+      </main>
+    </div>
+  </template>
+
+  <script>
+  import { mapState } from 'pinia'
+  import { coinConvert } from '@stakeordie/griptape.js'
+  import { useWalletStore } from '@stakeordie/griptape-vue.js'
+
+  export default {
+    computed: {
+    }
+  }
+  </script>
+```
+
+One last thing before we talk about SecretJS and connecting to a contract. Just for fun lets console.log out the the useWalletStore Object so we can see whe we have.
+
+
+We recommend that you install Vue DevTools to inspect you app in development. Here is what you will find if you open it and select Pinia
 
 ![](/tutorial/wallet-support/vue-devtools.png)
 

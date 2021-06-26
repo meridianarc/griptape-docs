@@ -5,7 +5,7 @@ Griptape comes with some prewired components that you can include in your app wi
 - `<wallet-info>`
 - `<viewing-key-info>`
 
-Lets add the `wallet-info` component to the header.
+We will get the viewing key component later when we start querying private state, but for now lets add the `wallet-info` component to the header to see what happens.
 
 **/src/App.vue**
 ```html {2-9}
@@ -153,8 +153,8 @@ So that worked, but it's not so easy to read. We added a utility function called
   </template>
 
   <script>
-  import { mapState } from 'pinia'
   import { coinConvert } from '@stakeordie/griptape.js'
+  import { mapState } from 'pinia`
   import { useWalletStore } from '@stakeordie/griptape-vue.js'
 
   export default {
@@ -170,7 +170,7 @@ So that worked, but it's not so easy to read. We added a utility function called
 
 That's much nicer. **coinConvert** accepts `(value, decimals, 'humanm|machine', roundedToXDecimals)
 
-We don't need that balance there so we will just delete the whole thing. But we'll leave coinConvert import as we will need that later for sure.
+Okay that showed something, but we don't really need it so lets just delete `{{ balance }}` and the other useWallet stuff, and even mapState, we will need it again soon enough, but lets keep things clean. We will leave coinConvert though, as we always need that :🛹.
 
 **/src/App.vue**
 ```javascript {8, 15, 21-23}
@@ -186,9 +186,7 @@ We don't need that balance there so we will just delete the whole thing. But we'
   </template>
 
   <script>
-  import { mapState } from 'pinia'
   import { coinConvert } from '@stakeordie/griptape.js'
-  import { useWalletStore } from '@stakeordie/griptape-vue.js'
 
   export default {
     computed: {

@@ -79,6 +79,10 @@ module.exports = {
               link: '/tutorial/wallet-support'
             },
             {
+              text: 'wSecretJS',
+              link: '/tutorial/wsecretjs'
+            },
+            {
               text: 'The Contract',
               link: '/tutorial/the-contract'
             },

@@ -4,6 +4,8 @@ Eventually Griptape will come with a UI library that will help build apps fast w
 
 Add the import lines 5-7 highlighted below.
 
+## Main.js
+
 **/src/main.js**
 ```javascript {5-7}
 import App from './App.vue'
@@ -27,7 +29,9 @@ Create two new files `/src/assets/styles/_reset.css` and `/src/assets/styles/ind
 
 Add code to each:
 
-**_reset.css**
+## _reset.css
+
+**/src/assets/styles/_reset.css**
 ```css
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -78,8 +82,10 @@ table {
 	border-spacing: 0;
 }
 ```
-and
-**test**
+
+## index.scss
+
+**/src/assets/styles/index.scss**
 ```scss
 @import "reset";
 

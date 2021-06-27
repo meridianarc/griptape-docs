@@ -1,6 +1,6 @@
 # Installation & Setup
 
-This section will go step by step setting up a new Griptape-vue app from scratch. You can skip this by using the starter project from the [Setup your app Page](/introduction/getting-started), however we recommend you follow along at least once so you can see the differences between a plain vue.js app setup and griptape-vue.
+This section will go step by step setting up a new Griptape-vue app from scratch. You can skip this by using the starter project from the [Getting Started](/introduction/getting-started). After that you can jump right to [Wallet](/tutorial/wallet-support). We do recommend you follow along here at least once so you can see the differences between a plain vue.js app setup and griptape-vue.
 ## Install
 
 First create a new vite app
@@ -21,6 +21,7 @@ yarn add @stakeordie/griptape-vue.js
 
 Open the project in your favorite editor and make some some small but important changes to the core application files:
 
+## Vite Config File
 **vite.config.js**
 ```javascript {4,9-14}
 import { defineConfig } from 'vite'
@@ -40,6 +41,7 @@ export default defineConfig({
 })
 ```
 
+## Index File
 **index.html**
 ```html {11}
 <!DOCTYPE html>
@@ -58,6 +60,7 @@ export default defineConfig({
 </html>
 ```
 
+## App Component
 Strip out everything from the App component
 
 **/src/App.vue**
@@ -78,6 +81,8 @@ Strip out everything from the App component
 
 ```
 And finally
+
+## Main.js
 
 **/src/main.js**
 ```javascript {5,8,10-12,15}

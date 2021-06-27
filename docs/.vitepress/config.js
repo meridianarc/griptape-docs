@@ -66,17 +66,17 @@ module.exports = {
               text: 'Prerequisites',
               link: '/tutorial/prerequisites'
             },
+            {
+              text: 'Installation & Setup',
+              link: '/tutorial/installation-and-setup'
+            },
+            {
+              text: 'Some Styles',
+              link: '/tutorial/styling-to-make-pretty'
+            },
             {              
               text: 'Part 1',
               children: [
-                {
-                  text: 'Installation & Setup',
-                  link: '/tutorial/installation-and-setup'
-                },
-                {
-                  text: 'Some Styles',
-                  link: '/tutorial/styling-to-make-pretty'
-                },
                 {
                   text: 'Wallet',
                   link: '/tutorial/wallet-support'

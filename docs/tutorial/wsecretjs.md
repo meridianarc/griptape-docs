@@ -2,11 +2,14 @@
 
 Now that we have a wallet connected, and you see how easy it is to get setup, the next step is to start interacting with the blockchain directly. For that we will need a SecretJS client.
 
+## Background
 SecretJS is a really powerful library. It wraps cosmjs which handles all sorts of tricky stuff like connecting to a wallet, signing transactions, and other low level stuff. What it adds to Cosmjs is the stuff that is important to Secret Network, namely client-side encryption. The problem, from out "lets get you off the ground fast and easy" perspective, is that the power and complexity come with a trade-off, it is quite difficult to use. In addition, SecretJS is mainly focused on interacting with contracts, not with core Secret Network modules like staking or governance. Meaning anything you want to do on that front needs to be manually built using similarly low level stuff. In other words its hard. 
 
 Wouldn't it be great if their was a way to bundle all that, every interaction you will have with the blockchain in an app, into one clean, easy to use wrapper? We thought so too, so we have added wSecretJS to the stack.
 
 Well, let's use it shall we?
+
+## wSecretJS Client
 
 The first thing we are going to need is to import two functions from Core Griptape: `createScrtCLient` and  `useWallet`. 
 
@@ -37,6 +40,8 @@ So first we will import those libraries and create a wSecretJS client.
 
 ...
 ```
+
+## First Query
 
 Lets use the trusty Secret Counter contract to test. First we'll just query the contract and output the result.
 
@@ -88,6 +93,8 @@ The above code used a vue.js lifecycle hook `created() {}` to trigger the method
 
 This might not seem like much, but we just queried a contract on chain. That is no small accomplishment. Now lets execute a tx to show the second part of the equation.
 
+## First Transaction
+
 ```html
 <template>
   <div>
@@ -96,7 +103,7 @@ This might not seem like much, but we just queried a contract on chain. That is 
       <wallet-info></wallet-info>
     </header>
     <main>
-      <div>{{ theCount }}</div>
+      <div>Count is: {{ theCount }}</div>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
     </main>
@@ -113,7 +120,6 @@ This might not seem like much, but we just queried a contract on chain. That is 
 
   export default {
     created() {
-      //this.getActiveAuctions()
       this.getTheCount();
     },
     data() {
@@ -143,10 +149,14 @@ This might not seem like much, but we just queried a contract on chain. That is 
 
 There you have it, a fully functional dApp on Secret Network.
 
-Quickly, clicking the button we added trigger method `increment`. Increment use the wsjs.executeContract method to send a transaction to the chain. Then, in turn, increment calls `getTheCount()` which refreshes the value of theCount just like before. And that's it!
+To sum up, by clicking the button we trigger method `increment`. Increment use the `wsjs.executeContract()` method to send a transaction to the chain. Then, in turn, `getTheCount()` is called which queries to get the updated number.
 
 ::: warning
   Take note of the **try{ const res ... } catch(e) { console.log(e) } syntax. This is a temp fix to an issue where the response from a contract isn't a valid json object.
 :::
 
-So this is great, it works, but it has issues. For one the state of the contract is being represented in this one component. That is okay when the app only has one, but what about when it gets bigger. When you have 5 components, 20, 100? This problem is one that application frameworks like Vue and React have dealt with by extracting the state and it's associate logic into stores that are accisble anywhere. We knew we wanted to do this here, early, so that it didn't become a problem that you had to solve with a lot of refactoring only after you app grew to an unmaintanable level. But frankly state management tools introduce the need for a lot of boilerplate. We decided to blend the store with the contract into what we are calling Griptape Contract State. What is Griptape Contract State and how do you use it? We will find out next with The Contract. 
+## Up Next
+
+So this is great, it works, but it has issues. For one the state of the contract is being represented in this one component. That is okay when the app only has one, but what about when it gets bigger. When you have 5 components, 20, 100? 
+
+This problem is one that application frameworks like Vue and React have dealt with by extracting the state and it's associate logic into stores that are accessible throughout the app. When building Griptape, we knew we wanted do this early so that apps have reactive state by default. And this is where **Griptape Contract Stores** come in.

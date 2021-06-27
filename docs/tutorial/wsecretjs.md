@@ -147,5 +147,4 @@ There you have it, a fully functional dApp on Secret Network.
 
 Quickly, clicking the buttons we added trigger methods `increment` and `decrement` to be called respectively. Both use the wsjs.executeContract method to send a transaction to the chain. Then each, in turn, calls `getTheCount()` which refreshes the value of theCount just like before. And that's it!
 
-Before we finish lets look at a non contract method that is not a part of SecretJS so you can get a sense of that.
-
+So this is great, it works, but it has issues. For one the state of the contract is being represented in this one component. That is okay when the app only has one, but what about when it gets bigger. When you have 5 components, 20, 100? This problem is one that application frameworks like Vue and React have dealt with by extracting the state and it's associate logic into stores that are accisble anywhere. We knew we wanted to do this here, early, so that it didn't become a problem that you had to solve with a lot of refactoring only after you app grew to an unmaintanable level. But frankly state management tools introduce the need for a lot of boilerplate. We decided to blend the store with the contract into what we are calling Griptape Contract State. What is Griptape Contract State and how do you use it? We will find out next with The Contract. 

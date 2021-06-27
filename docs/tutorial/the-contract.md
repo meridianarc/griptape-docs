@@ -1,6 +1,6 @@
 # The Contract
 
-For most dApps on Secret Network, Secret Contracts are the core. We took that to heart and build Griptape in a way that, as best as possible, tried to bring the contract to the front-end. Analogous to the way that contract
+For most dApps on Secret Network, Secret Contracts are the core. We took that to heart and build Griptape in a way that, as best as possible, tried to bring the contract to the front-end. The goal with this is to allow the front end developer to code as if they were communicating with the smart contract directly in there web app. This is what Griptatpe contract state is all about. This should all make a lot more sense when you see it in actions so lets get to it.
 
 The first thing we will do is create the contract folder. This is where all `contract definiition files` will live.
 

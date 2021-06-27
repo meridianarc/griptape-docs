@@ -59,16 +59,16 @@ module.exports = {
           text: 'Tutorial',
           children: [
             {
+              text: 'Welcome to Griptape',
+              link: '/tutorial/welcome-to-griptape'
+            },
+            {
+              text: 'Prerequisites',
+              link: '/tutorial/prerequisites'
+            },
+            {              
               text: 'Part 1',
               children: [
-                {
-                  text: 'Welcome to Griptape',
-                  link: '/tutorial/welcome-to-griptape'
-                },
-                {
-                  text: 'Prerequisites',
-                  link: '/tutorial/prerequisites'
-                },
                 {
                   text: 'Installation & Setup',
                   link: '/tutorial/installation-and-setup'
@@ -78,7 +78,7 @@ module.exports = {
                   link: '/tutorial/styling-to-make-pretty'
                 },
                 {
-                  text: 'Add Wallet & Test Reactivity',
+                  text: 'Wallet',
                   link: '/tutorial/wallet-support'
                 },
                 {
@@ -95,19 +95,8 @@ module.exports = {
               text:'Part 2',
               children: [
                 {
-                  text: 'Viewing Key Support',
-    
-                },
-                {
-                  text: 'Private State',
-    
-                },
-                {
-                  text: 'Messages'
-    
-                },
-                {
-                  text: 'Condutor: Reactivity & Orchestration'
+                  text: 'Part 2 Introduction',
+                  link: '/tutorial/part-two-introduction'
                 }
               ]
             }

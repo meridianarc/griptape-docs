@@ -35,26 +35,26 @@ If nothing unexpected happens you should see something close to this:
 
 ![](/tutorial/wallet-support/wallet-component.png)
 
-*If the screen is blank it is most likely because the wallet you have selected doesn't exist on testnet. Add some tokens to it here [Holodeck Faucet](https://faucet.secrettestnet.io/), or select a wallet that has a testnet balance.
-
-## It's Reactive!!
+::: warning
+If the screen is blank it is most likely because the wallet you have selected doesn't exist on testnet. Add some tokens to it here [Holodeck Faucet](https://faucet.secrettestnet.io/), or select a wallet that has a testnet balance.
+:::
 
 If you have another testnet wallet, switch to it. You will notice that the wallet component changes and the balance is changed automatically. Pretty cool huh!
 
-But how does it work?
+## useWalletStore
 
-At the heart of any Griptape app are stores. When you "Grip" your app you automatically get access to the walletInfoStore which is watching for changes to the selected wallet. The `<wallet-info>` component is bound to that store, so any time you change the wallet, the component updates.
+So we are able to display the wallet address and balance, but how does it work?
 
-To see this a little more clearly, lets pull the balance from that store and render in directly in App.vue
+At the heart of any Griptape app are stores. This is how all components can stay in sync without passing values around up and down the component tree. There are three types of stores. Basic, Core, and **Griptape Contract Stores**. **Griptape Contract Stores** will be introduced in due time, but the walletStore is the 2nd type. It along with viewingKeyStore are the fundamental stores that all Griptape apps share. The `<wallet-info>` component is bound to that store, so any time you change the wallet, the component updates.
 
-To do this we need to first import two libraries:
+Because the `<wallet-info>` component is fully built and lived outside of this app, it is hard follow what is going on. So lets see this a little more clearly, lets pull the balance from walletStore directly and render to the user.
 
-Pinia, our state managment library.
-
-And useWalletStore, the pinia store that the wallet-info component is boudn to.
+To do this we need to first import two methods:
+- mapState
+- useWalletStore
 
 **/src/App.vue**
-```javascript
+```html{13-14}
   <template>
     <div>
       <header>
@@ -67,7 +67,7 @@ And useWalletStore, the pinia store that the wallet-info component is boudn to.
   </template>
 
   <script>
-  import {mapState} from 'pinia'
+  import { mapState } from 'pinia'
   import { useWalletStore } from '@stakeordie/griptape-vue.js'
 
   export default {
@@ -76,11 +76,11 @@ And useWalletStore, the pinia store that the wallet-info component is boudn to.
   </script>
 ```
 
-Now we can get access to the Wallet Store. To do that we will create a computed property that gets the `balance` property.
+mapState comes from Pinia, the lightweight state-management library we are useing in Griptape-vue. We will use mapState to get the balance out of the useWalletStore store. To do that we will create a computed property.
 
 
 **/src/App.vue**
-```javascript
+```html{17-19}
   <template>
     <div>
       <header>
@@ -103,13 +103,14 @@ Now we can get access to the Wallet Store. To do that we will create a computed 
   }
   </script>
 ```
-*Note
+::: warning Note
 `...mapState()` is a common pattern used to access the state of a Pinia Store. Later we will use `...mapActions()` to access Pinia Actions that mutate the state, among other things.
+:::
 
 Now that we have the balance we can just render it in the template.
 
 **/src/App.vue**
-```javascript {8}
+```html {8}
   <template>
     <div>
       <header>
@@ -117,7 +118,7 @@ Now that we have the balance we can just render it in the template.
         <wallet-info></wallet-info>
       </header>
       <main>
-        {{ balance }}
+        Balance: {{ balance }}
       </main>
     </div>
   </template>
@@ -136,10 +137,12 @@ Now that we have the balance we can just render it in the template.
 
 ![](/tutorial/wallet-support/balance-machine.png)
 
+## coinConvert
+
 So that worked, but it's not so easy to read. We added a utility function called **coinConvert** to help. Here's what the code looks like:
 
 **/src/App.vue**
-```javascript {8, 15, 21-23}
+```html {8,15,22-24}
   <template>
     <div>
       <header>
@@ -147,22 +150,22 @@ So that worked, but it's not so easy to read. We added a utility function called
         <wallet-info></wallet-info>
       </header>
       <main>
-        {{ convertedBalance }}
+        Balance: {{ coinConvert(balance, 6, 'human', 2)}}
       </main>
     </div>
   </template>
 
   <script>
+  import { mapState } from 'pinia'
   import { coinConvert } from '@stakeordie/griptape.js'
-  import { mapState } from 'pinia`
   import { useWalletStore } from '@stakeordie/griptape-vue.js'
 
   export default {
     computed: {
-      ...mapState(useWalletStore, ['balance']),
-      convertedBalance() {
-        return coinConvert(this.balance, 6, 'human', 2);
-      }
+      ...mapState(useWalletStore, ['balance'])
+    },
+    methods: {
+      coinConvert
     }
   }
   </script>
@@ -170,10 +173,21 @@ So that worked, but it's not so easy to read. We added a utility function called
 
 That's much nicer. **coinConvert** accepts `(value, decimals, 'humanm|machine', roundedToXDecimals)
 
-Okay that showed something, but we don't really need it so lets just delete `{{ balance }}` and the other useWallet stuff, and even mapState, we will need it again soon enough, but lets keep things clean. We will leave coinConvert though, as we always need that :🛹.
+::: warning Note
+One last thing before we talk about SecretJS and connecting to a contract. It is really helpful to install vue dev tools so we can examine the stores we have. You can find the latest version [here](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en).
+
+![](/tutorial/wallet-support/vue-devtools.png)
+
+If you go to the Pinia sections you can see the stores. The only ones that we currently have are useWalletStore and useViewingKeyStore, and that is expected as they are the core stores. If you look at the state, you find `address`, `balance` and `isWalletReady`. This is how the <wallet-info> component can display the address and balance.
+
+We use vue dev tools all the time and you probably will too. 
+:::
+
+Okay, we learned all about the wallet component. Go ahead and remove everything from `App.Vue` getting back to its scaffold state.
+
 
 **/src/App.vue**
-```javascript {8, 15, 21-23}
+```html
   <template>
     <div>
       <header>
@@ -186,22 +200,10 @@ Okay that showed something, but we don't really need it so lets just delete `{{ 
   </template>
 
   <script>
-  import { coinConvert } from '@stakeordie/griptape.js'
-
+  
   export default {
-    computed: {
-    }
   }
   </script>
 ```
 
-One last thing before we talk about SecretJS and connecting to a contract. Just for fun lets console.log out the the useWalletStore Object so we can see whe we have.
-
-
-We recommend that you install Vue DevTools to inspect you app in development. Here is what you will find if you open it and select Pinia
-
-![](/tutorial/wallet-support/vue-devtools.png)
-
-This then gives you a window into the store and it's current state. This will be more and more helpful as we go along.
-
-Next it's time to connect to a contract and talk to the blockchain!
+Great, now it's time to connect to a contract and talk to the blockchain!

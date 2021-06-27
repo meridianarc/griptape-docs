@@ -22,15 +22,15 @@ First lets just create an empty `index.js` and a `contractDef.js` file.
 
 ```{2-3}
 │  ├─ contracts
-│  │  ├─ contractDef.js
+│  │  ├─ counterDef.js
 │  │  └─ index.js
 ```
 
-Open `contractDef.js` and add the follow:
+Open `counterDef.js` and add the follow:
 
-**/src/contracts/contractDef.js**
+**/src/contracts/counterDef.js**
 ```javascript
-export const contractDef = {
+export const counterDef = {
   state: {},
   queries: {},
   messages: {}
@@ -41,9 +41,9 @@ This is what an empty contract definition object looks like. And although it doe
 
 But lets add the logic from App.vue so it can do something of use.
 
-**/src/contracts/contractDef.js**
+**/src/contracts/counterDef.js**
 ```javascript
-export const contractDef = {
+export const counterDef = {
   state: {
     count: undefined
   },
@@ -74,11 +74,11 @@ That looks familiar, and good. The next step is "creating" contractDef to the `i
 **/src/contracts/index.js**
 ```javascript
   import { createContract } from '@stakeordie/griptape-vue.js'
-  import { contractDef } from './contractDef.js'
+  import { counterDef } from './counterDef.js'
 
   const contractAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
-  const useContract = createContract('counter', contractAddress, contractDef)
+  const useContract = createContract('counter', contractAddress, counterDef)
 ```
 
 And now finally we can refactor App.vue
@@ -92,9 +92,8 @@ From
       <wallet-info></wallet-info>
     </header>
     <main>
-      <div>Count is: {{ theCount }}</div>
+      <div>Count is: {{ count }}</div>
       <button @click="increment">+</button>
-      <button @click="decrement">-</button>
     </main>
   </div>
 </template>
@@ -109,33 +108,35 @@ From
 
   export default {
     created() {
-      this.getTheCount();
+      this.getCount();
     },
     data() {
       return {
-        theCount: 0
+        count: 0
       }
     },
     methods: {
       async increment() {
-        const handleMsg = { 'increment': { } }
+        const handleMsg = {'increment':{}}
         try {
           const res = await wsjs.executeContract(secretCounterAddress, handleMsg)
         } catch (e) {
           console.log(e);
         }
-        this.getTheCount()
+        this.getCount()
       },
-      async getTheCount() {
-        const msg = { 'get_count': { } }
+      async getCount() {
+        const msg = {'get_count':{}}
         const res = await wsjs.queryContract(secretCounterAddress, msg)
-        this.theCount = res.count
+        this.count = res.count
       }
     }
   }
 </script>
 ```
+
 to
+
 ```html
 <template>
   <div>
@@ -146,7 +147,6 @@ to
     <main>
       <div>Count is: {{ count }}</div>
       <button @click="increment">+</button>
-      <button @click="reset">RESET</button>
     </main>
   </div>
 </template>
@@ -161,7 +161,6 @@ to
     },
     computed: {
       ...mapState(useCounterStore, ['count']),
-      ...mapState(useWalletStore, ['balance'])
     },
     methods: {
       ...mapActions(useCounterStore, ['getCount','increment']),
@@ -170,8 +169,14 @@ to
 </script>
 ```
 
+Hopefully it works, and you have now defined, created, and used a **Griptape Contract Store**. 
+
+## What's Next
+
+There is soooo much more. Viewing Keys, createSnip20Contract, Orchestration, and more... But lets take a break and come back for Part 2
+
 ## Intermission
 
-Well, you did it! You made it to the end of Part 1 of this tutorial. Part 1 is all about showing features and explaining things at a high level with examples. I hope you enjoyed getting your hands dirty and will move on the Part 2 where we will build a real app. In Part 2 we will be moving pretty fast, but we will try to refer back to Part 1 a lot for reference.
+Well, you did it! You made it to the end of Part 1 of this tutorial. Part 1 is all about showing features and explaining things at a high level with examples. We didn't show you everything, but we showed you enough for things to make sense. I hope you enjoyed getting your hands dirty and will move on the Part 2 where we will build a real app. In Part 2 we will be moving pretty fast, but we will try to refer back to Part 1 a lot for reference.
 
 Thanks Again, and get ready for Part 2!!!

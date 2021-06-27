@@ -89,6 +89,10 @@ module.exports = {
                   text: 'Griptape Contract',
                   link: '/tutorial/griptape-contract'
                 },
+                {
+                  text: 'My First Contract Store',
+                  link: '/tutorial/first-contract-store'
+                }
               ]
             },
             {

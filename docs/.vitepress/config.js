@@ -59,59 +59,60 @@ module.exports = {
           text: 'Tutorial',
           children: [
             {
-              text: 'Welcome to Griptape',
-              link: '/tutorial/welcome-to-griptape'
+              text: 'Part 1',
+              children: [
+                {
+                  text: 'Welcome to Griptape',
+                  link: '/tutorial/welcome-to-griptape'
+                },
+                {
+                  text: 'Prerequisites',
+                  link: '/tutorial/prerequisites'
+                },
+                {
+                  text: 'Installation & Setup',
+                  link: '/tutorial/installation-and-setup'
+                },
+                {
+                  text: 'Some Styles',
+                  link: '/tutorial/styling-to-make-pretty'
+                },
+                {
+                  text: 'Add Wallet & Test Reactivity',
+                  link: '/tutorial/wallet-support'
+                },
+                {
+                  text: 'wSecretJS',
+                  link: '/tutorial/wsecretjs'
+                },
+                {
+                  text: 'Griptape Contract',
+                  link: '/tutorial/griptape-contract'
+                },
+              ]
             },
             {
-              text: 'Prerequisites',
-              link: '/tutorial/prerequisites'
-            },
-            {
-              text: 'Installation & Setup',
-              link: '/tutorial/installation-and-setup'
-            },
-            {
-              text: 'Some Styles',
-              link: '/tutorial/styling-to-make-pretty'
-            },
-            {
-              text: 'Add Wallet & Test Reactivity',
-              link: '/tutorial/wallet-support'
-            },
-            {
-              text: 'wSecretJS',
-              link: '/tutorial/wsecretjs'
-            },
-            {
-              text: 'The Contract',
-              link: '/tutorial/the-contract'
-            },
-          ]
-        },
-        {
-          text:'Tutorial (Coming Soon)',
-          children: [
-            {
-              text: 'Viewing Key Support',
-
-            },
-            {
-              text: 'Private State',
-
-            },
-            {
-              text: 'wSecretJS & the scrtClient',
-              
-            },
-            {
-              text: 'Messages'
-
-            },
-            {
-              text: 'Condutor: Reactivity & Orchestration'
+              text:'Part 2',
+              children: [
+                {
+                  text: 'Viewing Key Support',
+    
+                },
+                {
+                  text: 'Private State',
+    
+                },
+                {
+                  text: 'Messages'
+    
+                },
+                {
+                  text: 'Condutor: Reactivity & Orchestration'
+                }
+              ]
             }
           ]
-        }
+        },
       ]
     }
   }

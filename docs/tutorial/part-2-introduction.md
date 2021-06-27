@@ -1,46 +1,29 @@
-# The Contract
+# Part 2
 
-For most dApps on Secret Network, Secret Contracts are the core. We took that to heart and build Griptape in a way that, as best as possible, tried to bring the contract to the front-end. The goal with this is to allow the front end developer to code as if they were communicating with the smart contract directly in there web app. This is what Griptatpe contract state is all about. This should all make a lot more sense when you see it in actions so lets get to it.
+# Introduction
 
-The first thing we will do is create the contract folder. This is where all `contract definiition files` will live.
-
-Contract definitiion files are just vanilla js objects that map the messages, queries and state of contacts on the blockchain. But to use them, they need to be instantiated in to a pinia store.
-
-## Index.js
-
-The `index.js` file is where is were contract definition files will be turned into contracts that we can use in our app.
-
-Create a new file named `index.js`
-
-```javascript
-import { createContract } from '@stakeordie/griptape-vue.js'
+```html
+  <template>
+    <div>
+      <header>
+        <div class="logo">Secret Auctions</div>
+        <wallet-info></wallet-info>
+        <viewing-key-manager></viewing-key-manager>
+      </header>
+      <main>
+        <div>{{ theCount }}</div>
+        <button @click="increment">+</button>
+        <button @click="reset">RESET</button>
+      </main>
+    </div>
+  </template>
 ```
 
-`createContract` is griptapes contract instantiation method. To use it we need a contract.
-
-##Auction Contract
-
-Create a file called auctions-factory.js in the contract folder. All contracts need to these three objects
+To apply this to a real world example, lets take the contract 
 
 **auctions-factory.js**
 ```javascript
-export const auctionsFactory = {
-  state: {
-  },
-  messages: {
-  },
-  queries: {
-  }
-}
-```
-
-If you have create a Secret Contract you will recognize these objects as the three parts of any contract. 
-
-The auctions-factory contract keeps track of all the auctions that have been created. To try out Griptape's contracts lets query those and save them in state.
-
-**auctions-factory.js**
-```javascript
-export const auctionsFactory = {
+export const auctionsFactoryDef = {
   state: {
     auctions: {},
   },

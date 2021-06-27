@@ -124,13 +124,11 @@ This might not seem like much, but we just queried a contract on chain. That is 
     methods: {
       async increment() {
         const handleMsg = { 'increment': { } }
-        const res = await wsjs.executeContract(secretCounterAddress, handleMsg)
-        this.getTheCount()
-
-      },
-      async decrement() {
-        const handleMsg = { 'decrement': { } }
-        const res = await wsjs.executeContract(secretCounterAddress, handleMsg)
+        try {
+          const res = await wsjs.executeContract(secretCounterAddress, handleMsg)
+        } catch (e) {
+          console.log(e);
+        }
         this.getTheCount()
       },
       async getTheCount() {
@@ -145,6 +143,10 @@ This might not seem like much, but we just queried a contract on chain. That is 
 
 There you have it, a fully functional dApp on Secret Network.
 
-Quickly, clicking the buttons we added trigger methods `increment` and `decrement` to be called respectively. Both use the wsjs.executeContract method to send a transaction to the chain. Then each, in turn, calls `getTheCount()` which refreshes the value of theCount just like before. And that's it!
+Quickly, clicking the button we added trigger method `increment`. Increment use the wsjs.executeContract method to send a transaction to the chain. Then, in turn, increment calls `getTheCount()` which refreshes the value of theCount just like before. And that's it!
+
+::: warning
+  Take note of the **try{ const res ... } catch(e) { console.log(e) } syntax. This is a temp fix to an issue where the response from a contract isn't a valid json object.
+:::
 
 So this is great, it works, but it has issues. For one the state of the contract is being represented in this one component. That is okay when the app only has one, but what about when it gets bigger. When you have 5 components, 20, 100? This problem is one that application frameworks like Vue and React have dealt with by extracting the state and it's associate logic into stores that are accisble anywhere. We knew we wanted to do this here, early, so that it didn't become a problem that you had to solve with a lot of refactoring only after you app grew to an unmaintanable level. But frankly state management tools introduce the need for a lot of boilerplate. We decided to blend the store with the contract into what we are calling Griptape Contract State. What is Griptape Contract State and how do you use it? We will find out next with The Contract. 

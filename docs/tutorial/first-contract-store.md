@@ -49,25 +49,33 @@ export const counterDef = {
   },
   queries: {
     async getCount() {
-      const msg = { 'get_count': { } }
-      const res = await wsjs.queryContract(this.contractAddress, msg)
+      const msg = {'get_count':{}}
+      const res = await this.scrtClient.queryContract(this.contractAddress, msg)
       this.count = res.count
     }
   },
   messages: {
     async increment() {
+      let success = true;
       const msg = {'increment':{}}
       try {
-        const res = await wsjs.executeContract(this.contractAddress, msg)
-        this.count = res.count
+        const res = await this.scrtClient.executeContract(this.contractAddress, msg)
+        //this.count = res.count
       } catch (e) {
-        
+        success = false
       }
-      this.count = res.count
+      //this.count = res.count;
+      if(success) {
+        this.count++
+      }
     } 
   }
 }
 ```
+
+::: warning Note
+  The way the increment message handles, or doesn't handle, the situation in which the contract returns a valid JSON error message is not good. It is done this way here becasue of the lack of valid response coming from the contract. This will be fixed in newer versions of this tutorial. For now just know this code is ugly and bad and shouldn't be emulated.
+:::
 
 That looks familiar, and good. The next step is "creating" contractDef to the `index.js` file.
 
@@ -81,59 +89,7 @@ That looks familiar, and good. The next step is "creating" contractDef to the `i
   const useContract = createContract('counter', contractAddress, counterDef)
 ```
 
-And now finally we can refactor App.vue
-
-Old
-```html
-<template>
-  <div>
-    <header>
-      <div class="logo">GRIPTAPE.JS</div>
-      <wallet-info></wallet-info>
-    </header>
-    <main>
-      <div>Count is: {{ count }}</div>
-      <button @click="increment">+</button>
-    </main>
-  </div>
-</template>
-
-<script>
-  import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
-
-  const wallet = await useWallet()
-  const wsjs = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
-
-  const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
-
-  export default {
-    created() {
-      this.getCount();
-    },
-    data() {
-      return {
-        count: 0
-      }
-    },
-    methods: {
-      async increment() {
-        const handleMsg = {'increment':{}}
-        try {
-          const res = await wsjs.executeContract(secretCounterAddress, handleMsg)
-        } catch (e) {
-          console.log(e);
-        }
-        this.getCount()
-      },
-      async getCount() {
-        const msg = {'get_count':{}}
-        const res = await wsjs.queryContract(secretCounterAddress, msg)
-        this.count = res.count
-      }
-    }
-  }
-</script>
-```
+And now finally we can refactor App.vue. New and old versions are present, the New version is the one you want to follow.. 
 
 New
 ```html
@@ -168,7 +124,59 @@ New
 </script>
 ```
 
-Hopefully it works, and you have now defined, created, and used a **Griptape Contract Store**. 
+Old
+```html
+<template>
+  <div>
+    <header>
+      <div class="logo">GRIPTAPE.JS</div>
+      <wallet-info></wallet-info>
+    </header>
+    <main>
+      <div>Count is: {{ count }}</div>
+      <button @click="increment">+</button>
+    </main>
+  </div>
+</template>
+
+<script>
+  import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
+
+  const wallet = await useWallet()
+  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
+
+  const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
+
+  export default {
+    created() {
+      this.getCount();
+    },
+    data() {
+      return {
+        count: 0
+      }
+    },
+    methods: {
+      async increment() {
+        const handleMsg = {'increment':{}}
+        try {
+          const res = await wscrtClient.executeContract(secretCounterAddress, handleMsg)
+        } catch (e) {
+          console.log(e);
+        }
+        this.getCount()
+      },
+      async getCount() {
+        const msg = {'get_count':{}}
+        const res = await wscrtClient.queryContract(secretCounterAddress, msg)
+        this.count = res.count
+      }
+    }
+  }
+</script>
+```
+
+Hopefully it works, and you have now defined, created, and used a **Griptape Contract Store**. And comparing it to the way we were doing it before, this is much much nicer.
 
 ## What's Next
 

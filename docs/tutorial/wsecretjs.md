@@ -31,7 +31,7 @@ So first we will import those libraries and create a wSecretJS client.
   import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
   const wallet = await useWallet();
-  const wsjs = await createScrtClient('https://api.holodeck.stakeordie.com', wallet);
+  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet);
 
   export default {
 
@@ -54,7 +54,7 @@ Lets use the trusty Secret Counter contract to test. First we'll just query the 
       <wallet-info></wallet-info>
     </header>
     <main>
-      <div>{{ theCount }}</div>
+      <div>{{ count }}</div>
   </div>
 </template>
 
@@ -62,27 +62,27 @@ Lets use the trusty Secret Counter contract to test. First we'll just query the 
   import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
   const wallet = await useWallet()
-  const wsjs = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
+  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
 
   const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
   export default {
     created() {
       //this.getActiveAuctions()
-      this.getTheCount();
+      this.getCount();
     },
     data() {
       return {
-        theCount: 0
+        count: 0
       }
     },
     methods: {
-      async getTheCount() {
-        const msg = { 'get_count': { } }
+      async getCount() {
+        const msg = {'get_count':{}}
 
-        const res = await wsjs.queryContract(secretCounterAddress, msg)
+        const res = await wscrtClient.queryContract(secretCounterAddress, msg)
 
-        this.theCount = res.count
+        this.count = res.count
       }
     }
   }
@@ -103,7 +103,7 @@ This might not seem like much, but we just queried a contract on chain. That is 
       <wallet-info></wallet-info>
     </header>
     <main>
-      <div>Count is: {{ theCount }}</div>
+      <div>Count is: {{ count }}</div>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
     </main>
@@ -114,33 +114,33 @@ This might not seem like much, but we just queried a contract on chain. That is 
   import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
   const wallet = await useWallet()
-  const wsjs = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
+  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
 
   const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
   export default {
     created() {
-      this.getTheCount();
+      this.getCount();
     },
     data() {
       return {
-        theCount: 0
+        count: 0
       }
     },
     methods: {
       async increment() {
         const handleMsg = { 'increment': { } }
         try {
-          const res = await wsjs.executeContract(secretCounterAddress, handleMsg)
+          const res = await wscrtClient.executeContract(secretCounterAddress, handleMsg)
         } catch (e) {
           console.log(e);
         }
-        this.getTheCount()
+        this.getCount()
       },
-      async getTheCount() {
+      async getCount() {
         const msg = { 'get_count': { } }
-        const res = await wsjs.queryContract(secretCounterAddress, msg)
-        this.theCount = res.count
+        const res = await wscrtClient.queryContract(secretCounterAddress, msg)
+        this.count = res.count
       }
     }
   }

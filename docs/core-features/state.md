@@ -1,8 +1,8 @@
 # State
 
 One of the principles behind in Griptape design is related to state management. Centralization for state is not
-necessary for all applications, but Griptape, takes advantage of this pattern to provide a more rich UX/UI experience,
-which not all of dApps takes into account when interacting with 3rd party extensions and many common functionality such
+necessary for all applications, but Griptape takes advantage of this pattern to provide a more rich UX/UI experience,
+which not all of dApps takes into account when interacting with 3rd party extensions and common functionality such
 as the viewing keys management.
 
 In order to provide such state management, Griptape uses [Pinia](http://pinia.esm.dev/) as its state management

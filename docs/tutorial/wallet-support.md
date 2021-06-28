@@ -12,7 +12,7 @@ We will get the viewing key component later when we start querying private state
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>
@@ -58,7 +58,7 @@ To do this we need to first import two methods:
   <template>
     <div>
       <header>
-        <div class="logo">Secret Auctions</div>
+        <div class="logo">GRIPTAPE.JS</div>
         <wallet-info></wallet-info>
       </header>
       <main>
@@ -84,7 +84,7 @@ mapState comes from Pinia, the lightweight state-management library we are usein
   <template>
     <div>
       <header>
-        <div class="logo">Secret Auctions</div>
+        <div class="logo">GRIPTAPE.JS</div>
         <wallet-info></wallet-info>
       </header>
       <main>
@@ -115,7 +115,7 @@ Now that we have the balance we can just render it in the template.
   <template>
     <div>
       <header>
-        <div class="logo">Secret Auctions</div>
+        <div class="logo">GRIPTAPE.JS</div>
         <wallet-info></wallet-info>
       </header>
       <main>
@@ -147,7 +147,7 @@ So that worked, but it's not so easy to read. We added a utility function called
   <template>
     <div>
       <header>
-        <div class="logo">Secret Auctions</div>
+        <div class="logo">GRIPTAPE.JS</div>
         <wallet-info></wallet-info>
       </header>
       <main>
@@ -195,7 +195,7 @@ Okay, we learned all about the wallet component. Go ahead and remove everything 
   <template>
     <div>
       <header>
-        <div class="logo">Secret Auctions</div>
+        <div class="logo">GRIPTAPE.JS</div>
         <wallet-info></wallet-info>
       </header>
       <main>

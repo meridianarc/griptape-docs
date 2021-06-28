@@ -83,12 +83,12 @@ That looks familiar, and good. The next step is "creating" contractDef to the `i
 
 And now finally we can refactor App.vue
 
-From
+Old
 ```html
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>
@@ -135,13 +135,12 @@ From
 </script>
 ```
 
-to
-
+New
 ```html
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>

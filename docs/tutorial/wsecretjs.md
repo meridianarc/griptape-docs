@@ -50,7 +50,7 @@ Lets use the trusty Secret Counter contract to test. First we'll just query the 
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>
@@ -99,7 +99,7 @@ This might not seem like much, but we just queried a contract on chain. That is 
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>

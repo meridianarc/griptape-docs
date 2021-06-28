@@ -1,6 +1,21 @@
 # Part 2
 
-# Introduction
+## Introduction
+
+Part two is about building so lets get right to it.
+
+First we want a fresh project to work with. For that we could go through and delete everything we did, or even better lets' just scrap what we have and start again with the starter app.
+
+Delete the last project then run:
+
+```bash
+  degit https://github.com/stakeordie/griptape-vue-starter auctions-tutorial
+  cd auctions-tutorial
+  yarn && yarn dev
+```
+
+![](/part-two-new-project.png)
+
 
 ```html
   <template>

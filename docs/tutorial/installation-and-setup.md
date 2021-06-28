@@ -9,7 +9,9 @@ First create a new vite app
 
 Open a terminal and enter
 ```bash
-yarn create @vitejs/app griptape-auctions
+yarn create @vitejs/app griptape-tutorial
+
+cd griptape-tutorial
 ```
 
 When prompted, select `vue` for both options. (you are free to `vue.ts` as it is supported, but doing that will result in code that differs from this tutorial)
@@ -101,4 +103,4 @@ gripVueJsApp(conf, App, (app, pinia) => {})
 ```
 With these changes made you can run the app with `yarn dev` and right away, keplr should popup and ask you to authorized.
 
-**Congratulations** you are connected to the network and ready to start **building!**
+**Congratulations** you are connected to the network and ready to start **Building!**

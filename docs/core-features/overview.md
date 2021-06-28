@@ -4,7 +4,7 @@ As you might notice, Griptape takes control over how your application gets boots
 fact that many of the core features of Griptape are built upon the Keplr wallet extension support and the configuration
 neccesary for connecting to the Secret Network blockchain.
 
-## Griping an app
+## Gripping an app
 
 A *gripped application* is the term we use to refer to a Vue instance application that has been instantiated by using
 the `gripVueJsApp` method.

@@ -14,29 +14,12 @@ Delete the last project then run:
   yarn && yarn dev
 ```
 
+Voila!
+
 ![](/part-two-new-project.png)
 
 
-```html
-  <template>
-    <div>
-      <header>
-        <div class="logo">Secret Auctions</div>
-        <wallet-info></wallet-info>
-        <viewing-key-manager></viewing-key-manager>
-      </header>
-      <main>
-        <div>{{ theCount }}</div>
-        <button @click="increment">+</button>
-        <button @click="reset">RESET</button>
-      </main>
-    </div>
-  </template>
-```
-
-To apply this to a real world example, lets take the contract 
-
-**auctions-factory.js**
+<!-- **auctions-factory.js**
 ```javascript
 export const auctionsFactoryDef = {
   state: {
@@ -120,7 +103,7 @@ This then culminates in the ability to use the auctions object in the template. 
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>
@@ -150,7 +133,7 @@ We will use the coinConvert utility as well. To use it in the template you need 
 <template>
   <div>
     <header>
-      <div class="logo">Secret Auctions</div>
+      <div class="logo">GRIPTAPE.JS</div>
       <wallet-info></wallet-info>
     </header>
     <main>
@@ -201,4 +184,4 @@ And your app should look like this:
 
 ![](/tutorial/the-contract/list-auctions.png)
 
-Next lets talk about viewing keys
+Next lets talk about viewing keys -->

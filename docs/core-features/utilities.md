@@ -5,8 +5,8 @@ developing your application. Here we are going through some of them briefly.
 
 ## Numbers
 
-Is commonly in DApps to perform operation on big numbers. Most of this numbers are represented in strings, which for
-some cases formmating and handling a proper way for displaying them might cause some problems. For that you have
+It is common in DApps to perform operations on big numbers. Most of these numbers are represented in strings, which for
+some cases formmatting and handling a proper way for displaying them might cause some problems. For that you have
 a `coinConvert` function to help you manage those cases:
 
 ```js

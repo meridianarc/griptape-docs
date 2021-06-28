@@ -1,11 +1,11 @@
 # Contracts
 
-Contracts are essential when working with dApps. Secret Network has also its own challenges when doing interacting with
+Contracts are essential when working with dApps. Secret Network has its own challenges when interacting with
 contracts. For that, we created a uniform, yet known way of interacting with contracts.
 
 ## Anatomy of a contract
 
-To interact with a contract in Griptape, you need first to create its definition:
+To interact with a contract in Griptape, you first need to create its definition:
 
 ```ts
 interface ContractBaseDefinition {
@@ -44,7 +44,7 @@ const secretCounter = {
 ## Instantiating contracts
 
 
-Once you have a contract definition, you can create an _instaciator_ of the contract by using the `createContract`
+Once you have a contract definition, you can create an _instantiator_ of the contract by using the `createContract`
 helper method:
 
 ```js
@@ -96,7 +96,7 @@ const secretCounter = {
 
 ## Interacting with the contract
 
-Messages and queries are the functions in which we can interact with a contract to modify its state. This
+Messages and queries are the functions in which we can interact with a contract to modify its state. These
 methods have access to a special object that have the ability to call the contract on the blockchain. This object is
 called the `scrtClient`, and is accessable by `this`.
 

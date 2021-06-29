@@ -111,49 +111,41 @@ This might not seem like much, but we just queried a contract on chain. That is 
 </template>
 
 <script>
-  import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
+import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
-  const wallet = await useWallet()
-  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
+const wallet = await useWallet()
+const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
 
-  const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
+const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
-  export default {
-    created() {
-      this.getCount();
+export default {
+  created() {
+    this.getCount();
+  },
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    async increment() {
+      const handleMsg = { 'increment': { } }
+      await wscrtClient.executeContract(secretCounterAddress, handleMsg)
+      this.getCount()
     },
-    data() {
-      return {
-        count: 0
-      }
-    },
-    methods: {
-      async increment() {
-        const handleMsg = { 'increment': { } }
-        try {
-          const res = await wscrtClient.executeContract(secretCounterAddress, handleMsg)
-        } catch (e) {
-          console.log(e);
-        }
-        this.getCount()
-      },
-      async getCount() {
-        const msg = { 'get_count': { } }
-        const res = await wscrtClient.queryContract(secretCounterAddress, msg)
-        this.count = res.count
-      }
+    async getCount() {
+      const msg = { 'get_count': { } }
+      const res = await wscrtClient.queryContract(secretCounterAddress, msg)
+      this.count = res.count
     }
   }
+}
 </script>
 ```
 
 There you have it, a fully functional dApp on Secret Network.
 
 To sum up, by clicking the button we trigger method `increment`. Increment use the `wsjs.executeContract()` method to send a transaction to the chain. Then, in turn, `getTheCount()` is called which queries to get the updated number.
-
-::: warning
-  Take note of the **try{ const res ... } catch(e) { console.log(e) } syntax. This is a temp fix to an issue where the response from a contract isn't a valid json object.
-:::
 
 ## Up Next
 

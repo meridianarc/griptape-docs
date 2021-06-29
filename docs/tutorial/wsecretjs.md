@@ -55,6 +55,7 @@ Lets use the trusty Secret Counter contract to test. First we'll just query the 
     </header>
     <main>
       <div>{{ count }}</div>
+    </main>
   </div>
 </template>
 

@@ -25,7 +25,7 @@ whenever you change your wallet in Keplr, the component and the whole applicatio
 
 ![wallet showcase](/wallet-info-showcase.png)
 
-## Viewing Keys (DISCUSS WITH LUIS)
+## Viewing Keys
 
 Viewing keys are required on Secret Network whenever state is private. Griptape provides a way to store viewing keys and a component, `<viewing-key-manager>`, for creating and referencing them. 
 

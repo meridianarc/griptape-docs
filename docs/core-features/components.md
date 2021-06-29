@@ -5,11 +5,8 @@ DApps.
 
 ## Wallet
 
-DApps have the need to interact with a wallet. For Secret Network, [Keplr](https://docs.keplr.app/) is the de facto
-wallet.
-
-When you grip a Vue application with Griptape, the [Keplr wallet extension](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)
-should be installed in order to griptape boostrap your application.
+DApps have the need to interact with a wallet. The default browser extension for managing wallets in
+Secret Network is [Keplr](https://wallet.keplr.app/).
 
 The gripped app will then have the ability to access some information provided by the Keplr extension, such the address
 and the balance.

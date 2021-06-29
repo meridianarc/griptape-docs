@@ -1,30 +1,35 @@
 # Installation & Setup
 
-This section will go step by step setting up a new Griptape-vue app from scratch. You can skip this by using the starter project from the [Getting Started](/introduction/getting-started). After that you can jump right to [Wallet](/tutorial/wallet-support). We do recommend you follow along here at least once so you can see the differences between a plain vue.js app setup and griptape-vue.
-## Install
+This section will go step by step setting up a new Vue.js app from scratch using Griptape. You can skip this by using the starter project from the [Getting Started](/introduction/getting-started). After that you can jump right to [Wallet](/tutorial/wallet-support). We do recommend you follow along here at least once so you can see the differences between a plain Vue.js app setup and with Griptape.
 
-First create a new vite app
+## Installation
 
-@vitejs/app requires node ">=10.16.0 <=14.x.x"
+::: tip
+`@vitejs/app` requires `node` ">=10.16.0 <=14.x.x"
+:::
 
-Open a terminal and enter
+First create a new vite app. Open a terminal and enter:
+
 ```bash
 yarn create @vitejs/app griptape-tutorial
 
 cd griptape-tutorial
 ```
 
-When prompted, select `vue` for both options. (you are free to `vue.ts` as it is supported, but doing that will result in code that differs from this tutorial)
+When prompted, select `vue` for both options. (you are free to `vue.ts` as it is supported, but doing that will result in code that differs from this tutorial).
 
-🛹 GRIPTAPE 🛹
+Then add Griptape:
+
 ```bash
 yarn add @stakeordie/griptape-vue.js
 ```
 
+## Setup
+
 Open the project in your favorite editor and make some some small but important changes to the core application files:
 
-## Vite Config File
 **vite.config.js**
+
 ```javascript {4,9-14}
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -43,8 +48,8 @@ export default defineConfig({
 })
 ```
 
-## Index File
 **index.html**
+
 ```html {11}
 <!DOCTYPE html>
 <html lang="en">
@@ -62,31 +67,26 @@ export default defineConfig({
 </html>
 ```
 
-## App Component
-Strip out everything from the App component
-
 **/src/App.vue**
-```html
+
+```html {2,7,12}
 <template>
 
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+  
+}
 </script>
 
 <style>
 
 </style>
-
 ```
-And finally
 
-## Main.js
+**main.js**
 
-**/src/main.js**
 ```javascript {5,8,10-12,15}
 // Root app component
 import App from './App.vue'
@@ -103,4 +103,4 @@ gripVueJsApp(conf, App, (app, pinia) => {})
 ```
 With these changes made you can run the app with `yarn dev` and right away, keplr should popup and ask you to authorized.
 
-**Congratulations** you are connected to the network and ready to start **Building!**
+**Congratulations** you are connected to the network and ready to start **building!**

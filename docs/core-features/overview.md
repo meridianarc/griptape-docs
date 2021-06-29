@@ -1,8 +1,8 @@
 # Overview
 
 As you might notice, Griptape takes control over how your application gets bootstraped. This is important, due to the
-fact that many of the core features of Griptape are built upon the Keplr wallet extension support and the configuration
-neccesary for connecting to the Secret Network blockchain.
+fact that many of the core features of Griptape are built upon the *convention over configuration* principle. It
+provides with all you need to connect to the Secret Network blockchain.
 
 ## Gripping an app
 
@@ -12,7 +12,7 @@ the `gripVueJsApp` method.
 ### Basic example
 
 This is the most basic configuration to grip an application in which you need two things to get your application
-working: A **root vue component** and a **configuration object**:
+working: A **root Vue component** and a **configuration object**:
 
 ```js
 import Root from './Root.vue'
@@ -27,9 +27,9 @@ gripVueJsApp(conf, Root)
 
 The `conf` object defines the REST URL of the node you want to connect to.
 
-### Access vue instance
+### Access Vue instance
 
-You can access and configure the created `vue` instance by adding a callback fuction as last parameter of
+You can access and configure the created Vue instance by adding a callback fuction as last parameter of
 `gripVueJsApp`:
 
 ```js
@@ -62,7 +62,7 @@ gripVueJsApp(conf, Root, (app) => {
 
 ### Access pinia instance
 
-As with the `vue` instance, you can access `pinia` by setting a second parameter to the callback function:
+As with the Vue instance, you can access Pinia by setting a second parameter to the callback function:
 
 ```js
 import Root from './Root.vue'

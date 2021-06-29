@@ -1,12 +1,11 @@
-# Styling Just Because
+# Applying some styling
 
 Eventually Griptape will come with a UI library that will help build apps fast with reasonably not ugly styling. For now, let's just add to stylesheet files so things look good enough
 
-Add the import lines 5-7 highlighted below.
+Add the import lines 5-7 highlighted below:
 
-## Main.js
+`/src/main.js`
 
-**/src/main.js**
 ```javascript {5-7}
 import App from './App.vue'
 
@@ -27,11 +26,8 @@ gripVueJsApp(conf, App, (app, pinia) => {})
 
 Create two new files `/src/assets/styles/_reset.css` and `/src/assets/styles/index.scss`
 
-Add code to each:
+`/src/assets/styles/_reset.css`
 
-## _reset.css
-
-**/src/assets/styles/_reset.css**
 ```css
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -83,9 +79,8 @@ table {
 }
 ```
 
-## index.scss
+`/src/assets/styles/index.scss`
 
-**/src/assets/styles/index.scss**
 ```scss
 @import "reset";
 

@@ -5,9 +5,10 @@ Griptape comes with some prewired components that you can include in your app wi
 - `<wallet-info>`
 - `<viewing-key-info>`
 
-We will get the viewing key component later when we start querying private state, but for now lets add the `wallet-info` component to the header to see what happens.
+We will get the viewing key component later when we start querying private state, but for now lets add the `<wallet-info>` component to the header to see what happens.
 
 **/src/App.vue**
+
 ```html {2-9}
 <template>
   <div>
@@ -21,9 +22,9 @@ We will get the viewing key component later when we start querying private state
 </template>
 
 <script>
-  export default {
+export default {
 
-  }
+}
 </script>
 
 <style>
@@ -33,11 +34,7 @@ We will get the viewing key component later when we start querying private state
 
 If nothing unexpected happens you should see something close to this:
 
-![](/wallet-working.png)
-
-::: warning
-If the screen is blank it is most likely because the wallet you have selected doesn't exist on testnet. Add some tokens to it here [Holodeck Faucet](https://faucet.secrettestnet.io/), or select a wallet that has a testnet balance.
-:::
+![wallet working](/wallet-working.png)
 
 If you have another testnet wallet, switch to it. You will notice that the wallet component changes and the balance is changed automatically. Reactivity, pretty cool huh!
 

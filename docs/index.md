@@ -2,23 +2,24 @@
 title: Home
 ---
 
-# What is griptape.js?
+# What is Griptape.js?
 
 ::: warning
-This docs are for the *beta* release of griptape.js and griptape-vue.js
+This docs are for the *beta* release of griptape.js and griptape-vue.js.
 :::
 
-griptape.js is an opinionated, web application front-end library for developing dApps for Secret Network.
+Griptape.js is an opinionated, web application front-end framework for developing DApps in Secret Network.
 
 ## Why Griptape?
 
 Griptape is an essential part of the skate setup. Not only provides the traction necessary to keep your foot on the
-board, but help you a lot when doing advance stuff like tricks.
+board, but it helps a lot when doing advance stuff like tricks; the real focus of most skaters.
 
-When developing dApps, you have to setup your app by connecting many pieces before you can start by doing what your app
-is suppose to do. That's why we  call it griptape, because it is the layer that helps you get off the ground.
+While developing DApps, we found a lot of patterns and good practices that can help you quickly get your application up
+and running and start focusing on what your application has to do. We call it griptape because is the layer that helps
+with all the core of your app; it helps you get off the ground.
 
-## What is griptape-vue.js?
+## What is Griptape-vue.js?
 
 griptape-vue.js is an implementation of the griptape.js core library for [Vue.js](https://v3.vuejs.org/). We call it
-griptape, but Vue.js flavored (many other flavors comming soon).
+griptape, but Vue.js flavored (many other flavors coming soon).

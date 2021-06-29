@@ -59,7 +59,7 @@ module.exports = {
           text: 'Tutorial',
           children: [
             {
-              text: 'Welcome to Griptape',
+              text: 'Welcome to Griptape.js',
               link: '/tutorial/welcome-to-griptape'
             },
             {
@@ -71,14 +71,14 @@ module.exports = {
               link: '/tutorial/installation-and-setup'
             },
             {
-              text: 'Some Styles',
+              text: 'Styling',
               link: '/tutorial/styling-to-make-pretty'
             },
-            {              
+            {
               text: 'Part 1',
               children: [
                 {
-                  text: 'Wallet',
+                  text: 'Wallet Support',
                   link: '/tutorial/wallet-support'
                 },
                 {

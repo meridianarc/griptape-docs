@@ -12,29 +12,16 @@ yarn add @stakeordie/griptape-vue.js
 npm install @stakeordie/griptape-vue.js
 ```
 
-Or use our starter project:
+Or use our starter project by scaffolding with [degit](https://github.com/Rich-Harris/degit):
+
 ```bash
 degit https://github.com/stakeordie/griptape-vue-starter my-griptape-starter
 ```
 
-If you got an error you may need to install degit
-```bash
-yarn global add degit
+## Set up your app
 
-//or with npm
+*Grip* your app by adding this to your `main.js` file:
 
-npm install -g degit
-```
-
-
-
-## Setup your app
-
-Griptape is written using [vite](https://vitejs.dev/). All examples shown in
-this docs are using vite.
-
-Griptape takes care of managing your application for you, by gripping it.
-Usually this done in the `main.*` file:
 
 ```js
 // Root app component

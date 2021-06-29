@@ -141,32 +141,32 @@ So that worked, but it's not so easy to read. We added a utility function called
 
 **/src/App.vue**
 ```html {8,15,22-24}
-  <template>
-    <div>
-      <header>
-        <div class="logo">GRIPTAPE.JS</div>
-        <wallet-info></wallet-info>
-      </header>
-      <main>
-        Balance: {{ coinConvert(balance, 6, 'human', 2) }}
-      </main>
-    </div>
-  </template>
+<template>
+  <div>
+    <header>
+      <div class="logo">GRIPTAPE.JS</div>
+      <wallet-info></wallet-info>
+    </header>
+    <main>
+      Balance: {{ coinConvert(balance, 6, 'human', 2) }}
+    </main>
+  </div>
+</template>
 
-  <script>
-    import { mapState } from 'pinia'
-    import { coinConvert } from '@stakeordie/griptape.js'
-    import { useWalletStore } from '@stakeordie/griptape-vue.js'
+<script>
+import { mapState } from 'pinia'
+import { coinConvert } from '@stakeordie/griptape.js'
+import { useWalletStore } from '@stakeordie/griptape-vue.js'
 
-    export default {
-      computed: {
-        ...mapState(useWalletStore, ['balance'])
-      },
-      methods: {
-        coinConvert
-      }
-    }
-  </script>
+export default {
+  computed: {
+    ...mapState(useWalletStore, ['balance'])
+  },
+  methods: {
+    coinConvert
+  }
+}
+</script>
 ```
 
 That's much nicer. **coinConvert** accepts:
@@ -189,22 +189,21 @@ Okay, we learned all about the wallet component. Go ahead and remove everything 
 
 **/src/App.vue**
 ```html
-  <template>
-    <div>
-      <header>
-        <div class="logo">GRIPTAPE.JS</div>
-        <wallet-info></wallet-info>
-      </header>
-      <main>
-      </main>
-    </div>
-  </template>
+<template>
+  <div>
+    <header>
+      <div class="logo">GRIPTAPE.JS</div>
+      <wallet-info></wallet-info>
+    </header>
+    <main>
+    </main>
+  </div>
+</template>
 
-  <script>
-  
-  export default {
-  }
-  </script>
+<script>
+export default {
+}
+</script>
 ```
 
 Great, now it's time to connect to a contract and talk to the blockchain!

@@ -1,4 +1,4 @@
-## My First Contract Store
+## First Contract Store
 
 The first thing we will do is create the contracts folder.
 
@@ -58,16 +58,9 @@ export const counterDef = {
     async increment() {
       let success = true;
       const msg = {'increment':{}}
-      try {
-        const res = await this.scrtClient.executeContract(this.contractAddress, msg)
-        //this.count = res.count
-      } catch (e) {
-        success = false
-      }
-      //this.count = res.count;
-      if(success) {
-        this.count++
-      }
+      const res = await this.scrtClient.executeContract(this.contractAddress, msg)
+      //this.count = res.count
+      this.count++
     } 
   }
 }
@@ -140,39 +133,39 @@ Old
 </template>
 
 <script>
-  import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
+import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
-  const wallet = await useWallet()
-  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
+const wallet = await useWallet()
+const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
 
-  const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
+const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
-  export default {
-    created() {
-      this.getCount();
-    },
-    data() {
-      return {
-        count: 0
+export default {
+  created() {
+    this.getCount();
+  },
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    async increment() {
+      const handleMsg = {'increment':{}}
+      try {
+        const res = await wscrtClient.executeContract(secretCounterAddress, handleMsg)
+      } catch (e) {
+        console.log(e);
       }
+      this.getCount()
     },
-    methods: {
-      async increment() {
-        const handleMsg = {'increment':{}}
-        try {
-          const res = await wscrtClient.executeContract(secretCounterAddress, handleMsg)
-        } catch (e) {
-          console.log(e);
-        }
-        this.getCount()
-      },
-      async getCount() {
-        const msg = {'get_count':{}}
-        const res = await wscrtClient.queryContract(secretCounterAddress, msg)
-        this.count = res.count
-      }
+    async getCount() {
+      const msg = {'get_count':{}}
+      const res = await wscrtClient.queryContract(secretCounterAddress, msg)
+      this.count = res.count
     }
   }
+}
 </script>
 ```
 

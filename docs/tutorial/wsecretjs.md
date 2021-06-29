@@ -14,7 +14,7 @@ Well, let's use it shall we?
 The first thing we are going to need is to import two functions from Core Griptape: `createScrtCLient` and  `useWallet`. 
 
 ```javascript
-   import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
+import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 ```
 
 This may seem a little strange at first. Didn't we already import `useWalletStore` in the last section? What is `useWallet` and why do we need it? 
@@ -28,14 +28,14 @@ So first we will import those libraries and create a wSecretJS client.
 ...
 
 <script>
-  import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
+import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
-  const wallet = await useWallet();
-  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet);
+const wallet = await useWallet();
+const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet);
 
-  export default {
+export default {
 
-  }
+}
 </script>
 
 ...
@@ -59,33 +59,33 @@ Lets use the trusty Secret Counter contract to test. First we'll just query the 
 </template>
 
 <script>
-  import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
+import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.js'
 
-  const wallet = await useWallet()
-  const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
+const wallet = await useWallet()
+const wscrtClient = await createScrtClient('https://api.holodeck.stakeordie.com', wallet)
 
-  const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
+const secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
-  export default {
-    created() {
-      //this.getActiveAuctions()
-      this.getCount();
-    },
-    data() {
-      return {
-        count: 0
-      }
-    },
-    methods: {
-      async getCount() {
-        const msg = {'get_count':{}}
+export default {
+  created() {
+    //this.getActiveAuctions()
+    this.getCount();
+  },
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    async getCount() {
+      const msg = {'get_count':{}}
 
-        const res = await wscrtClient.queryContract(secretCounterAddress, msg)
+      const res = await wscrtClient.queryContract(secretCounterAddress, msg)
 
-        this.count = res.count
-      }
+      this.count = res.count
     }
   }
+}
 </script>
 ```
 

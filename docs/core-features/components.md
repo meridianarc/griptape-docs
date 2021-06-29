@@ -39,11 +39,11 @@ Viewing keys are required on Secret Network whenever state is private. Griptape 
 ```
 
 `contractAddress` is just a string that represents the contracts address which this instance of the
-`viewing-key-manager` can create viewing keys for.
+`<viewing-key-manager>` can create viewing keys for.
 
-Griptape's `viewing-key-manager` has a defualt method for creating and storing viewing keys that works with or without a Griptape contract in place, which we will discuss in the next section. With a contract, however, the creation method can be customized by overridding the default `createViewingKey()` method. An example to this is a [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md) contract where the functionality of creating or getting a viewing key can be yielded to Keplr, and then stored locally for efficient access.
+Griptape's `<viewing-key-manager>` use the `createViewingKey()` method that is part of any Griptape Contract by default. We will discuss Griptape Contracts in a the Contracts section. A contract definition can, however, override this default `createViewingKey()` method. An example to this is a [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md) contract where the functionality of creating or getting a viewing key can be yielded to Keplr, and then stored locally for efficient access.
 
-**Default Viewing Key Creation** ADD NEW screenshot
+**Default Viewing Key Creation** //Add new screenshot
 ![viewing keys showcase](/viewing-keys-showcase.png)
 **SNIP-20 Viewing Key Creation**
 ![viewing keys showcase](/viewing-keys-showcase.png)

@@ -1,18 +1,21 @@
 # Components
 
-By default, Griptape provides with a set of helper Vue components which has some core features that are common to all
+By default, Griptape provides a set of core Vue components for features that are common to all
 DApps.
 
 ## Wallet
 
-DApps have the need to interact with a wallet. The default browser extension for managing wallets in
-Secret Network is [Keplr](https://wallet.keplr.app/).
+DApps need to interact with a wallet. For Secret Network, [Keplr](https://docs.keplr.app/) is the de facto
+wallet, and so the wallet enabled by default.
+
+When you grip a Vue application with Griptape, the [Keplr wallet extension](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)
+should be installed in order to boostrap your application.
 
 The gripped app will then have the ability to access some information provided by the Keplr extension, such the address
 and the balance.
 
 The `<wallet-info>` component shows the address and the balance of the user. It is **fully reactive**, that means,
-whenever you change your wallet in Keplr, the component and the whole application state will update too:
+whenever you change your wallet in Keplr, the component and the whole application state will update as well:
 
 ```vue
 <template>
@@ -22,14 +25,9 @@ whenever you change your wallet in Keplr, the component and the whole applicatio
 
 ![wallet showcase](/wallet-info-showcase.png)
 
-## Viewing Keys
+## Viewing Keys (DISCUSS WITH LUIS)
 
-For contract interaction, specially for [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md)
-contracts, apps need to manage viewing keys. Keplr helps you manage the viewing keys in a secure way, but sometimes you
-want to give the user the ability to create the viewing key while using your app in order the improve the UX experience.
-
-For that, Griptape has a `<viewing-key-manager>` which provides a simple interace for creating viewing keys for SNIP-20
-and non-SNIP-20 contracts:
+Viewing keys are required on Secret Network whenever state is private. Griptape provides a way to store viewing keys and a component, `<viewing-key-manager>`, for creating and referencing them. 
 
 ```vue
 <template>
@@ -43,4 +41,9 @@ and non-SNIP-20 contracts:
 `contractAddress` is just a string that represents the contracts address which this instance of the
 `viewing-key-manager` can create viewing keys for.
 
+Griptape's `viewing-key-manager` has a defualt method for creating and storing viewing keys that works with or without a Griptape contract in place, which we will discuss in the next section. With a contract, however, the creation method can be customized by overridding the default `createViewingKey()` method. An example to this is a [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md) contract where the functionality of creating or getting a viewing key can be yielded to Keplr, and then stored locally for efficient access.
+
+**Default Viewing Key Creation** ADD NEW screenshot
+![viewing keys showcase](/viewing-keys-showcase.png)
+**SNIP-20 Viewing Key Creation**
 ![viewing keys showcase](/viewing-keys-showcase.png)

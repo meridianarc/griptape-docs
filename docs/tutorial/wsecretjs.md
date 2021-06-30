@@ -19,7 +19,7 @@ import { coinConvert, createScrtClient, useWallet } from '@stakeordie/griptape.j
 
 This may seem a little strange at first. Didn't we already import `useWalletStore` in the last section? What is `useWallet` and why do we need it? 
 
-Well, remember how Griptape.js comes in two parts, core and flavored. So far we used core Griptape directly only to get the `coinConvert` utility.  Griptape-vue is were we have seen, among other things, state management related stuff. This is because Pinia, the state management library, is a Vue.JS library. So when we imported `useWalletStore`, what were were importign was a Pinia store that lives in the griptape-vue layer. Underneath that, is `useWallet`, which is not a pinia store, and lives in core griptape library, and it's purpose is to act as the connective tissue needed to interact with a wallet, in this case Keplr. I hope that wasn't too confusing. Later when we start to use **Griptape Contract Stores** most of this will be abstracted away, but for now it is good to see how it works.
+Well, remember how Griptape.js comes in two parts, core and flavored. So far we used core Griptape directly only to get the `coinConvert` utility.  Griptape-vue is were we have seen, among other things, state management related stuff. This is because Pinia, the state management library, is a Vue.JS library. So when we imported `useWalletStore`, what were were importing was a Pinia store that lives in the griptape-vue layer. Underneath that, is `useWallet`, which is not a pinia store, and lives in core griptape library, and it's purpose is to act as the connective tissue needed to interact with a wallet, in this case Keplr. I hope that wasn't too confusing. Later when we start to use **Griptape Contract Stores** most of this will be abstracted away, but for now it is good to see how it works.
 
 So first we will import those libraries and create a wSecretJS client.
 
@@ -92,7 +92,7 @@ export default {
 
 The above code used a vue.js lifecycle hook `created() {}` to trigger the method `getTheCount()`. `getTheCount` then queries the contract `secretCounterAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'` and assigns the response value to the data oject propery `theCount`. Finally `theCount` is included in the vue template and is outputted to the screen.
 
-This might not seem like much, but we just queried a contract on chain. That is no small accomplishment. Now lets execute a tx to show the second part of the equation.
+This might not seem like much, but we just queried a contract on chain. That is no small accomplishment. Now lets execute a transaction to show the second part of the equation.
 
 ## First Transaction
 

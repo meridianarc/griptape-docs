@@ -9,7 +9,7 @@ First we want a fresh project to work with. For that we could go through and del
 Delete the last project then run:
 
 ```bash
-  degit https://github.com/stakeordie/griptape-vue-starter auctions-tutorial
+  degit https://github.com/stakeordie/griptape-vue-starter#main auctions-tutorial
   cd auctions-tutorial
   yarn && yarn dev
 ```

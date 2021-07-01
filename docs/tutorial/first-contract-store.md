@@ -43,7 +43,7 @@ But lets add the logic from App.vue so it can do something of use.
 
 **/src/contracts/counterDef.js**
 ```javascript
-export const counterDef = {
+export const counterDefinition = {
   state: {
     count: undefined
   },
@@ -75,11 +75,11 @@ That looks familiar, and good. The next step is "creating" contractDef to the `i
 **/src/contracts/index.js**
 ```javascript
   import { createContract } from '@stakeordie/griptape-vue.js'
-  import { counterDef } from './counterDef.js'
+  import { counterDefinition } from './counterDef.js'
 
   const contractAddress = 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h'
 
-  const useContract = createContract('counter', contractAddress, counterDef)
+  export const useCounterStore = createContract('counter', contractAddress, counterDefinition)
 ```
 
 And now finally we can refactor App.vue. New and old versions are present, the New version is the one you want to follow.. 

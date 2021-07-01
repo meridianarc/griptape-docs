@@ -18,6 +18,50 @@ Voila!
 
 ![](/part-two-new-project.png)
 
+The starter app is a common starting place for all apps which is great, but for out purposes we need to make some small changes.
+
+First lets update `App.vue` to strip it of everything and then add back in a Logo and the wallte-info component
+
+**/src/App.vue**
+```html
+  <template>
+    <div>
+      <header>
+        <div class="logo">New Griptape App</div>
+        <wallet-info></wallet-info>
+      </header>
+    </div>
+  </template>
+
+  <script>
+    export default {
+      
+    }
+  </script>
+
+  <style>
+
+  </style>
+```
+
+Next we will update `main.js`.
+
+```javascript
+import App from './App.vue'
+import { gripVueJsApp } from '@stakeordie/griptape-vue.js'
+
+import "~/@stakeordie/griptape-vue.js/dist/style.css"
+import '@/assets/styles/index.scss'
+
+const conf = {
+  restUrl: 'https://api.holodeck.stakeordie.com'
+}
+
+gripVueJsApp(conf, App, (app, pinia) => {})
+```
+The only thing we are doing is adding the (app,pinia) => {} callback.
+
+
 
 <!-- **auctions-factory.js**
 ```javascript

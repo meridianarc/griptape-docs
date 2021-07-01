@@ -22,21 +22,22 @@ degit https://github.com/stakeordie/griptape-vue-starter#main my-griptape-starte
 *Grip* your app by adding this to your `main.js` file:
 
 ```js
-// Root app component
+// Define a root app component
 import App from './App.vue'
 
-// Default styling
+// Import default styling
 import '~/@stakeordie/griptape-vue.js/dist/style.css';
 
 // Import `gripVueJsApp`
 import { gripVueJsApp } from '@stakeordie/griptape-vue.js'
 
+// Set your config
 const conf = {
   restUrl: 'https://api.holodeck.stakeordie.com'
 }
 
-// Grip your app, you are now ready to develop your application
-gripVueJsApp(conf, App, (app, pinia) => {})
+// Grip your app
+gripVueJsApp(conf, App)
 ```
 
 That's it! You are now ready to go!

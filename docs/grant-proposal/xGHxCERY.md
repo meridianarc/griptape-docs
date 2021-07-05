@@ -49,9 +49,9 @@ So from a roadmap standpoint we are already 2 months down the road and have a si
 - Griptape-vue - v1.0.0
 - Griptape-react - v1.0.0
 - Poser - (Mock Library)
-- Skateshop-cli - (app scaffold and schema-to-contract-defintion builder)
 - Joystick - (State Orchestration)
 - Prodigy - (Server)
+- Skateshop-cli - (app scaffold and schema-to-contract-defintion builder)
 
 - Full Documention
 - Video and Text Tutorials
@@ -62,7 +62,8 @@ So from a roadmap standpoint we are already 2 months down the road and have a si
 The development will be done using Agile Development Methodology. Progress will be made in 2 week sprints with working releases at the end of each. Our budget calls for 12 sprints (24 weeks) of development
 
 ## Grant request
-We are requesting 92,002.30 SCRT ($95,940.00 USD based on 1 week trailing average). This will pay for 12 Sprints (two weeks each). Below is the rate and position table:
+
+We are requesting a total of $95,940 USD ( ... SCRT based on 7 trailing average) broken into 3 parts, $31,980 each. The first 2 months will focus on improving the overall architecture and feature set and implementing the react-flavor. The second 2 months will be a continuation of the work on core and flavors, some predicted refactoring/refactor planning, and implementing Poser and Joystick. Finally the third will focused on the Server Side (Prodigy), Skateshop-CLI, and building out the Griptape-ui library. Although this is the basic plan, we expect priorities to shift based on constant interations and the knowledge that we will aquire through that.
 
 | Billables                     | Sprints | Rate                    | Hours Per Sprint | Total            |
 |-------------------------------|---------|-------------------------|------------------|------------------|

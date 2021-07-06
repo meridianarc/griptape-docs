@@ -64,7 +64,7 @@ The development will be done using Agile Development Methodology. Progress will 
 
 ## Grant request
 
-We are requesting a total of $95,940 USD (91371.43 SCRT based on 7 trailing average) broken into 2 parts, 45,685.72 SCRT each, with 2 seperate grant applications. The first 6 sprints will focus on improving the overall architecture and feature set and implementing the react-flavor. After that, if approved, the second 6 sprints will be implementing Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Although this is the basic plan, we expect priorities to shift based on constant interations and the knowledge that we will aquire along the way.
+We are requesting a total of $95,940 USD (91,371.43 SCRT based on 7 trailing average) broken into 2 parts, 45,685.72 SCRT each, with 2 seperate grant applications. The first 6 sprints will focus on improving the overall architecture and feature set, and implementing the react-flavor. After that, if approved, the second 6 sprints will be implementing Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Although this is the basic plan, we expect priorities to shift based on constant interations and the knowledge that we will aquire along the way.
 
 | Billables                     | Sprints | Rate                    | Hours Per Sprint | Total            |
 |-------------------------------|---------|-------------------------|------------------|------------------|

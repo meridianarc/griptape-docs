@@ -52,6 +52,7 @@ So from a roadmap standpoint we are already 2 months down the road and have a si
 - Joystick - (State Orchestration)
 - Prodigy - (Server)
 - Skateshop-cli - (app scaffold and schema-to-contract-defintion builder)
+- Griptape-ui Library
 
 - Full Documention
 - Video and Text Tutorials
@@ -63,12 +64,12 @@ The development will be done using Agile Development Methodology. Progress will 
 
 ## Grant request
 
-We are requesting a total of $95,940 USD ( ... SCRT based on 7 trailing average) broken into 3 parts, $31,980 each. The first 2 months will focus on improving the overall architecture and feature set and implementing the react-flavor. The second 2 months will be a continuation of the work on core and flavors, some predicted refactoring/refactor planning, and implementing Poser and Joystick. Finally the third will focused on the Server Side (Prodigy), Skateshop-CLI, and building out the Griptape-ui library. Although this is the basic plan, we expect priorities to shift based on constant interations and the knowledge that we will aquire through that.
+We are requesting a total of $95,940 USD (91371.43 SCRT based on 7 trailing average) broken into 2 parts, 45,685.72 SCRT each, with 2 seperate grant applications. The first 3 months will focus on improving the overall architecture and feature set and implementing the react-flavor. After that, if approved, the second 3 months will be implementing Poser and Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Although this is the basic plan, we expect priorities to shift based on constant interations and the knowledge that we will aquire along the way.
 
 | Billables                     | Sprints | Rate                    | Hours Per Sprint | Total            |
 |-------------------------------|---------|-------------------------|------------------|------------------|
-| Senior Full Stack Developer   | 12      |  $               37.50  | 80               |  $   36,000.00   |
-| Senior Full Stack Developer   | 12      |  $               37.50  | 80               |  $   36,000.00   |
+| Senior Developer              | 12      |  $               37.50  | 80               |  $   36,000.00   |
+| Senior Developer              | 12      |  $               37.50  | 80               |  $   36,000.00   |
 | 1 QA Engineer (60 Hours)      | 12      |  $               27.00  | 60               |  $   19,440.00   |
 | 1 Technical Writer (20 Hours) | 12      |  $               25.00  | 15               |  $    4,500.00   |
 | Total                         |         |                         | 235              |  $   95,940.00   |
@@ -76,7 +77,7 @@ We are requesting a total of $95,940 USD ( ... SCRT based on 7 trailing average)
 In addition to these hours we have provided, and will provide, a significant amount of work and services for no charge. They include:
 
 - The initial 2-3 Months of development it took to get the project where it is today.
-- 1-2 hours (depending on participation) of office hours in which Sandy and Luis will be available for support, feedback, and ideation with the community (First hour was attending by 10+ community members)
+- 1 hour weekly office hours in which Sandy and Luis will be available for support, feedback, and ideation with the community (First hour was attending by 10+ community members).
 - 1 hour bi-weekly live release/demo meetings at the conclusion of each sprint
-- 3 bi-monthly "Hackathons", sponsored by Stake or Die, in which a common contract will be used to develop multiple UIs.
+- 2 "Hackathons" (at the end of each phase), sponsored by Stake or Die, in which a common contract worked on by different teams to build different UIs.
 - Free video tutorials demonstrating solutions to common issues.

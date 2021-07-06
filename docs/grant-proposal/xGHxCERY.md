@@ -7,9 +7,9 @@ For a thorough understanding of what Griptape.js is, what problems it solves, an
 Just Install Griptape.js and you have an environment ready to begin talking to the blockchain and the secret contracts running on it.
 
 ## Problem / Solution
-**Problem:** Developing web applications on Secret Network is hard, and the solutions that people have developed are all doing the sames things in different ways, some more successfully than others.
+**Problem:** Developing web applications on Secret Network is hard, and the solutions that people have developed are all doing the same things in different ways, some more successfully than others.
 
-**Solution:** Griptape makes application development significantly easier by providing common components, utilities, and preconfigured libraries by default. In addition the framework gives you a structured way to organize the different parts of the application so that you don't need to think about... And the way it structures the application is an extremely intuitive one that has the amazing effect of getting front end and back end devs speaking the same language.
+**Solution:** Griptape makes application development significantly easier by providing common components, utilities, and preconfigured libraries by default. In addition the framework gives you a structured way to organize the different parts of the application that is intuitive and scalable, removing many early decisions can lead to refactoring over and over as your application grows.
 
 ## Value Capture for Secret Network Ecosystem
 The challenges of developing contracts on Secret Network are well understood. Less well understood and arguably under-appreciated, are the challenges of developing user interfaces for those applications. Whether it’s the current need for every developer to build the same features independently, the amount of boiler plate code required to be written for each task, or the fact that design decisions around viewing keys and state management, if done incorrectly, can lead to frustrating UX and even network wide performance issues; the need for a unified set of tools is clear.
@@ -64,20 +64,33 @@ The development will be done using Agile Development Methodology. Progress will 
 
 ## Grant request
 
-We are requesting a total of $95,940 USD (91,371.43 SCRT based on 7 trailing average) broken into 2 parts, 45,685.72 SCRT each, with 2 seperate grant applications. The first 6 sprints will focus on improving the overall architecture and feature set, and implementing the react-flavor. After that, if approved, the second 6 sprints will be implementing Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Although this is the basic plan, we expect priorities to shift based on constant interations and the knowledge that we will aquire along the way.
+### Overview
+From a funding perspective, the plan is to split the project into two parts with seperate grant applications for each. This is to reduce the risk to the ecosystem and allows us to be agile in our longer term planning. 
+### Part 1 (Current Grant Request)
+We are requesting a total of $47,970 USD (45,685.72 SCRT based on 7 trailing average). Part 1 will be executed in 6 sprints and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React.
 
 | Billables                     | Sprints | Rate                    | Hours Per Sprint | Total            |
 |-------------------------------|---------|-------------------------|------------------|------------------|
-| Senior Developer              | 12      |  $               37.50  | 80               |  $   36,000.00   |
-| Senior Developer              | 12      |  $               37.50  | 80               |  $   36,000.00   |
-| 1 QA Engineer (60 Hours)      | 12      |  $               27.00  | 60               |  $   19,440.00   |
-| 1 Technical Writer (20 Hours) | 12      |  $               25.00  | 15               |  $    4,500.00   |
-| Total                         |         |                         | 235              |  $   95,940.00   |
+| Senior Developer              | 6       |  $               37.50  | 80               |  $   18,000.00   |
+| Senior Developer              | 6       |  $               37.50  | 80               |  $   18,000.00   |
+| 1 QA Engineer (60 Hours)      | 6       |  $               27.00  | 60               |  $    9,720.00   |
+| 1 Technical Writer (20 Hours) | 6       |  $               25.00  | 15               |  $    2,250.00   |
+| Total                         |         |                         |                  |  $   47,970.00   |
 
-In addition to these hours we have provided, and will provide, a significant amount of work and services for no charge. They include:
+### Part 2 (Future Grant Request)
+
+If approved, the second part will focus on the implemention of Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library.
+
+### Additional considerations
+
+In addition to the hours of work outlined above, a significant amount of work and services are included. They are:
 
 - The initial 2-3 Months of development it took to get the project where it is today.
 - 1 hour weekly office hours in which Sandy and Luis will be available for support, feedback, and ideation with the community (First hour was attending by 10+ community members).
 - 1 hour bi-weekly live release/demo meetings at the conclusion of each sprint
 - 2 "Hackathons" (at the end of each phase), sponsored by Stake or Die, in which a common contract worked on by different teams to build different UIs.
 - Free video tutorials demonstrating solutions to common issues.
+
+## End Note - a word about network upgrades / improvements.
+
+In order for Secret Network to thrive, the network iteself needs to go through periodic upgrades and improvements. While unarguably the best thing for the network, these upgrades can introduce changes that make dApp maintenance a challenge. Whether it is breaking changes that will impact every dApp on the network, or just new implementations of contracts that are widely used, having a framework that handles the lower level code can be incredibly helpful in improving the speed and quality of upgrades accross the ecosystem. With the upcoming Stargate upgrades getting closer by the day, we are excited about the potential Griptape holds to make lives of developers and users much easier.

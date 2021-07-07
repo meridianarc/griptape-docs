@@ -108,5 +108,10 @@ module.exports = {
         },
       ]
     }
+  },
+  markdown: {
+    config: (md) => {
+      md.use(require('markdown-it-codetabs'))
+    }
   }
 }

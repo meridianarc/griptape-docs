@@ -5,9 +5,8 @@
   --font-family-base: "Source Sans Pro", apple-system, BlinkMacSystemFont, Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  --font-family-mono: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  --font-family-mono: "Source Code Pro", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  --code-font-size: 13px
 }
 
 .nav-bar-title {

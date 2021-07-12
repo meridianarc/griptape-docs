@@ -67,19 +67,17 @@ The development will be done using Agile Development Methodology. Progress will 
 ### Overview
 From a funding perspective, the plan is to split the project into two parts with seperate grant applications for each. This is to reduce the risk to the ecosystem and allows us to be agile in our longer term planning. 
 ### Part 1 (Current Grant Request)
-We are requesting a total of $47,970 USD (45,685.72 SCRT based on 7 trailing average). Part 1 will be executed in 6 sprints and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React.
+Part 1 will be executed in 6 sprints and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000USD (50,261SCRT based on 7 trailing avg), made in 4 payments.
 
-| Billables                     | Sprints | Rate                    | Hours Per Sprint | Total            |
-|-------------------------------|---------|-------------------------|------------------|------------------|
-| Senior Developer              | 6       |  $               37.50  | 80               |  $   18,000.00   |
-| Senior Developer              | 6       |  $               37.50  | 80               |  $   18,000.00   |
-| 1 QA Engineer (60 Hours)      | 6       |  $               27.00  | 60               |  $    9,720.00   |
-| 1 Technical Writer (20 Hours) | 6       |  $               25.00  | 15               |  $    2,250.00   |
-| Total                         |         |                         |                  |  $   47,970.00   |
+ - 10K (9,138.38 SCRT) immediately
+ - 20K (18,264.84 SCRT) on completion of work
+ - 12.5K (11,363.64 SCRT) after a total of 5 projects* are built using Griptape.js
+ - 12.5K (11,363.64 SCRT) after a total of 10 projects* are built using Griptape.js
 
+ * Projects defined through mutual understanding to be "serious" projects and not proof of concepts, hackathon submissions, or other similarly "early" endeavors
 ### Part 2 (Future Grant Request)
 
-If approved, the second part will focus on the implemention of Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library.
+If approved, the second part will focus on the implemention of Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Additional funding to be discussed and determined later.
 
 ### Additional considerations
 

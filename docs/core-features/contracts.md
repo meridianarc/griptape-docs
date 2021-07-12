@@ -23,11 +23,10 @@ interface ContractDefinition extends ContractBaseDefinition {
 For example, you can define a contract definition for the [secret-counter](https://github.com/enigmampc/secret-counter)
 secret contract:
 
-```js
+```js [sc:JavaScript]
 const secretCounter = {
   state: {
-    count: undefined,
-    owner: undefined
+    count: undefined
   },
 
   messages: {
@@ -38,6 +37,23 @@ const secretCounter = {
   queries: {
     getCount() { ... }
   }
+}
+```
+
+```ts [sc:TypeScript]
+const secretCounter: ContractDefinition = {
+  state: {
+    count: undefined
+  },
+
+  messages: {
+    increment() { ... }
+    reset() { ... }
+  },
+
+  queries: {
+    getCount() { ... }
+  },
 }
 ```
 

@@ -60,14 +60,14 @@ So from a roadmap standpoint we are already 2 months down the road and have a si
 - Public Release Meetings/Demos
 - 3 Hackathons
 ### Process
-The development will be done using Agile Development Methodology. Progress will be made in 2 week sprints with working releases at the end of each. Our budget calls for 12 sprints (24 weeks) of development
+The development will be done using Agile Development Methodology. Progress will be made in 2 week sprints with working releases at the end of each. Our budget calls for 12 sprints (24 weeks) of development. 
 
 ## Grant request
 
 ### Overview
 From a funding perspective, the plan is to split the project into two parts with seperate grant applications for each. This is to reduce the risk to the ecosystem and allows us to be agile in our longer term planning. 
 ### Part 1 (Current Grant Request)
-Part 1 will be executed in 6 sprints and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000USD (50,261SCRT based on 7 trailing avg), made in 4 payments.
+Part 1 will be executed in 6 sprints, starting Monday, July 19th, and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000USD (50,261SCRT based on 7 trailing avg), made in 4 payments.
 
  - 10K (9,138.38 SCRT) immediately
  - 20K (18,264.84 SCRT) on completion of work

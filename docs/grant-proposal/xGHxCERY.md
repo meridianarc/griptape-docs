@@ -67,12 +67,12 @@ The development will be done using Agile Development Methodology. Progress will 
 ### Overview
 From a funding perspective, the plan is to split the project into two parts with seperate grant applications for each. This is to reduce the risk to the ecosystem and allows us to be agile in our longer term planning. 
 ### Part 1 (Current Grant Request)
-Part 1 will be executed in 6 sprints, starting Monday, July 19th, and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000 USD (51,305.98 SCRT based on 7 trailing avg of 1.072 SCRT to 1 USD), made in 4 payments.
+Part 1 will be executed in 6 sprints, starting Monday, July 19th, and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000 USD (51,128.15 SCRT based on 7 trailing avg of 1.073 SCRT to 1 USD), made in 4 payments.
 
- - 10K (9,328.36 SCRT) immediately
- - 20K (18656.72 SCRT) on completion of work
- - 12.5K (11,660.45 SCRT) after a total of 5 projects* are built using Griptape.js
- - 12.5K (11,660.45 SCRT) after a total of 10 projects* are built using Griptape.js
+ - 10K (9,319.66 SCRT) immediately
+ - 20K (18,639.33 SCRT) on completion of work
+ - 12.5K (11,649.58 SCRT) after a total of 5 projects* are built using Griptape.js
+ - 12.5K (11,649.58 SCRT) after a total of 10 projects* are built using Griptape.js
 
  * "Projects" defined through mutual understanding to be "serious" projects and not proof of concepts, hackathon submissions, or other similarly "early" endeavors
 ### Part 2 (Future Grant Request)

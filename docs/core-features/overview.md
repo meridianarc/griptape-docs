@@ -6,13 +6,13 @@ provides with all you need to connect to the Secret Network blockchain.
 
 ## Gripping an app
 
-A *gripped application* is the term we use to refer to a Vue instance application that has been instantiated by using
+A *gripped* application is the term we use to refer to a Vue instance application that has been instantiated by using
 the `gripVueJsApp` method.
 
 ### Basic example
 
-This is the most basic configuration to grip an application in which you need two things to get your application
-working: A **root Vue component** and a **configuration object**:
+This is the most basic configuration to *grip* an application in which you need two things to get your application
+working: a **root Vue component** and a **configuration object**:
 
 ```js
 import Root from './Root.vue'
@@ -27,7 +27,7 @@ gripVueJsApp(conf, Root)
 
 The `conf` object defines the REST URL of the node you want to connect to.
 
-### Access Vue instance
+### Access vue instance
 
 You can access and configure the created Vue instance by adding a callback fuction as last parameter of
 `gripVueJsApp`:
@@ -88,3 +88,21 @@ gripVueJsApp(conf, Root, (app, pinia) => {
 
 })
 ```
+
+### Connecting to Secret Network testnet
+
+When conecting to a testnet node, you are able to tell Griptape to suggest a chain to Keplr in order integrate a
+non-native testnet chain the the Keplr extension.
+
+To do this, simply add to the configuration  a RPC url and set the `isExperimental` property to true, to enable this
+feature.
+
+```js
+const conf = {
+  restUrl: 'https://api.holodeck.stakeordie.com',
+  rpcUrl: 'https://rpc.holodeck.stakeordie.com',
+  isExperimental: true
+}
+```
+
+This is implemented using the [Keplr suggest chain](https://docs.keplr.app/api/suggest-chain.html) feature of Keplr.

@@ -58,7 +58,7 @@ So from a roadmap standpoint we are already 2 months down the road and have a si
 - Video and Text Tutorials
 - Office Hours
 - Public Release Meetings/Demos
-- 3 Hackathons
+- 2 Hackathons
 ### Process
 The development will be done using Agile Development Methodology. Progress will be made in 2 week sprints with working releases at the end of each. Our budget calls for 12 sprints (24 weeks) of development. 
 

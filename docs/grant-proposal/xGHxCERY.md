@@ -36,7 +36,7 @@ That's right, you can start using it today. To really get a feel for our vision,
 
 The current build is far from perfect, we only have the vue-flavor, and a lot of features are still at an early stage, but what we have currently is significant. In fact we are using it internally at Stake or Die to build our next project.
 
-So from a roadmap standpoint we are already 2 months down the road and have a significate feature set.
+So from a roadmap standpoint we are already 2 months down the road and have a significant feature set.
 
 ### Current Feature Set
 - Griptape.js - v0.2.12
@@ -54,7 +54,7 @@ So from a roadmap standpoint we are already 2 months down the road and have a si
 - Skateshop-cli - (app scaffold and schema-to-contract-defintion builder)
 - Griptape-ui Library
 
-- Full Documention
+- Full Documentation
 - Video and Text Tutorials
 - Office Hours
 - Public Release Meetings/Demos
@@ -65,9 +65,9 @@ The development will be done using Agile Development Methodology. Progress will 
 ## Grant request
 
 ### Overview
-From a funding perspective, the plan is to split the project into two parts with seperate grant applications for each. This is to reduce the risk to the ecosystem and allows us to be agile in our longer term planning. 
+From a funding perspective, the plan is to split the project into two parts with separate grant applications for each. This is to reduce the risk to the ecosystem and allows us to be agile in our longer term planning. 
 ### Part 1 (Current Grant Request)
-Part 1 will be executed in 6 sprints, starting Monday, July 19th, and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000 USD (51,128.15 SCRT based on 7 trailing avg of 1.073 SCRT to 1 USD), made in 4 payments.
+Part 1 will be executed in 6 sprints, starting Monday, July 19th, and will focus on improving the overall architecture and feature set Griptape.js and Griptape-Vue, and implementing Griptape-React. For this we are requesting a total of 55,000 USD (51,128.15 SCRT based on 7 trailing avg of 1.073 SCRT to 1 USD calculated on 2021-07-13), made in 4 payments.
 
  - 10K (9,319.66 SCRT) immediately
  - 20K (18,639.33 SCRT) on completion of work
@@ -77,7 +77,7 @@ Part 1 will be executed in 6 sprints, starting Monday, July 19th, and will focus
  * "Projects" defined through mutual understanding to be "serious" projects and not proof of concepts, hackathon submissions, or other similarly "early" endeavors
 ### Part 2 (Future Grant Request)
 
-If approved, the second part will focus on the implemention of Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Additional funding to be discussed and determined later.
+If approved, the second part will focus on the implementation of Poser, Joystick, Prodigy and Skateshop-CLI as well as building out the Griptape-ui library. Additional funding to be discussed and determined later.
 
 ### Additional considerations
 
@@ -86,9 +86,9 @@ In addition to the hours of work outlined above, a significant amount of work an
 - The initial 2-3 Months of development it took to get the project where it is today.
 - 1 hour weekly office hours in which Sandy and Luis will be available for support, feedback, and ideation with the community (First hour was attending by 10+ community members).
 - 1 hour bi-weekly live release/demo meetings at the conclusion of each sprint
-- 2 "Hackathons" (at the end of each phase), sponsored by Stake or Die, in which a common contract worked on by different teams to build different UIs.
+- 2 "Hackathons" (at the end of each phase), sponsored by Stake or Die, in which a teams will compete to build different UIs based on a common contract.
 - Free video tutorials demonstrating solutions to common issues.
 
 ## End Note - a word about network upgrades / improvements.
 
-In order for Secret Network to thrive, the network iteself needs to go through periodic upgrades and improvements. While unarguably the best thing for the network, these upgrades can introduce changes that make dApp maintenance a challenge. Whether it is breaking changes that will impact every dApp on the network, or just new implementations of contracts that are widely used, having a framework that handles the lower level code can be incredibly helpful in improving the speed and quality of upgrades accross the ecosystem. With the upcoming Stargate upgrades getting closer by the day, we are excited about the potential Griptape holds to make the lives of developers and users much easier.
+In order for Secret Network to thrive, the network itself needs to go through periodic upgrades and improvements. While unarguably the best thing for the network, these upgrades can introduce changes that make dApp maintenance a challenge. Whether it is breaking changes that will impact every dApp on the network, or just new implementations of contracts that are widely used, having a framework that handles the lower level code can be incredibly helpful in improving the speed and quality of upgrades across the ecosystem. With the upcoming Stargate upgrades getting closer by the day, we are excited about the potential Griptape holds to make the lives of developers and users much easier.

@@ -106,6 +106,15 @@ module.exports = {
             }
           ]
         },
+        {
+          text: 'Current development',
+          children: [
+            {
+              text: 'Updates 2021-08-06',
+              link: '/updates/2021-08-06'
+            },
+          ]
+        }
       ]
     }
   },

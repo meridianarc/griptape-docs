@@ -113,6 +113,10 @@ module.exports = {
               text: 'Updates 2021-08-06',
               link: '/updates/2021-08-06'
             },
+            {
+              text: 'Updates 2021-08-13',
+              link: '/updates/2021-08-13'
+            },
           ]
         }
       ]

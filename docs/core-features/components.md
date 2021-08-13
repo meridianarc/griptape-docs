@@ -32,18 +32,40 @@ Viewing keys are required on Secret Network whenever state is private. Griptape 
 ```vue
 <template>
   <viewing-key-manager
-    :contract-address="contractAddress"
+    :contract-identifier="contractAddress"
   >
   </viewing-key-manager>
 </template>
 ```
 
 `contractAddress` is just a string that represents the contracts address which this instance of the
-`<viewing-key-manager>` can create viewing keys for.
+`<viewing-key-manager>` can create viewing keys for. In addition of using the `contractAddress`, you
+can use the contract `id` to tell the viewing key manager which contract to use:
 
-Griptape's `<viewing-key-manager>` use the `createViewingKey()` method that is part of any Griptape Contract by default. We will discuss Griptape Contracts in a the Contracts section. A contract definition can, however, override this default `createViewingKey()` method. An example to this is a [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md) contract where the functionality of creating or getting a viewing key can be yielded to Keplr, and then stored locally for efficient access.
 
-**Default Viewing Key Creation** //Add new screenshot
+```js
+const myContractDef = { ... };
+export const myContract = createContract('myContract', 'secret...', myContractDef);
+```
+
+```vue
+<template>
+  <viewing-key-manager
+    contract-identifier="myContractId"
+  >
+  </viewing-key-manager>
+</template>
+```
+
+Griptape's `<viewing-key-manager>` use the `createViewingKey()` method that is part of any Griptape Contract by default.
+We will discuss Griptape Contracts in a the Contracts section. A contract definition can, however, override this default
+`createViewingKey()` method. An example to this is a [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md)
+contract where the functionality of creating or getting a viewing key can be yielded to Keplr, and then stored locally for efficient access.
+
+**Default Viewing Key Creation**
+
 ![viewing keys showcase](/viewing-keys-showcase.png)
+
 **SNIP-20 Viewing Key Creation**
+
 ![viewing keys showcase](/viewing-keys-showcase.png)

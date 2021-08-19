@@ -107,8 +107,12 @@ module.exports = {
           ]
         },
         {
-          text: 'Current development',
+          text: 'Current Development Updates',
           children: [
+            {
+              text: 'Index',
+              link: '/updates/index'
+            },
             {
               text: 'Updates 2021-08-06',
               link: '/updates/2021-08-06'
@@ -116,6 +120,10 @@ module.exports = {
             {
               text: 'Updates 2021-08-13',
               link: '/updates/2021-08-13'
+            },
+            {
+              text: 'Updates 2021-08-20',
+              link: '/updates/2021-08-20'
             },
           ]
         }

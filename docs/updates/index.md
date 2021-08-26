@@ -9,3 +9,4 @@ a week by week basis.
 - [Updates 2021-08-06](/updates/2021-08-06)
 - [Updates 2021-08-13](/updates/2021-08-13)
 - [Updates 2021-08-20](/updates/2021-08-20)
+- [Updates 2021-08-26](/updates/2021-08-26)

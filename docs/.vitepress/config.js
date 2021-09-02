@@ -129,6 +129,10 @@ module.exports = {
               text: 'Updates 2021-08-26',
               link: '/updates/2021-08-26'
             },
+            {
+              text: 'Updates 2021-09-02',
+              link: '/updates/2021-09-02'
+            },
           ]
         }
       ]

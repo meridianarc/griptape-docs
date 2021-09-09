@@ -107,7 +107,16 @@ module.exports = {
           ]
         },
         {
-          text: 'Current Development Updates',
+          text: 'API Reference',
+          children: [
+            {
+              text: 'Cheatsheet',
+              link: '/api/cheatsheet'
+            },
+          ]
+        },
+        {
+          text: 'Development Updates',
           children: [
             {
               text: 'Index',
@@ -132,6 +141,10 @@ module.exports = {
             {
               text: 'Updates 2021-09-02',
               link: '/updates/2021-09-02'
+            },
+            {
+              text: 'Updates 2021-09-09',
+              link: '/updates/2021-09-09'
             },
           ]
         }

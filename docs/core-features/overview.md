@@ -1,9 +1,5 @@
 # Overview
 
-As you might notice, Griptape takes control over how your application gets bootstraped. This is important, due to the
-fact that many of the core features of Griptape are built upon the *convention over configuration* principle. It
-provides with all you need to connect to the Secret Network blockchain.
-
 ## Gripping an app
 
 A *gripped* application is the term we use to refer to a Vue instance application that has been instantiated by using

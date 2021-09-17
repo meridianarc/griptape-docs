@@ -1,14 +1,13 @@
 # Current Development Updates
 
 If you want to know about the current development of griptape.js, you are in the right place.
-Here you can find what are the lastest news in terms of features that we want to implement in
-a week by week basis.
+Here you can find the latest news in terms of features that we want to implement into Griptape.js.
 
-## Updates
+## Meetings
 
-- [Updates 2021-08-06](/updates/2021-08-06)
-- [Updates 2021-08-13](/updates/2021-08-13)
-- [Updates 2021-08-20](/updates/2021-08-20)
-- [Updates 2021-08-26](/updates/2021-08-26)
-- [Updates 2021-09-02](/updates/2021-09-02)
-- [Updates 2021-09-09](/updates/2021-09-09)
+- [2021-08-06](/updates/2021-08-06)
+- [2021-08-13](/updates/2021-08-13)
+- [2021-08-20](/updates/2021-08-20)
+- [2021-08-26](/updates/2021-08-26)
+- [2021-09-02](/updates/2021-09-02)
+- [2021-09-09](/updates/2021-09-09)

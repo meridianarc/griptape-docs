@@ -1,43 +1,64 @@
 # Getting Started
 
-## Installation
+This is the first section of a step-by-step guide to start using Griptape.js in your application.
 
-Install griptape.js with your preferred package manager:
+## Installation and setup
 
-```bash
-yarn add @stakeordie/griptape-vue.js
+Griptape.js is able to work along any front-end UI library out there. Therefore, the first step is to set
+up an application in which then you can install Griptape.js. Example of libraries are:
 
-// or with npm
+* [Vue.js 3](https://v3.vuejs.org/guide/installation.html)
+* [React.js](https://reactjs.org/docs/getting-started.html)
 
-npm install @stakeordie/griptape-vue.js
-```
-
-Or use our starter project by scaffolding with [degit](https://github.com/Rich-Harris/degit):
+Once you have a front-end application ready, install Griptape.js by running one of the following:
 
 ```bash
-degit https://github.com/stakeordie/griptape-vue-starter#main my-griptape-starter
-```
-## Set up your app
+# Using yarn
+yarn add @stakeordie/griptape.js
 
-*Grip* your app by adding this to your `main.js` file:
+# or npm
+npm install @stakeordie/griptape.js
+```
+
+## Gripping an app
+
+A *gripped* application is a term we used to describe an application which bootstrap process is handled by Griptape.
+*Grip* your app by adding this to your `main.js` or `index.js` file:
 
 ```js
-// Define a root app component
-import App from './App.vue'
+import { gripApp, getKeplrAccountProvider } from '@stakeordie/griptape.js';
 
-// Import default styling
-import '~/@stakeordie/griptape-vue.js/dist/style.css';
-
-// Import `gripVueJsApp`
-import { gripVueJsApp } from '@stakeordie/griptape-vue.js'
-
-// Set your config
-const conf = {
-  restUrl: 'https://api.holodeck.stakeordie.com'
+const restUrl = 'https://api.stakeordie.com';
+const provider = getKeplrAccountProvider();
+function runApp() {
+  // Bootstrap your app here!
 }
 
-// Grip your app
-gripVueJsApp(conf, App)
+gripApp(restUrl, provider, runApp);
 ```
 
-That's it! You are now ready to go!
+`runApp` is a function able to bootstrap your front-end application, e.g. for [Vue.js](https://vuejs.org/) the
+implementation looks like this:
+
+```js
+function runApp() {
+  new Vue({
+    render: function (h) { return h(App) },
+  }).$mount('#app')
+}
+```
+
+Or in [React](https://reactjs.org/), like this:
+
+```js
+function runApp() {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
+```
+
+Now you are ready! You can start developing your Dapp.

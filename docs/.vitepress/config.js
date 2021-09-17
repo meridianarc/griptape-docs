@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'griptape.js',
-  description: 'griptape.js is a library for developing Secret Apps on Secret Network',
+  title: 'Griptape.js',
+  description: 'Griptape.js is an opinionated, web application front-end framework for developing Dapps in Secret Network.',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }]
   ],
@@ -21,90 +21,23 @@ module.exports = {
           text: 'Introduction',
           children: [
             {
-              text: 'What is griptape.js?',
+              text: 'What is Griptape.js?',
               link: '/'
             },
+          ],
+        },
+        {
+          text: 'Guide',
+          children: [
             {
               text: 'Getting Started',
               link: '/introduction/getting-started',
-            }
+            },
+            {
+              text: 'Interacting with Contracts',
+              link: '/guide/interacting-with-contracts',
+            },
           ],
-        },
-        {
-          text: 'Core Features',
-          children: [
-            {
-              text: 'Overview',
-              link: '/core-features/overview'
-            },
-            {
-              text: 'Components',
-              link: '/core-features/components'
-            },
-            {
-              text: 'State',
-              link: '/core-features/state',
-            },
-            {
-              text: 'Contracts',
-              link: '/core-features/contracts',
-            },
-            {
-              text: 'Utilities',
-              link: '/core-features/utilities',
-            }
-          ],
-        },
-        {
-          text: 'Tutorial',
-          children: [
-            {
-              text: 'Welcome to Griptape.js',
-              link: '/tutorial/welcome-to-griptape'
-            },
-            {
-              text: 'Prerequisites',
-              link: '/tutorial/prerequisites'
-            },
-            {
-              text: 'Installation & Setup',
-              link: '/tutorial/installation-and-setup'
-            },
-            {
-              text: 'Styling',
-              link: '/tutorial/styling-to-make-pretty'
-            },
-            {
-              text: 'Part 1',
-              children: [
-                {
-                  text: 'Wallet Support',
-                  link: '/tutorial/wallet-support'
-                },
-                {
-                  text: 'wSecretJS',
-                  link: '/tutorial/wsecretjs'
-                },
-                {
-                  text: 'Griptape Contract',
-                  link: '/tutorial/griptape-contract'
-                },
-                {
-                  text: 'My First Contract Store',
-                  link: '/tutorial/first-contract-store'
-                }
-              ]
-            },
-            {
-              text:'Part 2',
-              children: [
-                {
-                  text: 'Part 2 Introduction',
-                  link: '/tutorial/part-two-introduction'
-                }
-              ]
-            }
-          ]
         },
         {
           text: 'API Reference',
@@ -123,27 +56,27 @@ module.exports = {
               link: '/updates/index'
             },
             {
-              text: 'Updates 2021-08-06',
+              text: '2021-08-06',
               link: '/updates/2021-08-06'
             },
             {
-              text: 'Updates 2021-08-13',
+              text: '2021-08-13',
               link: '/updates/2021-08-13'
             },
             {
-              text: 'Updates 2021-08-20',
+              text: '2021-08-20',
               link: '/updates/2021-08-20'
             },
             {
-              text: 'Updates 2021-08-26',
+              text: '2021-08-26',
               link: '/updates/2021-08-26'
             },
             {
-              text: 'Updates 2021-09-02',
+              text: '2021-09-02',
               link: '/updates/2021-09-02'
             },
             {
-              text: 'Updates 2021-09-09',
+              text: '2021-09-09',
               link: '/updates/2021-09-09'
             },
           ]

@@ -1,11 +1,11 @@
 # Components
 
 By default, Griptape provides a set of core Vue components for features that are common to all
-DApps.
+Dapps.
 
 ## Wallet
 
-DApps need to interact with a wallet. For Secret Network, [Keplr](https://docs.keplr.app/) is the de facto
+Dapps need to interact with a wallet. For Secret Network, [Keplr](https://docs.keplr.app/) is the de facto
 wallet, and so the wallet enabled by default.
 
 When you grip a Vue application with Griptape, the [Keplr wallet extension](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)

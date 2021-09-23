@@ -79,6 +79,14 @@ module.exports = {
               text: '2021-09-09',
               link: '/updates/2021-09-09'
             },
+            {
+              text: 'Updates 2021-09-17',
+              link: '/updates/2021-09-17'
+            },
+            {
+              text: 'Updates 2021-09-23',
+              link: '/updates/2021-09-23'
+            },
           ]
         }
       ]

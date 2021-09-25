@@ -13,6 +13,7 @@ module.exports = {
     editLinkText: 'Want to contribute to this page? Click here!',
     nav: [
       { text: 'Getting Started', link: '/introduction/getting-started' },
+      { text: 'Discord', link: 'https://discord.gg/Z8wRUuyrPr' },
       { text: 'Secret Network', link: 'https://scrt.network' },
     ],
     sidebar: {
@@ -37,62 +38,34 @@ module.exports = {
               text: 'Interacting with Contracts',
               link: '/guide/interacting-with-contracts',
             },
-          ],
-        },
-        {
-          text: 'API Reference',
-          children: [
             {
-              text: 'Cheatsheet',
-              link: '/api/cheatsheet'
+              text: 'Managing Viewing Keys',
+              link: '/guide/managing-viewing-keys',
             },
-          ]
+            {
+              text: 'Handling Events',
+              link: '/guide/events',
+            },
+            {
+              text: 'Using Utilities',
+              link: '/guide/utilities',
+            },
+          ],
         },
         {
           text: 'Development Updates',
           children: [
             {
-              text: 'Index',
+              text: 'Office Hours',
               link: '/updates/index'
-            },
-            {
-              text: '2021-08-06',
-              link: '/updates/2021-08-06'
-            },
-            {
-              text: '2021-08-13',
-              link: '/updates/2021-08-13'
-            },
-            {
-              text: '2021-08-20',
-              link: '/updates/2021-08-20'
-            },
-            {
-              text: '2021-08-26',
-              link: '/updates/2021-08-26'
-            },
-            {
-              text: '2021-09-02',
-              link: '/updates/2021-09-02'
-            },
-            {
-              text: '2021-09-09',
-              link: '/updates/2021-09-09'
-            },
-            {
-              text: '2021-09-17',
-              link: '/updates/2021-09-17'
-            },
-            {
-              text: '2021-09-23',
-              link: '/updates/2021-09-23'
-            },
+            }
           ]
         }
       ]
     }
   },
   markdown: {
+    lineNumbers: true,
     config: (md) => {
       md.use(require('markdown-it-codetabs'))
     }

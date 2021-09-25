@@ -2,9 +2,9 @@
   --c-brand: #00e2ac;
   --c-brand-light: #00e2ac;
 
-  --font-family-base: "Source Sans Pro", apple-system, BlinkMacSystemFont, Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  //--font-family-base: "Source Sans Pro", apple-system, BlinkMacSystemFont, Roboto,
+  //  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //  sans-serif;
   --font-family-mono: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   --code-font-size: 14px;

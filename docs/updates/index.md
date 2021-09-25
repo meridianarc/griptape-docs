@@ -1,4 +1,4 @@
-# Current Development Updates
+# Office Hours
 
 If you want to know about the current development of griptape.js, you are in the right place.
 Here you can find the latest news in terms of features that we want to implement into Griptape.js.

@@ -225,6 +225,36 @@ createContract({
 All common methods between contract definitions are overrided by the methods on the second parameters of the
 `extendContract` function.
 
+### More on Defining Messages
+
+When writing messages in your contract definition, you have the following options to pass to each
+message:
+
+```ts
+interface ContractMessageRequest {
+  handleMsg: Record<string, unknown>;
+  memo?: string;
+  transferAmount?: { amount: string, denom: string };
+  fees?: number;
+}
+```
+
+So if you want to pass a custom fee for this message you do:
+
+```ts
+const def = {
+  messages: {
+    coolMessageName(...): ContractMessageRequest {
+      const fees = 1_000_000;
+      const memo = 'My Custom Memo';
+      const transferAmount = { amount: '...', denom: '...' };
+      const handleMsg = { ... };
+      return { handleMsg, fees, memo, transferAmount };
+    }
+  }
+}
+```
+
 ## Contract Registry
 
 All contracts _created_ by the `createContract` are added to the Contract Registry. By doing this, you will be able
@@ -241,6 +271,28 @@ await sefi.getBalance();
 
 refContract('sefi') === sefi; // true
 ```
+
+## Multi Message Execution
+
+::: warning
+- This feature is experimental
+- Functions names might change since version `0.7.0`
+:::
+
+Multi message execution gives you the ability to perform cross-contract multi messages. That means that you can
+execute multiple messages and sign all at once. Griptape offers a way to perform multi messages using the
+`multiMessage` and `Message` functions:
+
+```ts
+await multiMessage([
+  message(sust, sust.depositTo, '1000000'),
+  message(sust, sust.depositTo, '2000000')
+]);
+```
+
+The `multiMessage` function takes an array of `MultiMessageInfo`, which you can construct using the `message` function.
+Then you use any created contract and pass it along with the transaction you want to perform and the arguments that
+it has at the end (as a `var args`).
 
 ## Utilities
 

@@ -35,6 +35,10 @@ module.exports = {
               link: '/introduction/getting-started',
             },
             {
+              text: 'Bootstraping Your App',
+              link: '/guide/bootstraping-your-app',
+            },
+            {
               text: 'Interacting with Contracts',
               link: '/guide/interacting-with-contracts',
             },

@@ -16,3 +16,4 @@ Here you can find the latest news in terms of features that we want to implement
 - [2021-09-30](/updates/2021-09-30)
 - [2021-10-07](/updates/2021-10-07)
 - [2021-10-14](/updates/2021-10-14)
+- [2021-11-18](/updates/2021-11-18)

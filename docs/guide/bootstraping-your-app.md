@@ -1,22 +1,16 @@
-# Bootstraping Your App
+# Bootstrapping Your App
 
-In order to start interacting with contracts, you first need to bootstrap your app.
-After you grip an application your application needs to boostrap in order to have
-access to the account address from your Account Provider. Is important to mention that
-the bootstrap proccess should be run after you grip your application, and is commonly
-handled by a component in your UI.
+In order to start interacting with contracts, you first need to bootstrap your app. After you grip an application, your application needs to boostrap in order to have access to the account address from your Account Provider. It is important to mention that the bootstrap process should be run after you grip your application, and is commonly handled by a component in your UI.
 
-## App states
+## App States
 
-This diagram represents how the app goes from a __no gripped app__ to a __boostrapped app__:
+This diagram represents how the app goes from a **not gripped app** to a **bootstrapped app**:
 
-![bootstrap](/bootstrap.png)
+![bootstrap](../../bootstrap.png)
 
-* **Regular App:** Regular app, cannot interact with contracts
-* **Gripped:** Can interact with contracts, but the account provider hasn't been initialized
-(queries that requires a **account address** or **viewing key** and **messages** in general can't be called)
-* **Bootstrapped:** Messages and queries that require a **account address** or **viewing key** (for queries only)
-now can be called.
+* **Regular App:** Regular app which cannot interact with contracts
+* **Gripped:** Can interact with contracts, but the account provider hasn't been initialized (queries that require an **account address** or **viewing key** and **messages** in general can't be called)
+* **Bootstrapped:** Messages and queries that require an **account address** or **viewing key** (for queries only) now can be called.
 
 ```ts
 import { bootstrap } from '@stakeordie/griptape.js';
@@ -27,7 +21,7 @@ bootstrap();
 
 ## Vue Store Example
 
-__Store__:
+**Store**:
 
 ```ts
 import {
@@ -74,9 +68,9 @@ export function useWalletStore(): WalletStore {
 }
 ```
 
-__Component__:
+**Component**:
 
-```vue
+```
 <template>
   <div class="wallet">
     <img src="../assets/images/wallet.svg" alt="wallet icon" />

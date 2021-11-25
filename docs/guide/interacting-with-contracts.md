@@ -1,14 +1,12 @@
 # Interacting with Contracts
 
-In this section you will learn about how to interact with an instantiated contract deployed in Secret Network.
-Griptape.js offers an abstraction layer for contracts, so querying and performing transactions over them is as easy as a
-kickflip.
+In this section you will learn about how to interact with an instantiated contract deployed in Secret Network. Griptape.js offers an abstraction layer for contracts, so querying and performing transactions over them is as easy as a kickflip.
 
 ## Contract Definitions
 
 In order to interact with a contract, you first need to create its definition.
 
-Lets take a look at a basic contract definition:
+Let's take a look at a basic contract definition:
 
 ```ts
 import {
@@ -25,12 +23,11 @@ const secretCounterDef: ContractDefinition = {
 }
 ```
 
-This simple contract definition defines one query: `getCount`. A query should return a vanilla object that represent the
-query to perform on the instantiated contract on the blockchain.
+This simple contract definition defines one query: `getCount`. A query should return a vanilla object that represent the query to perform on the instantiated contract on the blockchain.
 
-Now that we know how to define a query, lets add a message `increment` which, when executed, will perform a transaction:
+Now that we know how to define a query, let's add a message `increment` which, when executed, will perform a transaction:
 
-```ts {4,13-18}
+```ts
 import {
   ContractDefinition,
   ContractQueryRequest,
@@ -52,13 +49,11 @@ const secretCounterDef: ContractDefinition = {
 }
 ```
 
-Now we have a contract definition that we could use to _create_ a contract, so we will be able to call this queries and
-messages to the instantiated contract.
+Now we have a contract definition that we could use to _create_ a contract, so we will be able to call these queries and messages to the instantiated contract.
 
 ## Creating Contracts
 
-Once we have a contract definition, we can _create_ a contract. Creating a contract in Griptape.js is simply using the
-`createContract` function and pass the following data:
+Once we have a contract definition, we can _create_ a contract. Creating a contract in Griptape.js is simply using the `createContract` function and passing the following data:
 
 ```ts
 import {
@@ -86,7 +81,6 @@ const secretCounter = createContract<SecretCounter>({
 
 Now you can do:
 
-
 ```ts
 const queryRes = await secretCounter.getCount();
 // or
@@ -95,7 +89,7 @@ const messageRes = await secretCounter.increment();
 
 Now you are able to interact with contracts!
 
-## Definitions In-Dept
+## Definitions In-Depth
 
 This sections goes over some advanced features for interacting with contracts.
 
@@ -116,7 +110,7 @@ const sefi: ContractDefinition = {
 
 For this cases, Griptape provides any `query` or `message` a `Context` object as the first parameter of the function:
 
-```ts {6-8}
+```ts
 import { Context, ... } from '@stakeordie/griptape.js';
 
 const sefi: ContractDefinition = {
@@ -133,7 +127,7 @@ const sefi: ContractDefinition = {
 
 Also, you can define parameters at the right of a `query` or `message`:
 
-```ts {7}
+```ts
 import { Context, ... } from '@stakeordie/griptape.js';
 
 const sefi: ContractDefinition = {
@@ -155,11 +149,9 @@ So you can pass those as arguments when you call the method of a _created_ contr
 await sefi.getTransferHistory(20);
 ```
 
-::: tip
-Define the context for all your `queries` and `messages` is a good practice even if you don't use it.
-You can also use `_` as an identifier to express that is not being used by that `query` or `message`:
+::: tip Define the context for all your `queries` and `messages` is a good practice even if you don't use it. You can also use `_` as an identifier to express what is not being used by that `query` or `message`:
 
-```ts {2}
+```ts
 getAllowance(
   _: Context, // We are not using the context in this query
   owner: string,
@@ -169,6 +161,7 @@ getAllowance(
   return { allowance: { owner, spender, key } };
 },
 ```
+
 :::
 
 ### Built-In Definitions
@@ -199,10 +192,9 @@ const anSnip721 = createContract<Snip721Contract>({
 
 ### Extending Contract Definitions
 
-Contract definition can be extended, in the same sense a class can inherit from another class in Object-oriented
-programming, by using the `extendContract` function:
+Contract definition can be extended, in the same sense a class can inherit from another class in Object-oriented programming, by using the `extendContract` function:
 
-```ts {12}
+```ts
 import {
   createContract,
   extendContract,
@@ -222,13 +214,11 @@ createContract({
 });
 ```
 
-All common methods between contract definitions are overrided by the methods on the second parameters of the
-`extendContract` function.
+All common methods between contract definitions are overrided by the methods on the second parameters of the `extendContract` function.
 
 ### More on Defining Messages
 
-When writing messages in your contract definition, you have the following options to pass to each
-message:
+When writing messages in your contract definition, you have the following options to pass to each message:
 
 ```ts
 interface ContractMessageRequest {
@@ -257,8 +247,7 @@ const def = {
 
 ## Contract Registry
 
-All contracts _created_ by the `createContract` are added to the Contract Registry. By doing this, you will be able
-to get access to any contract at any moment, by using the `refContract` function:
+All contracts _created_ by the `createContract` are added to the Contract Registry. By doing this, you will be able to get access to any contract at any moment, by using the `refContract` function:
 
 ```ts
 import { refContract, ... } from '@stakeordie/griptape.js';
@@ -275,13 +264,11 @@ refContract('sefi') === sefi; // true
 ## Multi Message Execution
 
 ::: warning
-- This feature is experimental
-- Functions names might change since version `0.7.0`
-:::
 
-Multi message execution gives you the ability to perform cross-contract multi messages. That means that you can
-execute multiple messages and sign all at once. Griptape offers a way to perform multi messages using the
-`multiMessage` and `Message` functions:
+* This feature is experimental
+* Functions names might change since version `0.7.0` :::
+
+Multi message execution gives you the ability to perform cross-contract multi messages. That means that you can execute multiple messages and sign all at once. Griptape offers a way to perform multi messages using the `multiMessage` and `Message` functions:
 
 ```ts
 await multiMessage([
@@ -290,9 +277,7 @@ await multiMessage([
 ]);
 ```
 
-The `multiMessage` function takes an array of `MultiMessageInfo`, which you can construct using the `message` function.
-Then you use any created contract and pass it along with the transaction you want to perform and the arguments that
-it has at the end (as a `var args`).
+The `multiMessage` function takes an array of `MultiMessageInfo`, which you can construct using the `message` function. Then you use any created contract and pass it along with the transaction you want to perform and the arguments that it has at the end (as a `var args`).
 
 ## Utilities
 

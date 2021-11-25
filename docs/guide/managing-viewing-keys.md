@@ -1,16 +1,10 @@
 # Managing Viewing Keys
 
-Viewing keys are an essential piece of Secret Network. They gives users the ability to decrypt and access private data
-in a Secret Contract. Griptape has a way to manage viewing keys in an efficient way, so you don't need to care about
-how to securely store them, and also how to use it when interacting with contracts. In this section you will learn how
-to use it.
+Viewing keys are an essential piece of Secret Network. They gives users the ability to decrypt and access private data in a Secret Contract. Griptape has a way to manage viewing keys in an efficient way, so you don't need to care about how to securely store them, and also how to use it when interacting with contracts. In this section you will learn how to use it.
 
 ## Viewing Key Manager
 
-::: warning
-Is important to mention, that when interacting with contracts, viewinng keys exposed by the `Context` should be
-registered using the `viewingKeyManager` in order to queries have the viewing key available.
-:::
+::: warning It is important to mention that when interacting with contracts, viewing keys exposed by the `Context` should be registered using the `viewingKeyManager` in order to queries have the viewing key available. :::
 
 The viewing key manager is an object provided by Griptape to create, set and get viewing keys for an specific contract.
 

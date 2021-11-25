@@ -2,10 +2,9 @@
 
 This is the first section of a step-by-step guide to start using Griptape.js in your application.
 
-## Installation and setup
+## Installation and Setup
 
-Griptape.js is able to work along any front-end UI library out there. Therefore, the first step is to set
-up an application in which then you can install Griptape.js. Example of libraries are:
+Griptape.js is able to work along any front-end UI library out there. Therefore, the first step is to set up an application in which you can then install Griptape.js. Example of libraries are:
 
 * [Vue.js](https://v3.vuejs.org/guide/installation.html)
 * [React.js](https://reactjs.org/docs/getting-started.html)
@@ -20,10 +19,9 @@ yarn add @stakeordie/griptape.js
 npm install @stakeordie/griptape.js
 ```
 
-## Gripping an app
+## Gripping an App
 
-A *gripped* application is a term we use to describe an application which bootstrap process is handled by Griptape.
-*Grip* your app by adding this to your `main.js` or `index.js` file:
+A _gripped_ application is a term we use to describe an application whose bootstrap process is handled by Griptape. _Grip_ your app by adding this to your `main.js` or `index.js` file:
 
 ```js
 import {
@@ -40,8 +38,7 @@ function runApp() {
 gripApp(restUrl, provider, runApp);
 ```
 
-`runApp` is a function able to bootstrap your front-end application, e.g. for [Vue.js](https://vuejs.org/) the
-implementation looks like this:
+`runApp` is a function able to bootstrap your front-end application, e.g. for [Vue.js](https://vuejs.org) the implementation looks like this:
 
 ```js
 function runApp() {
@@ -49,7 +46,7 @@ function runApp() {
 }
 ```
 
-Or in [React](https://reactjs.org/), like this:
+Or in [React](https://reactjs.org), like this:
 
 ```jsx
 function runApp() {
@@ -62,4 +59,4 @@ function runApp() {
 }
 ```
 
-Now you are ready! You can start developing your Dapp.
+Now you are ready! You can start developing your dApp.

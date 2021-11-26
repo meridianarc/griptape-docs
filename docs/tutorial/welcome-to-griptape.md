@@ -1,20 +1,18 @@
 # Welcome to Griptape.js
 
-And in fact, welcome to the first Griptape.js tutorial; one of many hopefully. 
+And in fact, welcome to the first Griptape.js tutorial; one of many hopefully.
 
 ## Brief Housekeeping
 
-If you jumped here without taking a look at [introductory](/) section, we admire your go-getter spirit, but it may be helpful to take a look at it first. It goes over the goals of Griptape.js, why we built it, and importantly, why we call it Griptape.js. It's truly awe inspiring.
+If you jumped here without taking a look at [introductory](../) section, we admire your go-getter spirit, but it may be helpful to take a look at it first. It goes over the goals of Griptape.js, why we built it, and importantly, why we call it Griptape.js. It's truly awe inspiring.
 
 ## Who is this for?
 
-Before we get going, it's important to know that this tutorial is for the Vue.js flavor of Griptape. A key part feature of Griptape is it's modular design which includes the idea of "flavors". Eventually we will have flavors like griptape-react.js and griptape-svelte.js, but of now we only have griptape-vue.js. If you think Vue.js is lame as F#*K, maybe this is your chance to actually try it and have your mind changed. If not it's your loss and you can GTF out, beat it!
+Before we get going, it's important to know that this tutorial is for the Vue.js flavor of Griptape. A key part feature of Griptape is it's modular design which includes the idea of "flavors". Eventually we will have flavors like griptape-react.js and griptape-svelte.js, but of now we only have griptape-vue.js. If you think Vue.js is lame as F#\*K, maybe this is your chance to actually try it and have your mind changed. If not it's your loss and you can GTF out, beat it!
 
-Still here? Great, you will love it, we promise. 
+Still here? Great, you will love it, we promise.
 
-:::warning 🐝 DISCLAIMER 🐝
-Stake or Die makes no promise that you will actually like Griptape.js, Griptape-Vue, or any other of it's products.
-:::
+:::warning 🐝 DISCLAIMER 🐝 Stake or Die makes no promise that you will actually like Griptape.js, Griptape-Vue, or any other of it's products. :::
 
 ## What are we building?
 

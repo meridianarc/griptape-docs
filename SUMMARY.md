@@ -1,7 +1,6 @@
 # Table of contents
 
-* [griptape-docs](README.md)
-* [What is Griptape.js?](index.md)
+* [What is Griptape.js?](README.md)
 * [APIs](api/README.md)
   * [Cheatsheet](api/cheatsheet.md)
 * [Getting Started](getting-started.md)
@@ -25,6 +24,7 @@
   * [Griptape Update 2021-10-14](updates/2021-10-14.md)
   * [Griptape Update 2021-11-18](updates/2021-11-18.md)
 * [docs](docs/README.md)
+  * [griptape-docs](docs/readme.md)
   * [core-features](docs/core-features/README.md)
     * [Components](docs/core-features/components.md)
     * [Contracts](docs/core-features/contracts.md)

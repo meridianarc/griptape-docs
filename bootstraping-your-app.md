@@ -6,9 +6,9 @@ In order to start interacting with contracts, you first need to bootstrap your a
 
 This diagram represents how the app goes from a **not gripped app** to a **bootstrapped app**:
 
-![bootstrap](../../bootstrap.png)
+![bootstrap](.gitbook/assets/bootstrap.png)
 
-* **Regular App:** Regular app which cannot interact with contracts
+* **Regular App: **Cannot interact with contracts
 * **Gripped:** Can interact with contracts, but the account provider hasn't been initialized (queries that require an **account address** or **viewing key** and **messages** in general can't be called)
 * **Bootstrapped:** Messages and queries that require an **account address** or **viewing key** (for queries only) now can be called.
 

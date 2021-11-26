@@ -145,11 +145,13 @@ const sefi: ContractDefinition = {
 So you can pass those as arguments when you call the method of a _created_ contract:
 
 ```ts
-// Pasing a page size
+// Passing a page size
 await sefi.getTransferHistory(20);
 ```
 
-::: tip Define the context for all your `queries` and `messages` is a good practice even if you don't use it. You can also use `_` as an identifier to express what is not being used by that `query` or `message`:
+{% hint style="info" %}
+Defining the context for all your `queries` and `messages` is a good practice even if you don't use them. You can also use `_` as an identifier to express what is not being used by that `query` or `message`:
+{% endhint %}
 
 ```ts
 getAllowance(
@@ -161,8 +163,6 @@ getAllowance(
   return { allowance: { owner, spender, key } };
 },
 ```
-
-:::
 
 ### Built-In Definitions
 
@@ -263,10 +263,11 @@ refContract('sefi') === sefi; // true
 
 ## Multi Message Execution
 
-::: warning
+{% hint style="danger" %}
+This feature is experimental.
 
-* This feature is experimental
-* Functions names might change since version `0.7.0` :::
+Function names might change since version `0.7.0`
+{% endhint %}
 
 Multi message execution gives you the ability to perform cross-contract multi messages. That means that you can execute multiple messages and sign all at once. Griptape offers a way to perform multi messages using the `multiMessage` and `Message` functions:
 

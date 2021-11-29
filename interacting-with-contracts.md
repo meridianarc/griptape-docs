@@ -8,7 +8,7 @@ In order to interact with a contract, you first need to create its definition.
 
 Let's take a look at a basic contract definition:
 
-```ts
+```typescript
 import {
   ContractDefinition,
   ContractQueryRequest
@@ -27,7 +27,7 @@ This simple contract definition defines one query: `getCount`. A query should re
 
 Now that we know how to define a query, let's add a message `increment` which, when executed, will perform a transaction:
 
-```ts
+```typescript
 import {
   ContractDefinition,
   ContractQueryRequest,
@@ -55,7 +55,7 @@ Now we have a contract definition that we could use to _create_ a contract, so w
 
 Once we have a contract definition, we can _create_ a contract. Creating a contract in Griptape.js is simply using the `createContract` function and passing the following data:
 
-```ts
+```typescript
 import {
   ContractDefinition,
   ContractMessageResponse,

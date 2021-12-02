@@ -1,10 +1,14 @@
-# Getting Started
+---
+description: Getting started with Griptape
+---
+
+# Prep Your Deck 🛹
 
 This is the first section of a step-by-step guide to start using Griptape.js in your application.
 
 ## Installation and Setup
 
-Griptape.js is able to work along any front-end UI library out there. Therefore, the first step is to set up an application in which you can then install Griptape.js. Example of libraries are:
+Griptape.js is able to work along any front-end UI library out there. Therefore, the first step is to set up an application in which you can then install Griptape.js. Examples of libraries are:
 
 * [Vue.js](https://v3.vuejs.org/guide/installation.html)
 * [React.js](https://reactjs.org/docs/getting-started.html)

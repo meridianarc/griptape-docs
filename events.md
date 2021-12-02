@@ -8,7 +8,7 @@ Event handlers are functions that receive a callback function that will be calle
 
 All event handlers have a common naming convention, all starting with `on`:
 
-```ts
+```typescript
 onAccountAvailable(() => {});
 onAccountChange(() => {});
 ```
@@ -23,7 +23,7 @@ Account events are the most basic events you will have in your application. Its 
 
 When running queries using a contract, sometimes you need to pass a user address, like so:
 
-```ts
+```typescript
 // Build the definition
 const def: ContractDefinition = {
   queries: {
@@ -47,7 +47,7 @@ contract.getBalance();
 
 The only issue with this approach is that sometimes the `address` hasn't been resolved by the `AccountProvider`(when using Keplr, for example). To prevent this query from failing, wrap it under the `onAccountAvailable` event:
 
-```ts
+```typescript
 onAccountAvailable(() => {
   contract.getBalance();
 });
@@ -57,7 +57,7 @@ onAccountAvailable(() => {
 
 You can handle certain events that are dependent on Keplr. For example, when changing an account on Keplr, you might want to refresh the page so everything is updated for the new account properly.
 
-```ts
+```typescript
 onAccountChange(() => {
   window.location.reload();
 });

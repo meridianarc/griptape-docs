@@ -12,7 +12,7 @@ The viewing key manager is an object provided by Griptape to create, set and get
 
 For adding a viewing for an specific contract, use the `add` function:
 
-```ts
+```typescript
 import { viewingKeyManager, ... } from '@stakeordie/griptape.js';
 const sefi = refContract<Snip20Contract>('sefi');
 viewingKeyManager.add(sefi, 'api_key_J41LMWYXaZqknjcmaex...');
@@ -20,13 +20,13 @@ viewingKeyManager.add(sefi, 'api_key_J41LMWYXaZqknjcmaex...');
 
 In case you want to update a viewing key for an specific contract, use the `set` function:
 
-```ts
+```typescript
 viewingKeyManager.set(sefi, 'api_key_J41LMWYXaZqknjcmaex...');
 ```
 
 And finally, you can get the viewing key using the `get` function:
 
-```ts
+```typescript
 const key = viewingKeyManager.get(sefi.at);
 ```
 
@@ -34,7 +34,7 @@ const key = viewingKeyManager.get(sefi.at);
 
 Griptape also provides a wrapped version of the `viewingKeyManager` that uses Keplr to add and get viewing keys:
 
-```ts
+```typescript
 import { keplrViewingkeyManager, ... } from '@stakeordie/griptape.js';
 const sefi = refContract<...>(...);
 await keplrViewingkeyManager.add(sefi);

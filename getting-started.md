@@ -11,7 +11,7 @@ Griptape.js is able to work along any front-end UI library out there. Therefore,
 
 Once you have a front-end application ready, install Griptape.js by running one of the following:
 
-```bash
+```typescript
 # Using yarn
 yarn add @stakeordie/griptape.js
 
@@ -23,7 +23,7 @@ npm install @stakeordie/griptape.js
 
 A _gripped_ application is a term we use to describe an application whose bootstrap process is handled by Griptape. _Grip_ your app by adding this to your `main.js` or `index.js` file:
 
-```js
+```typescript
 import {
   gripApp,
   getKeplrAccountProvider
@@ -40,7 +40,7 @@ gripApp(restUrl, provider, runApp);
 
 `runApp` is a function able to bootstrap your front-end application, e.g. for [Vue.js](https://vuejs.org) the implementation looks like this:
 
-```js
+```typescript
 function runApp() {
   createApp(App).mount('#app');
 }
@@ -48,7 +48,7 @@ function runApp() {
 
 Or in [React](https://reactjs.org), like this:
 
-```jsx
+```typescript
 function runApp() {
   ReactDOM.render(
     <React.StrictMode>

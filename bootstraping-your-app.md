@@ -8,11 +8,11 @@ This diagram represents how the app goes from a **not gripped app** to a **boots
 
 ![bootstrap](.gitbook/assets/bootstrap.png)
 
-* **Regular App: **Cannot interact with contracts
+* **Regular App:** Cannot interact with contracts
 * **Gripped:** Can interact with contracts, but the account provider hasn't been initialized (queries that require an **account address** or **viewing key** and **messages** in general can't be called)
 * **Bootstrapped:** Messages and queries that require an **account address** or **viewing key** (for queries only) now can be called.
 
-```ts
+```typescript
 import { bootstrap } from '@stakeordie/griptape.js';
 
 // This will bootstrap your app
@@ -23,7 +23,7 @@ bootstrap();
 
 **Store**:
 
-```ts
+```typescript
 import {
   bech32,
   bootstrap,
@@ -70,7 +70,7 @@ export function useWalletStore(): WalletStore {
 
 **Component**:
 
-```
+```typescript
 <template>
   <div class="wallet">
     <img src="../assets/images/wallet.svg" alt="wallet icon" />

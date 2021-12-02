@@ -4,7 +4,7 @@ Here's the list of all the current APIs available on Griptape.js.
 
 ## Bootstrap API
 
-```ts
+```typescript
 import { gripApp } from '...';
 
 gripApp(
@@ -16,7 +16,7 @@ gripApp(
 
 ## Contracts API
 
-```ts
+```typescript
 import { createContract, extendContract } from '...';
 
 createContract(spec: ContractSpecification);
@@ -25,7 +25,7 @@ extendContract(def1: ContractDefintion, def2: ContractDefinition);
 
 ## Viewing Keys API
 
-```ts
+```typescript
 import { viewingKeyManager } from '...';
 
 viewingKeyManager.add(contract: ContractInstance, key: string);
@@ -35,7 +35,7 @@ viewingKeyManager.set(contract: ContractInstance, key: string);
 
 ## Keplr Utils
 
-```ts
+```typescript
 import { getKeplr } from '...';
 
 getKeplr(): Promise<Keplr | undefined>;
@@ -43,7 +43,7 @@ getKeplr(): Promise<Keplr | undefined>;
 
 ## Events API
 
-```ts
+```typescript
 import {
   onAccountAvailable,
   onAccountChange,
@@ -57,7 +57,7 @@ onViewingKeyCreated(callback: Callback);
 
 ## Account Provider
 
-```ts
+```typescript
 import {
   getKeplrAccountProvider
 } from '...';

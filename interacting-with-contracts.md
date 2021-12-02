@@ -81,7 +81,7 @@ const secretCounter = createContract<SecretCounter>({
 
 Now you can do:
 
-```ts
+```typescript
 const queryRes = await secretCounter.getCount();
 // or
 const messageRes = await secretCounter.increment();
@@ -97,7 +97,7 @@ This sections goes over some advanced features for interacting with contracts.
 
 `queries` and `messages` requires certain request parameters in order to be executed, e.g.
 
-```ts
+```typescript
 const sefi: ContractDefinition = {
   queries: {
     getBalance() {
@@ -110,7 +110,7 @@ const sefi: ContractDefinition = {
 
 For this cases, Griptape provides any `query` or `message` a `Context` object as the first parameter of the function:
 
-```ts
+```typescript
 import { Context, ... } from '@stakeordie/griptape.js';
 
 const sefi: ContractDefinition = {
@@ -127,7 +127,7 @@ const sefi: ContractDefinition = {
 
 Also, you can define parameters at the right of a `query` or `message`:
 
-```ts
+```typescript
 import { Context, ... } from '@stakeordie/griptape.js';
 
 const sefi: ContractDefinition = {
@@ -144,7 +144,7 @@ const sefi: ContractDefinition = {
 
 So you can pass those as arguments when you call the method of a _created_ contract:
 
-```ts
+```typescript
 // Passing a page size
 await sefi.getTransferHistory(20);
 ```
@@ -152,9 +152,9 @@ await sefi.getTransferHistory(20);
 {% hint style="info" %}
 Defining the context for all your `queries` and `messages` is a good practice even if you don't use them. You can also use `_` as an identifier to express what is not being used by that `query` or `message`:
 
-````
+````typescript
  getAllowance(
-   _: Context, // We are not using the context in this query
+  _: Context, // We are not using the context in this query
   owner: string,
   spender: string,
   key: string
@@ -168,7 +168,7 @@ Defining the context for all your `queries` and `messages` is a good practice ev
 
 Griptape has SNIP-20 and SNIP-721 compliant contract definitions, so you don't need to write them yourself.
 
-```ts
+```typescript
 import {
   createContract,
   Snip20Contract
@@ -194,7 +194,7 @@ const anSnip721 = createContract<Snip721Contract>({
 
 Contract definition can be extended, in the same sense a class can inherit from another class in Object-oriented programming, by using the `extendContract` function:
 
-```ts
+```typescript
 import {
   createContract,
   extendContract,
@@ -220,7 +220,7 @@ All common methods between contract definitions are overrided by the methods on 
 
 When writing messages in your contract definition, you have the following options to pass to each message:
 
-```ts
+```typescript
 interface ContractMessageRequest {
   handleMsg: Record<string, unknown>;
   memo?: string;
@@ -231,7 +231,7 @@ interface ContractMessageRequest {
 
 So if you want to pass a custom fee for this message you do:
 
-```ts
+```typescript
 const def = {
   messages: {
     coolMessageName(...): ContractMessageRequest {
@@ -249,7 +249,7 @@ const def = {
 
 All contracts _created_ by the `createContract` are added to the Contract Registry. By doing this, you will be able to get access to any contract at any moment, by using the `refContract` function:
 
-```ts
+```typescript
 import { refContract, ... } from '@stakeordie/griptape.js';
 
 const sefi = createContract({ id: 'sefi', ... });
@@ -271,7 +271,7 @@ Function names might change since version `0.7.0`
 
 Multi message execution gives you the ability to perform cross-contract multi messages. That means that you can execute multiple messages and sign all at once. Griptape offers a way to perform multi messages using the `multiMessage` and `Message` functions:
 
-```ts
+```typescript
 await multiMessage([
   message(sust, sust.depositTo, '1000000'),
   message(sust, sust.depositTo, '2000000')
@@ -288,7 +288,7 @@ You are able to instantiate contract in the blockchain if you already have uploa
 
 Use the `instantiateContract` function and you will get a _created_ for free:
 
-```ts
+```typescript
 await instantiateContract<Counter>({
   id: 'counter',
   codeId: 50,

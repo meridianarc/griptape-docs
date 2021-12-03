@@ -5,7 +5,7 @@ title: Home
 # What is Griptape.js?
 
 {% hint style="info" %}
-IMPORTANT: Griptape.js is in development! If you want to learn more, check out the [current development updates](updates/).
+IMPORTANT: Griptape.js is in development! If you want to learn more, check out the [current development updates](../updates/).
 {% endhint %}
 
 Griptape.js is an opinionated, web application front-end framework for developing dApps in Secret Network.

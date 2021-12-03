@@ -25,7 +25,7 @@ npm install @stakeordie/griptape.js
 
 ## Gripping an App
 
-A _gripped_ application is a term we use to describe an application whose bootstrap process is handled by Griptape. _Grip_ your app by adding this to your `main.js` or `index.js` file:
+A [_gripped_ ](index/griptape-lexicon.md#gripping)application is a term we use to describe an application whose bootstrap process is handled by Griptape. _Grip_ your app by adding this to your `main.js` or `index.js` file:
 
 ```typescript
 import {

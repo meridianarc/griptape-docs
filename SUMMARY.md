@@ -1,9 +1,6 @@
 # Table of contents
 
-* [FAQ](README.md)
-* [Cheat Sheet](cheatsheet.md)
-* [APIs](api.md)
-* [What is Griptape.js?](index/README.md)
+* [What is Griptape.js?](README.md)
   * [Griptape Lexicon](index/griptape-lexicon.md)
 * [Prep Your Deck 🛹](getting-started.md)
 * [Using Utilities](utilities.md)
@@ -15,6 +12,9 @@
 * [Handling Your First Event](events.md)
 * [Managing States](managing-states.md)
 * [Griptape CLI: gtape](griptape-cli-gtape.md)
+* [FAQ](<README (1).md>)
+* [APIs](api.md)
+* [Cheat Sheet](cheatsheet.md)
 * [Development Updates](updates/README.md)
   * [Office Hours](updates/index.md)
   * [Griptape Update 2021-08-06](updates/2021-08-06.md)

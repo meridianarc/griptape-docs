@@ -1,0 +1,37 @@
+# Creating Contracts
+
+Once we have a contract definition, we can _create_ a contract. Creating a contract in Griptape.js is simply using the `createContract` function and passing the following data:
+
+```typescript
+import {
+  ContractDefinition,
+  ContractMessageResponse,
+  createContract
+} from '@stakeordie/griptape.js';
+
+interface SecretCounter {
+  getCount(): Promise<{ count: number }>;
+  increment(): Promise<ContractMessageResponse>;
+}
+
+const secretCounterDef: ContractDefinition = {
+  queries: { ... }
+  messages: { ... }
+};
+
+const secretCounter = createContract<SecretCounter>({
+  id: 'counter',
+  at: 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h',
+  definition: secretCounterDef
+});
+```
+
+Now you can do:
+
+```typescript
+const queryRes = await secretCounter.getCount();
+// or
+const messageRes = await secretCounter.increment();
+```
+
+Now you are able to interact with contracts!

@@ -63,7 +63,7 @@ await sefi.getTransferHistory(20);
 {% hint style="info" %}
 Defining the context for all your `queries` and `messages` is a good practice even if you don't use them. You can also use `_` as an identifier to express what is not being used by that `query` or `message`:
 
-````typescript
+```typescript
  getAllowance(
   _: Context, // We are not using the context in this query
   owner: string,
@@ -71,6 +71,6 @@ Defining the context for all your `queries` and `messages` is a good practice ev
   key: string
 ): ContractQueryRequest {
   return { allowance: { owner, spender, key } };
-},```
-````
+},
+```
 {% endhint %}

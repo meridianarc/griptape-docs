@@ -7,3 +7,6 @@ coverY: 0
 
 # FAQ
 
+**What assumptions are made about Griptape JS?**
+
+We assume you're working with

@@ -5,13 +5,15 @@ title: Home
 # What is Griptape.js?
 
 {% hint style="info" %}
-IMPORTANT: Griptape.js is in development! If you want to learn more, check out the [current development updates](../updates/).
+IMPORTANT: Griptape.js is in development! If you want to learn more, check out the [current development updates](updates/).
 {% endhint %}
 
 Griptape.js is an opinionated, web application front-end framework for developing dApps in Secret Network.
 
 ## Why Griptape?
 
-Griptape is an essential part of the skate setup. Not only does it provide the traction necessary to keep your foot on the board, but it helps when doing advanced stuff like tricks, which is the real focus of most skaters.
+While developing early dApps on Secret Network, we found a lot of patterns and best practices that helped us be way more productive. Eventually we realized we had a dev framework on our hands, one that bridged web2 dev practices with web3 processes.
 
-While developing dApps, we found a lot of patterns and good practices that can help you quickly get your application up and running and start focusing on what your application has to do. We call it Griptape because it is the layer that helps with the core of your app--it helps you get off the ground.
+In skateboarding, grip tape is an essential part of the board. Originally designed just to keep the skater's feet on the board, over time grip tape was leveraged to allow more and more tricks to be performed; the game-changing innovation coming in 1982 when Rodney Mullen introduced the flat ground ollie. He basically used friction and other fun physics to convert forward motion into vertical motion. In a sense he hacked the skateboard's design, using grip tape to get off the ground. The rest is history.
+
+Positioned between the skateboard and the riders feet, grip tape makes all the modern aspects of skateboarding possible. Similarly, Griptape JS sits between the blockchain and the modern web2 frameworks that every modern developer knows and loves. Although it is possible get off the ground without grip tape, it is really hard and doesn’t make much sense really. Similarly Griptape JS gets you off the ground quickly and easily. You could build without it, but really, whats the point.

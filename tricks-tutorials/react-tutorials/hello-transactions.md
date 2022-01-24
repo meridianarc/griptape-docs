@@ -16,6 +16,10 @@ This tutorial walks you through creating an application that sends a SNIP-20 tok
 
 ### Requirements
 
+{% content-ref url="hello-contracts.md" %}
+[hello-contracts.md](hello-contracts.md)
+{% endcontent-ref %}
+
 In order to go through this tutorial you'll need to have a React created. You can find how to do it [here](https://reactjs.org/docs/create-a-new-react-app.html). Also, install your dependencies and install Griptape:
 
 ```bash

@@ -1,73 +1,16 @@
 # Hello, Contracts
 
-## hello-contracts
-
-## hello-contracts
-
-### Overview
-
 {% hint style="info" %}
 Read the code for this tutorial [here](https://github.com/stakeordie/griptape-tutorials/tree/main/react/hello-contracts)
 {% endhint %}
 
-In this tutorial we are going to build an application, in which you will be able to connect to \[], learn to define a contract on \[], also interact with it in a simple way to increment a counter and finally get the value of the counter.
-
 ### Overview
 
-1. Create the contract definition.
-2. Use `onAccountAvailable` event.
-
-### Overview
-
-Full example: [hello-contracts](https://github.com/stakeordie/griptape-tutorials/tree/main/react/hello-contracts)
-
 In this tutorial we are going to build an application, in which you will be able to connect to \[], learn to define a contract on \[], also interact with it in a simple way to increment a counter and finally get the value of the counter.
-
-### Create the contract definition
-
-In this tutorial we are going to build an application, in which you will be able to connect to \[], learn to define a contract on \[], also interact with it in a simple way to increment a counter and finally get the value of the counter.
-
-If we go to the `src/contracts/counter.js` file, you can see that the first thing we need to do is import `createContract` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
-
-1. Create the contract definition.
-2. Use `onAccountAvailable` event.
-
-```js
-import { createContract } from '@stakeordie/griptape.js';
-```
 
 ### Requirements
 
-After that, we need to create the contract definition called `counterDef` the contract definition includes the `messages` part which is everything we are going to write in the blockchain and the `queries` part, basically everything we are going to read from the blockchain.
-
-Full example: [hello-contracts](https://github.com/stakeordie/griptape-tutorials/tree/main/react/hello-contracts)
-
-```js
-const counterDef = {
-  messages: {
-    incrementCount() {
-      const handleMsg = {
-        increment: {}
-      };
-      return { handleMsg };
-    }
-  },
-
-  queries: {
-    getCount() {
-      return { get_count: {} };
-    }
-  }
-};
-```
-
 For this tutorial you will need to have a React created. You can find how to do it [here](https://reactjs.org/docs/create-a-new-react-app.html). Also, install your dependencies and install Griptape:
-
-Now you can notice...
-
-### Create the contract definition
-
-Finally, we are going to create and export your `counter Contract` using the `createContact` API, which we are going to send...
 
 ```bash
 # With npm
@@ -77,59 +20,18 @@ npm install && npm install @stakeordie/griptape.js
 yarn && yarn add @stakeordie/griptape.js
 ```
 
-```js
-export const counterContract = createContract({
-  id: 'counter',
-  at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
-  definition: counterDef
-});
-```
-
-If we go to the `src/contracts/counter.js` file, you can see that the first thing we need to do is import `createContract` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
-
-### Use `onAccountAvailable` event
-
-### Getting Started
-
-```js
-import { createContract } from '@stakeordie/griptape.js';
-```
+### Getting started
 
 This tutorial consist of these steps:
-
-After that, we need to create the contract definition called `counterDef` the contract definition includes the `messages` part which is everything we are going to write in the blockchain and the `queries` part, basically everything we are going to read from the blockchain.
 
 1. Grip you application
 2. Boostrap the application
 3. Create a contract definition
 4. Build the application
 
-```js
-const counterDef = {
-  messages: {
-    incrementCount() {
-      const handleMsg = {
-        increment: {}
-      };
-      return { handleMsg };
-    }
-  },
-
-  queries: {
-    getCount() {
-      return { get_count: {} };
-    }
-  }
-};
-```
-
 ### Grip your application
 
-Now you can notice...
-
 Go to the `src/index.js` and import `gripApp` and `getKeplrAccountProvider` from `@stakeordie/griptape.js` package.
-
-Finally, we are going to create and export your `counter Contract` using the `createContact` API, which we are going to send...
 
 {% code title="src/index.js" %}
 ```jsx
@@ -140,21 +42,11 @@ import {
 ```
 {% endcode %}
 
-```js
-export const counterContract = createContract({
-  id: 'counter',
-  at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
-  definition: counterDef
-});
-```
-
 {% hint style="info" %}
 <mark style="color:red;">You can check how to grip your app, Here</mark>
 {% endhint %}
 
-### Use `onAccountAvailable` event
-
-### Bootstrap the application
+### Boostrap the application
 
 Open up `src/App.js` and add a button to bootstrap the application.
 
@@ -175,7 +67,7 @@ Open up `src/App.js` and add a button to bootstrap the application.
 <mark style="color:red;">You can check how to grip your app, Here</mark>
 {% endhint %}
 
-### Create a contract definition
+### Create the contract definition
 
 If we go to the `src/contracts/counter.js` file, you can see that the first thing we need to do is import `createContract` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
 
@@ -188,7 +80,7 @@ import { createContract } from '@stakeordie/griptape.js';
 After that, we need to create the contract definition called `counterDef` the contract definition includes the `messages` part, which is everything we are going to write in the blockchain and the `queries` part, basically everything we are going to read from the blockchain.
 
 {% code title="src/contracts/counter.js" %}
-```js
+```jsx
 const counterDef = {
   messages: {
     incrementCount() {
@@ -208,12 +100,10 @@ const counterDef = {
 ```
 {% endcode %}
 
-Now you can notice...
-
 Finally, we are going to create and export your `counter Contract` using the `createContact` API, which we are going to send...
 
 {% code title="src/contracts/counter.js" %}
-```js
+```jsx
 export const counterContract = createContract({
   id: 'counter',
   at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
@@ -248,14 +138,13 @@ export const counterContract = createContract({
   id: 'counter',
   at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
   definition: counterDef
-});
-
+});src/contracts/counter.js
 ```
 {% endcode %}
 
 ### Build the application
 
-To Start Building Our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./Contracts/Counter'`. Then We Need to Import `Boostrap` and `Onaccountavailable` from `"@ stakeordie / griptape.js"`.
+To Start Building our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./Contracts/Counter'`. Then We Need to Import `Boostrap` and `onAccountavailable` from `"@ stakeordie / griptape.js"`.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -357,4 +246,3 @@ function App() {
 export default App;
 ```
 {% endcode %}
-

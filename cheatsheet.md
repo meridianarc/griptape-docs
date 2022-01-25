@@ -1,4 +1,4 @@
-# Cheatsheet
+# 🔀 API Reference
 
 Here's the list of all the current APIs available on Griptape.js.
 

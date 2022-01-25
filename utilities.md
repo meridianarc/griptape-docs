@@ -1,4 +1,4 @@
-# Using Utilities
+# ⚒ Using Utilities
 
 Griptape has many other utilities to help you solve some of the most common but non-trivial problems you will find while developing your application. Here we are going through some of them briefly.
 

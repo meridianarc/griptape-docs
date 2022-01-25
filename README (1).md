@@ -5,7 +5,7 @@ cover: >-
 coverY: 0
 ---
 
-# FAQ
+# ❓ FAQ
 
 **What assumptions are made about Griptape JS?**
 

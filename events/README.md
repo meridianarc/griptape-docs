@@ -1,4 +1,4 @@
-# Handling Your First Event
+# 🕢 Handling Your First Event
 
 {% hint style="info" %}
 Events are anything that happen to a user.

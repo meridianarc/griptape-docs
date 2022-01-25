@@ -1,4 +1,4 @@
-# Bootstrapping Your App
+# 🚀 Bootstrapping Your App
 
 In order to start interacting with contracts, you first need to bootstrap your app. After you grip an application, your application needs to bootstrap in order to have access to the account address from your Account Provider. It is important to mention that the bootstrap process should be run after you _grip_ your application, and is commonly handled by a component in your UI.
 

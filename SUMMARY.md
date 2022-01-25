@@ -1,8 +1,7 @@
 # Table of contents
 
 * [What is Griptape.js?](README.md)
-  * [Griptape Lexicon](index/griptape-lexicon.md)
-* [Prep Your Deck 🛹](getting-started.md)
+* [🛹 Get your deck](getting-started.md)
 * [Using Utilities](utilities.md)
 * [Bootstrapping Your App](bootstraping-your-app.md)
 * [Interacting with Contracts](interacting-with-contracts/README.md)

@@ -1,6 +1,14 @@
 # 🚀 Bootstrapping Your App
 
-In order to start interacting with contracts, you first need to bootstrap your app. After you grip an application, your application needs to bootstrap in order to have access to the account address from your Account Provider. It is important to mention that the bootstrap process should be run after you _grip_ your application, and is commonly handled by a component in your UI.
+In order to start interacting with contracts, you first need to bootstrap your app. After you _grip_ an app, you need to "manually" _bootstrap_ Griptape. This bootstrap process does the following:
+
+1. Initialize a client to make queries to the blockchain
+2. Initialize your Account Provider
+3. Initialize a client to execute messages to the blockchain
+
+We are going to talk about Account Provider later in this guide, but for now think of it as the software piece in charge of getting a _wallet address_.
+
+Also, it is important to mention that the bootstrap process should be run after you _grip_ your application, and is commonly handled by a component in your UI.
 
 ## App States
 

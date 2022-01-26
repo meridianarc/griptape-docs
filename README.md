@@ -6,7 +6,7 @@ title: Home
 
 Griptape is the web framework for developing dApps on Secret Network.
 
-## Why Griptape?
+### Why Griptape?
 
 While developing early dApps on Secret Network, we found a lot of patterns and best practices that helped us be way more productive. Eventually we realized we had a dev framework on our hands, one that bridged web2 dev practices with web3 processes.
 

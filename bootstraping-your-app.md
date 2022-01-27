@@ -1,5 +1,5 @@
 ---
-description: Bootstrap your app and get started interacting with contracts.
+description: Bootstrap your app and connect to the blockchain.
 ---
 
 # 🚀 Bootstrapping Your App

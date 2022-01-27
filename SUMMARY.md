@@ -12,7 +12,6 @@
   * [Contract Registry](interacting-with-contracts/contract-registry.md)
   * [Instantiating Contracts](interacting-with-contracts/instantiating-contracts.md)
 * [🔑 Managing Viewing Keys](managing-viewing-keys/README.md)
-  * [Hey, what's a Viewing Key?](managing-viewing-keys/hey-whats-a-viewing-key.md)
   * [Viewing Key Manager](managing-viewing-keys/viewing-key-manager.md)
 * [🕢 Handling Events](events/README.md)
   * [Account Events](events/account-events.md)

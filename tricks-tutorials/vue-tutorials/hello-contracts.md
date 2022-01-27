@@ -25,7 +25,7 @@ yarn && yarn add @stakeordie/griptape.js
 This tutorial consist of these steps:
 
 1. Grip you application
-2. Boostrap the application
+2. Bootstrap the application
 3. Create a contract definition
 4. Build the application
 
@@ -134,7 +134,7 @@ export const counterContract = createContract({
 
 ### Build the application
 
-To Start Building Our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./contracts/counter'`. Then We Need to Import `Boostrap` and `onaccountavailable` from `"@ stakeordie / griptape.js"`.
+To start building our application, first we need to import the contract that we created a few steps before `countercontract` from `'./contracts/counter'`. Then we need to import `Bootstrap` and `onaccountavailable` from `"@ stakeordie / griptape.js"`.
 
 {% code title="src/App.vue" %}
 ```jsx
@@ -154,7 +154,7 @@ async getCount() {
 ```
 {% endcode %}
 
-Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` Contract and returns the result of it.
+Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` contract and returns the result of it.
 
 {% code title="App.vue" %}
 ```jsx

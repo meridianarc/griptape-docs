@@ -38,7 +38,7 @@ This tutorial consist of these steps.
 
 1. Grip an application.
 2. Creating contract definition.
-3. Import neccesary Griptape APIs and Contract Definition.
+3. Import necessary Griptape APIs and Contract Definition.
 4. Bootstrap app.
 5. Creating Permit .
 6. Get Balance.
@@ -187,7 +187,7 @@ We also import our contract `sscrt` we just created in a section before.
 
 ## Bootstrap app
 
-Before boostrapping our app, we are going to create some stores using useState hook from React and use one of our events APIs, `onAccountAvailable` explained in tutorials before (more info in `Hello, Events`).
+Before bootstrapping our app, we are going to create some stores using useState hook from React and use one of our events APIs, `onAccountAvailable` explained in tutorials before (more info in `Hello, Events`).
 
 ```javascript
 	var [loading, setLoading] = useState(false);
@@ -202,7 +202,7 @@ Before boostrapping our app, we are going to create some stores using useState h
 	}, []);
 ```
 
-As you see we used `hasPermit` Griptape API, this api returns Boolean and receives a contract as parameter which we imported before.
+As you see we used `hasPermit` Griptape API, this API returns Boolean and receives a contract as parameter which we imported before.
 
 Now, let's create a simple function to connect the app.
 
@@ -214,7 +214,7 @@ Now, let's create a simple function to connect the app.
 
 ## Creating Permit
 
-With Griptape creating a permit is very easy, `enablePermit` is an API that receives two parameters, the first is a contract, in this case the one we imported before (`sscrt`), and a array of permissions to approve, in this case we want to see the `balance`.
+With Griptape creating a permit is very easy, `enablePermit` is an API that receives two parameters, the first is a contract, in this case the one we imported before (`sscrt`), and an array of permissions to approve, in this case we want to see the `balance`.
 
 {% hint style="info" %}
 Possible permissions for a `SNIP-20` contract `"balance"` , `"history"`, `"allowance"`.&#x20;

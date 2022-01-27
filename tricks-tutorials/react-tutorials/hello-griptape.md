@@ -28,7 +28,7 @@ yarn && yarn add @stakeordie/griptape.js
 
 ## Getting started
 
-This tutorial consist of these steps.
+This tutorial consists of these steps:
 
 1. Grip an application.
 2. Bootstrap the application.
@@ -37,7 +37,7 @@ This tutorial consist of these steps.
 
 ## Grip an application
 
-**`Grip`** an application means involved our app into **Griptape**. This helps **Griptape** to control the different states an application can go through, trigger events, get balances and get wallet address properly. In order to **grip** the application go to `src/main.js` and import `gripApp` and `getKeplrAccountProvider` from `@stakeordie/griptape.js` as the follow.
+**`Grip`** an application means involving our app into **Griptape**. This helps **Griptape** to control the different states an application can go through, trigger events, get balances and get wallet address properly. In order to **grip** the application go to `src/main.js` and import `gripApp` and `getKeplrAccountProvider` from `@stakeordie/griptape.js` as the follow.
 
 ```javascript
 import {
@@ -50,19 +50,19 @@ import {
 We assumed you are using **Keplr** as wallet. Griptape has only support with Keplr at this point. The Griptape team is working looking froward to support as many wallets as the Cosmos Ecosystem requires.
 {% endhint %}
 
-Now, as you may know we need a rest url to connect to `pulsar-2`, let's add it.
+Now, as you may know, we need a REST URL to connect to `pulsar-2`, let's add it.
 
 ```javascript
 const  restUrl = 'https://api.pulsar.griptapejs.com';
 ```
 
-Ok, we good. now let's get Keplr provider.
+Ok, we're good. Now let's get the Keplr provider.
 
 ```javascript
 const  provider = getKeplrAccountProvider();
 ```
 
-We are almost get it, now we going to move our React app into a function, as the example below.
+We are almost getting it. Now we going to move our React app into a function, as the example below.
 
 ```javascript
 function  runApp() {
@@ -80,13 +80,13 @@ function  runApp() {
 
 Now we just need to execute `gripApp` from **Griptape** as the following code.
 
-```javascript
+```typescript
 gripApp(restUrl, provider, runApp);
 ```
 
 ## Bootstrap your application
 
-Now that we have your gripped our application we need to **bootstrap** it. Bootstrap creates a `signing client` able to encrypt and decrypt transactions. If don't **bootstrap** the app we won't be able to get the wallet address and execute messages.
+Now that we have your gripped our application we need to **bootstrap** it. Bootstrapping creates a `signing client` able to encrypt and decrypt transactions. If you don't **bootstrap** the app we won't be able to get the wallet address and execute messages.
 
 Now on, let's move to start working in `src/App.js`. As our first step we need to import `bootstrap` api from `@stakeordie/griptape.js`. Copy the example below.
 
@@ -129,7 +129,7 @@ import {
 
 ## Get and render the user's address and balance
 
-Let's get our hand dirty a bit, it's time to actually show something interesting for example the balance and address of the wallet. First some hooks to store the data.
+Let's get our hands dirty a bit! It's time to actually show something interesting for example the balance and address of the wallet. First some hooks to store the data.
 
 ```javascript
 import  React, { useState, useEffect } from  "react";

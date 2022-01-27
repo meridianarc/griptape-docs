@@ -27,7 +27,7 @@ Griptape.js can work along any front-end UI library out there. Therefore, the fi
 
 Once you have a front-end application ready, install Griptape.js by running one of the following:
 
-```bash
+```typescript
 # Using yarn
 yarn add @stakeordie/griptape.js
 

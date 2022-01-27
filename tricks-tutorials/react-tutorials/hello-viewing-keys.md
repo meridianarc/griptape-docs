@@ -17,7 +17,7 @@ yarn && yarn add @stakeordie/griptape.js
 This tutorial consist of these steps:
 
 1. Grip you application
-2. Boostrap the application
+2. Bootstrap the application
 3. Create a contract definition
 4. Build the app
 
@@ -35,10 +35,10 @@ import {
 {% endcode %}
 
 {% hint style="info" %}
-<mark style="color:red;">You can check how to grip your app, Here</mark>
+<mark style="color:red;">You can check how to grip your app, here</mark>
 {% endhint %}
 
-### Boostrap the application
+### Bootstrap the application
 
 Open up `src/App.js` and add a button to bootstrap the application.
 
@@ -56,7 +56,7 @@ Open up `src/App.js` and add a button to bootstrap the application.
 {% endcode %}
 
 {% hint style="info" %}
-<mark style="color:red;">You can check how to grip your app, Here</mark>
+<mark style="color:red;">You can check how to grip your app, here</mark>
 {% endhint %}
 
 ### Create a contract definition
@@ -78,7 +78,7 @@ export const sscrt = createContract({
 
 ### Build the application
 
-To start building our application, we need to import `boostrap`, `viewingKeyManager`, `onAccountAvailable`and `coinConvert` APIs from `@stakeordie/griptape.js` and also import the contract definition we just made `sscrt` from `"./contracts/sscrt"`.
+To start building our application, we need to import `bootstrap`, `viewingKeyManager`, `onAccountAvailable`and `coinConvert` APIs from `@stakeordie/griptape.js` and also import the contract definition we just made `sscrt` from `"./contracts/sscrt"`.
 
 ```jsx
 import {

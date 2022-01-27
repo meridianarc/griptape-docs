@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this tutorial we show you how to create Permits for authenticating a SNIP-20 contract.When you finish this Hello Permit tutorial you will have a web app connected to `pulsar-2` with the ability to query the `sSCRT` balance using permits. Creating permits and connecting the app to `Keplr`.
+In this tutorial we show you how to create Permits for authenticating a SNIP-20 contract. When you finish this Hello Permit tutorial you will have a web app connected to `pulsar-2` with the ability to query the `sSCRT` balance using permits. Creating permits and connecting the app to `Keplr`.
 
 
 
@@ -10,7 +10,7 @@ In this tutorial we show you how to create Permits for authenticating a SNIP-20 
 
 In order to go through this tutorial you'll need to have a Vue app created. You can find how to do it [here](https://cli.vuejs.org/guide/creating-a-project.html). Also, install your dependencies and install Griptape.
 
-```
+```typescript
 # With npm
 npm install && npm install @stakeordie/griptape.js
 

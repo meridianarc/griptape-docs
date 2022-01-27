@@ -24,8 +24,8 @@ yarn && yarn add @stakeordie/griptape.js
 
 This tutorial consist of these steps:
 
-1. Grip you application
-2. Boostrap the application
+1. Grip your application
+2. Bootstrap the application
 3. Create a contract definition
 4. Build the application
 
@@ -43,7 +43,7 @@ import {
 {% endcode %}
 
 {% hint style="info" %}
-<mark style="color:red;">You can check how to grip your app, Here</mark>
+<mark style="color:red;">You can check how to grip your app, here</mark>
 {% endhint %}
 
 ### Boostrap the application
@@ -64,7 +64,7 @@ Open up `src/App.js` and add a button to bootstrap the application.
 {% endcode %}
 
 {% hint style="info" %}
-<mark style="color:red;">You can check how to grip your app, Here</mark>
+<mark style="color:red;">You can check how to grip your app, here</mark>
 {% endhint %}
 
 ### Create the contract definition
@@ -144,7 +144,7 @@ export const counterContract = createContract({
 
 ### Build the application
 
-To Start Building our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./Contracts/Counter'`. Then We Need to Import `Boostrap` and `onAccountavailable` from `"@ stakeordie / griptape.js"`.
+To start building our application, first we need to import the contract that we created a few steps before `countercontract` from `'./Contracts/Counter'`. Then we need to import `Bootstrap` and `onAccountavailable` from `"@ stakeordie / griptape.js"`.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -156,7 +156,7 @@ import {
 ```
 {% endcode %}
 
-Now you can notice that we are using the `onAccountAvailable` event, it is within a `useEffect` to know when the user is connected. So, once our APP is rendered, it will be asked through the event `onAccountAvailable` if we are connected, if this is the case we will assign `true` to the `setIsConnected` variable.
+Now you can notice that we are using the `onAccountAvailable` event, it is within a `useEffect` to know when the user is connected. So, once our app is rendered, it will be asked through the event `onAccountAvailable` if we are connected. If this is the case we will assign `true` to the `setIsConnected` variable.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -168,7 +168,7 @@ useEffect(() => {
 ```
 {% endcode %}
 
-Now we are going to build the `getCount` function, which contains an asynchronous request to the contract `counterContract` in which it specifically requests the `getCount` query, once we have the response of this request, we can assign the value to `setCount` state.
+Now we are going to build the `getCount` function, which contains an asynchronous request to the contract `counterContract` in which it specifically requests the `getCount` query. Once we have the response of this request, we can assign the value to `setCount` state.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -179,7 +179,7 @@ const getCount = async () => {
 ```
 {% endcode %}
 
-Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` Contract and returns the result of it.
+Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` contract and returns the result of it.
 
 {% code title="src/App.js" %}
 ```jsx

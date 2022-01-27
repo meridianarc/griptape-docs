@@ -1,6 +1,8 @@
 # Creating Contracts
 
-Once we have a contract definition, we can _create_ a contract. Creating a contract in Griptape.js is simply using the `createContract` function and passing the following data:
+### Introduction
+
+Once we have a contract definition, we can _create_ a _client contract_. Creating a _client contract_ in Griptape.js is simply using the `createContract` function and passing the following data:
 
 ```typescript
 import {

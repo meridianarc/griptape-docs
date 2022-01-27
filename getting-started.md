@@ -1,10 +1,10 @@
 ---
-description: Getting started with Griptape
+description: >-
+  This is the first section of a step-by-step guide so you can start using
+  Griptape in your application.
 ---
 
 # 🛹 Getting Started
-
-This is the first section of a step-by-step guide so you can start using Griptape in your application.
 
 ### Introduction
 
@@ -35,7 +35,7 @@ yarn add @stakeordie/griptape.js
 npm install @stakeordie/griptape.js
 ```
 
-### Gripping an App
+### Getting Started: Grip and app
 
 A [_gripped_ ](broken-reference)application is a term we use to describe an application whose bootstrap process is handled by Griptape. _Grip_ your app by adding this to your `main.js` or `index.js` file:
 

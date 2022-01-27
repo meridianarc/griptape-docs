@@ -1,3 +1,7 @@
+---
+description: Bootstrap your app and get started interacting with contracts.
+---
+
 # 🚀 Bootstrapping Your App
 
 In order to start interacting with contracts, you first need to bootstrap your app. After you _grip_ an app, you need to "manually" _bootstrap_ Griptape. This bootstrap process does the following:

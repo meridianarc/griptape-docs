@@ -39,3 +39,4 @@
     * [Hello, Permits](tricks-tutorials/vue-tutorials/hello-permits.md)
     * [Hello, Transactions](tricks-tutorials/vue-tutorials/hello-transactions.md)
     * [Hello, Mint](tricks-tutorials/vue-tutorials/hello-mint.md)
+* [💻 Hackaton](hackaton.md)

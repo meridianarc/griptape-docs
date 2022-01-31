@@ -38,15 +38,27 @@ Once you have Keplr installed and an account created, you con now send test toke
 
 In order to add your custom SNIP-20 tokens, open the Keplr extension:
 
-![](../.gitbook/assets/add-tokens\_1.png)
+![Step 1/6](../.gitbook/assets/add-tokens\_1.png)
 
 Click on the hamburger menu:
 
-![](../.gitbook/assets/add-tokens\_2.png)
+![Step 2/6](../.gitbook/assets/add-tokens\_2.png)
 
-Click on add token and paste the contract address of the token:
+Click on add token:
 
-![](../.gitbook/assets/add-tokens\_3.png)
+![Step 3/6](../.gitbook/assets/add-tokens\_3.png)
+
+Paste the contract address of the token you want to add and click the "Submit" button:
+
+![Step 4/6](../.gitbook/assets/add-tokens\_4.png)
+
+Click the "approve" button:
+
+![Step 5/6](../.gitbook/assets/add-tokens\_5.png)
+
+Check that your tokens was added:
+
+![Step 6/6](../.gitbook/assets/add-tokens\_6.png)
 
 ### Install \`secretcli\` and connect it to \`pulsar-2\`
 

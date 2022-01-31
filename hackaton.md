@@ -18,11 +18,24 @@ description: Check out what you need to start hacking! 🛹
 
 ### Install Keplr
 
+Check out this video to set up you Keplr wallet.
 
+{% embed url="https://youtu.be/HgFWNJdD7-U" %}
 
-1\. Install secretcli
+### Connect to \`pulsar-2\`
 
-2\. Configure your secretcli
+In order to connect to the `pulsar-2` chain, go to [https://tools.trivium.network/addtestnets/](https://tools.trivium.network/addtestnets/) and click on the "pulsar-2" button:
+
+![](.gitbook/assets/connect-to-pulsar-2\_1.png)
+
+Then a Keplr window will pop up, click on the "approve" button:
+
+![](.gitbook/assets/connect-to-pulsar-2\_2.png)
+
+1.
+2.
+3. Install secretcli
+4. Configure your secretcli
 
 bash
 

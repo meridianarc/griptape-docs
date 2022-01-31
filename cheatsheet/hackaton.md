@@ -20,7 +20,7 @@ Check out this video to set up you Keplr wallet.
 
 {% embed url="https://youtu.be/HgFWNJdD7-U" %}
 
-### Connect to \`pulsar-2\`
+### Connect to `pulsar-2`
 
 In order to connect to the `pulsar-2` chain, go to [https://tools.trivium.network/addtestnets/](https://tools.trivium.network/addtestnets/) and click on the "pulsar-2" button:
 
@@ -34,7 +34,7 @@ Then a Keplr window will pop up, click on the "approve" button:
 
 Once you have Keplr installed and an account created, you con now send test tokens to your account. In order to send these tokens you will need to go the the faucet and paste your account address there.
 
-### Add custom SNIP-20 tokens to your walletF
+### Add custom SNIP-20 tokens to your wallet
 
 In order to add your custom SNIP-20 tokens, open the Keplr extension:
 
@@ -60,7 +60,9 @@ Check that your tokens was added:
 
 ![Step 6/6](../.gitbook/assets/add-tokens\_6.png)
 
-### Install \`secretcli\` and connect it to \`pulsar-2\`
+### Install `secretcli` and connect it to `pulsar-2`
 
+### Instantiate the `auction-factory` contract
 
+### Create auctions
 

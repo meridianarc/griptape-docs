@@ -32,27 +32,3 @@ Then a Keplr window will pop up, click on the "approve" button:
 
 ![](.gitbook/assets/connect-to-pulsar-2\_2.png)
 
-1.
-2.
-3. Install secretcli
-4. Configure your secretcli
-
-bash
-
-secretcli config chain pulsar-2
-
-secretcli config node tcp://rpc.pulsar.griptapejs.com
-
-secretcli config output json
-
-3\. Add tokens to Keplr
-
-4\. Instantiate the auction factory contract
-
-```bash
-secretcli tx compute instantiate 2496 \
-'{"entropy":"hola","auction_contract":{"code_id":1986,"code_hash":"477D30BF933D82AC233A13927EABAD4730DFCD1E0714EEA75A9F4DE26A631870"}}' \
---from test-account-first \
---label scrt-auction-factory-test-01
-```
-

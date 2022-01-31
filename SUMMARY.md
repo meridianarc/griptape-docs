@@ -22,6 +22,7 @@
   * [Contracts](cheatsheet/contracts.md)
   * [Viewing Keys & Permits](cheatsheet/viewing-keys-and-permits.md)
   * [Events](cheatsheet/events.md)
+  * [Hackaton](cheatsheet/hackaton.md)
 * [🐝 Tricks Tutorials](tricks-tutorials/README.md)
   * [React Tutorials](tricks-tutorials/react-tutorials/README.md)
     * [Hello, Griptape](tricks-tutorials/react-tutorials/hello-griptape.md)
@@ -39,4 +40,3 @@
     * [Hello, Permits](tricks-tutorials/vue-tutorials/hello-permits.md)
     * [Hello, Transactions](tricks-tutorials/vue-tutorials/hello-transactions.md)
     * [Hello, Mint](tricks-tutorials/vue-tutorials/hello-mint.md)
-* [💻 Hackaton](hackaton.md)

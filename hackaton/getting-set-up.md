@@ -27,7 +27,7 @@ Keep your mnemonic at hand, you will need it later on in this guide.
 
 ### Create an account and send funds using the [faucet](https://faucet.secrettestnet.io)
 
-Once you have Keplr installed and an account created, you con now send test tokens to your account. In order to send these tokens you will need to go the the [faucet](https://faucet.secrettestnet.io) and paste your account address there.
+Once you have Keplr installed and an account created, you con now send test tokens to your account. In order to send these tokens you will need to go the the [faucet](https://faucet.secrettestnet.io) and paste your account address there. (There are reports that the faucet may be down, lets us know if you need test SCRT and we will send)
 
 {% embed url="https://drive.google.com/file/d/1jQDqthtesitNY1It6WjxpvoB_Eh6_t4H/view?usp=sharing" %}
 
@@ -38,7 +38,9 @@ To see all the balances for the custom tokens we have provided you, do the follo
 1. Open the Keplr extension
 2. Click on the hamburger menu
 3. Click on add token
-4. Paste the contract address of the token you want to add and click the "Submit" button
+4.  Paste the contract address of the token you want to add and click the "Submit" button
+
+    (All the tokens, and their addresses, are listed in the [Glossary](glossary.md))
 5. Click the "approve" button
 6. Check that your tokens was added
 
@@ -72,8 +74,8 @@ After the installation is complete and you are now able to execute the `secretcl
 
 ```shell
 secretcli config broadcast-mode sync
-secretcli config node http://rpc.pulsar.stakeordie.com:26657
-lsecretcli config output json
+secretcli config node http://rpc.pulsar.griptapejs.com:26657
+secretcli config output json
 secretcli config chain-id pulsar-2
 ```
 
@@ -175,7 +177,7 @@ First, you need to run the following transaction:
 
 ```shell
 secretcli tx compute execute <sell-token-address> \
-'{"increase_allowance":{"spender":"secret1n9funu0pgycntvatcewfy20232r09ks7dr0hma","amount":"1000000"}}' \
+'{"increase_allowance":{"spender":"<auction-factory-contract>","amount":"1000000"}}' \
 --from <your-key> \
 --gas 120000 -y
 ```
@@ -230,3 +232,11 @@ Where:
 
 * `<auction-factory-contract>` the `auction-factory` contract address obtained in [this step](getting-set-up.md#instantiate-the-auction-factory-contract)
 * `<your-key-name>` is the key assigned to you account in the `secretcli`
+
+Lastly you can test that everything is working by querying the auction-factory-contract asking for a list of active auctions
+
+`secretcli q compute query <auction-factory-contract> '{"list_active_auctions":{}}'`
+
+`AND QUERY THE AUCTION DIRECTION WITH`
+
+`secretcli q compute query <auction-contract> '{"auction_info":{}}'`

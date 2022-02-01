@@ -1,8 +1,4 @@
----
-description: Check out what you need to start hacking! 🛹
----
-
-# Hackaton
+# Getting Set Up
 
 ### Getting Started
 
@@ -65,4 +61,3 @@ Check that your tokens was added:
 ### Instantiate the `auction-factory` contract
 
 ### Create auctions
-

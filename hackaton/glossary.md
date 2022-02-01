@@ -11,7 +11,6 @@ description: We will be adding to this page throughout the month.
 Contracts
 
 * Auctions-Factory
-  * address: secret1n9funu0pgycntvatcewfy20232r09ks7dr0hma
   * code\_id: 2496
 * Auctions
   * code\_id: 2760

@@ -38,7 +38,7 @@ Everything else will be happening on Discord. Feel free to reach out to any of u
 
 **Onward**
 
-Once again, We incredibly grateful that you have chosen to participate. We hope this is a rewarding and enlightening experience.
+Once again, we are incredibly grateful that you have chosen to participate. We hope this is a rewarding and enlightening experience.
 
 _Sincerely_
 

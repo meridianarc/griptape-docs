@@ -12,7 +12,7 @@ The hackathon four weeks long. Each week will follow the same schedule
 
 `Tuesday: 1PM-3PM: Live React Coding`
 
-`Wed: 1PM - 3PM: Live Vue Coding`
+`Wednesday: 1PM - 3PM: Live Vue Coding`
 
 `Thursday: 1PM - 3PM: Office Hours`
 
@@ -30,7 +30,7 @@ If you haven't received the tokens, (your balance is 0 after you add them), or t
 
 **Youtube Channel**
 
-Live Coding sessions will take place on our new Youtube Channel: [https://www.youtube.com/channel/UCwHl03HGzmkDI7L8zoLoWWw](https://www.youtube.com/channel/UCwHl03HGzmkDI7L8zoLoWWw). In addition, we will be posting bite size videos as we think to record them.&#x20;
+Live Coding sessions will take place on our new Youtube Channel: [https://www.youtube.com/channel/UCwHl03HGzmkDI7L8zoLoWWw](https://www.youtube.com/channel/UCwHl03HGzmkDI7L8zoLoWWw). In addition, we will be posting bite sized videos as we think to record them.&#x20;
 
 **Discord for everything else**
 

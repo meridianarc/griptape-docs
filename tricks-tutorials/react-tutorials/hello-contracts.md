@@ -6,11 +6,11 @@ Read the code for this tutorial [here](https://github.com/stakeordie/griptape-tu
 
 ### Overview
 
-In this tutorial we are going to build an application, in which you will be able to connect to Keplr, learn to define a contract, also interact with it in a simple way to increment a counter and finally get the value of the counter.
+In this tutorial we are going to build an application, in which you will be able to connect to \[], learn to define a contract on \[], also interact with it in a simple way to increment a counter and finally get the value of the counter.
 
 ### Requirements
 
-For this tutorial you will need to have a React app created. You can find how to do it [here](https://reactjs.org/docs/create-a-new-react-app.html). Also, install your dependencies and install Griptape:
+For this tutorial you will need to have a React created. You can find how to do it [here](https://reactjs.org/docs/create-a-new-react-app.html). Also, install your dependencies and install Griptape:
 
 ```bash
 # With npm
@@ -24,8 +24,8 @@ yarn && yarn add @stakeordie/griptape.js
 
 This tutorial consist of these steps:
 
-1. Grip your application
-2. Bootstrap the application
+1. Grip you application
+2. Boostrap the application
 3. Create a contract definition
 4. Build the application
 
@@ -43,7 +43,7 @@ import {
 {% endcode %}
 
 {% hint style="info" %}
-You can check how to boostrap your app [here](hello-griptape.md#grip-an-application)
+<mark style="color:red;">You can check how to grip your app, Here</mark>
 {% endhint %}
 
 ### Boostrap the application
@@ -53,7 +53,7 @@ Open up `src/App.js` and add a button to bootstrap the application.
 {% code title="src/App.js" %}
 ```jsx
 <>
-    <h1>Hello, Contracts!</h1>
+    <h1>Hello, Transactions!</h1>
     <p>Is connected? { isConnected ? "Yes": "No" }</p>
     <button
       onClick={() => bootstrap()}
@@ -62,6 +62,10 @@ Open up `src/App.js` and add a button to bootstrap the application.
 </>
 ```
 {% endcode %}
+
+{% hint style="info" %}
+<mark style="color:red;">You can check how to grip your app, Here</mark>
+{% endhint %}
 
 ### Create the contract definition
 
@@ -96,7 +100,7 @@ const counterDef = {
 ```
 {% endcode %}
 
-Finally, we are going to create and export our `counterContract` using the `createContact` API, which we are going to assign an id that can be the name you want `counter` in this case, we are also going to assign an address of instantiated contract on the blockchain and don't forget to assign the definition `counterDef`.
+Finally, we are going to create and export your `counter Contract` using the `createContact` API, which we are going to send...
 
 {% code title="src/contracts/counter.js" %}
 ```jsx
@@ -134,17 +138,13 @@ export const counterContract = createContract({
   id: 'counter',
   at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
   definition: counterDef
-});
+});src/contracts/counter.js
 ```
 {% endcode %}
 
-{% hint style="info" %}
-Learn more about contract definitions [here](https://docs.griptapejs.com/guide/interacting-with-contracts.html#contract-definitions)
-{% endhint %}
-
 ### Build the application
 
-To start building our application, first we need to import the contract that we created a few steps before `countercontract` from `'./Contracts/Counter'`. Then we need to import `Bootstrap` and `onAccountavailable` from `"@ stakeordie / griptape.js"`.
+To Start Building our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./Contracts/Counter'`. Then We Need to Import `Boostrap` and `onAccountavailable` from `"@ stakeordie / griptape.js"`.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -156,7 +156,7 @@ import {
 ```
 {% endcode %}
 
-Now you can notice that we are using the `onAccountAvailable` event, it is within a `useEffect` to know when the user is connected. So, once our app is rendered, it will be asked through the event `onAccountAvailable` if we are connected. If this is the case we will assign `true` to the `setIsConnected` variable.
+Now you can notice that we are using the `onAccountAvailable` event, it is within a `useEffect` to know when the user is connected. So, once our APP is rendered, it will be asked through the event `onAccountAvailable` if we are connected, if this is the case we will assign `true` to the `setIsConnected` variable.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -168,7 +168,7 @@ useEffect(() => {
 ```
 {% endcode %}
 
-Now we are going to build the `getCount` function, which contains an asynchronous request to the contract `counterContract` in which it specifically requests the `getCount` query. Once we have the response of this request, we can assign the value to `setCount` state.
+Now we are going to build the `getCount` function, which contains an asynchronous request to the contract `counterContract` in which it specifically requests the `getCount` query, once we have the response of this request, we can assign the value to `setCount` state.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -179,7 +179,7 @@ const getCount = async () => {
 ```
 {% endcode %}
 
-Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` contract and returns the result of it.
+Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` Contract and returns the result of it.
 
 {% code title="src/App.js" %}
 ```jsx
@@ -192,13 +192,16 @@ const incrementCount = async () => {
 ```
 {% endcode %}
 
-And adding JSX to our application we can see the full `src/App.js` code:
+And adding a little JSX to our application we can see the full `src/App.js` code:
 
 {% code title="src/App.js" %}
 ```jsx
 import React, { useState, useEffect } from "react";
 import { counterContract } from './contracts/counter';
-import { bootstrap, onAccountAvailable } from "@stakeordie/griptape.js";
+import {
+  bootstrap,
+  onAccountAvailable
+} from "@stakeordie/griptape.js";
 
 function App() {
 
@@ -226,19 +229,20 @@ function App() {
 
   return (
     <>
-      <h1>Hello, Contracts!</h1>
+      <h1>Hello, Transactions!</h1>
       <p>Is connected? {isConnected ? "Yes" : "No"}</p>
       <button
-        onClick={() => { bootstrap(); }}
+        onClick={() => bootstrap()}
         disabled={isConnected}>Bootstrap
       </button>
       <p>Your count is: {count}</p>
-      <button disabled={!isConnected} onClick={() => { incrementCount(); }}>{loading ? 'Loading...' : 'Increment by 1'}</button>
-      <button disabled={!isConnected} onClick={() => { getCount(); }}>Get count</button>
+      <button onClick={() => { incrementCount(); }}>{loading ? 'Loading...' : 'Increment by 1'}</button>
+      <button onClick={() => { getCount(); }}>Get count</button>
 
     </>
   );
 }
+
 export default App;
 ```
 {% endcode %}

@@ -1,16 +1,16 @@
 # Hello, Contracts
 
 {% hint style="info" %}
-Read the code for this tutorial [here](https://github.com/stakeordie/griptape-tutorials/tree/main/react/hello-contracts)
+Read the code for this tutorial [here](https://github.com/stakeordie/griptape-tutorials/tree/main/vue/hello-contracts)
 {% endhint %}
 
 ### Overview
 
-In this tutorial we are going to build an application, in which you will be able to connect to \[], learn to define a contract on \[], also interact with it in a simple way to increment a counter and finally get the value of the counter.
+In this tutorial we are going to build an application, in which you will be able to connect to Keplr, learn to define a contract, also interact with it in a simple way to increment a counter and finally get the value of the counter.
 
 ### Requirements
 
-For this tutorial you will need to have a Vue created. You can find how to do it <mark style="color:red;">here</mark>. Also, install your dependencies and install Griptape:
+For this tutorial you will need to have a Vue app created. You can find how to do it [here](https://cli.vuejs.org/guide/creating-a-project.html). Also, install your dependencies and install Griptape:
 
 ```bash
 # With npm
@@ -25,7 +25,7 @@ yarn && yarn add @stakeordie/griptape.js
 This tutorial consist of these steps:
 
 1. Grip you application
-2. Boostrap the application
+2. Bootstrap the application
 3. Create a contract definition
 4. Build the application
 
@@ -43,7 +43,7 @@ import {
 {% endcode %}
 
 {% hint style="info" %}
-<mark style="color:red;">You can check how to grip your app, Here</mark>
+You can check how to grip your app [here](hello-griptape.md#grip-an-application)
 {% endhint %}
 
 ### Bootstrap the application
@@ -51,14 +51,14 @@ import {
 Open up `App.vue` and add a button to bootstrap the application.
 
 {% hint style="info" %}
-<mark style="color:red;">You can check how to grip your app, Here</mark>
+You can check how to boostrap your app [here](hello-griptape.md#bootstrap-your-application)
 {% endhint %}
 
 ### Create a contract definition
 
-If we go to the `contracts/counter.js` file, you can see that the first thing we need to do is import `createContract` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
+If we go to the `src/contracts/counter.js` file, you can see that the first thing we need to do is import `createContract` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
 
-{% code title="contracts/counter.js" %}
+{% code title="src/contracts/counter.js" %}
 ```javascript
 import {
   createContract
@@ -89,7 +89,7 @@ const counterDef = {
 ```
 {% endcode %}
 
-Finally, we are going to create and export your `counter Contract` using the `createContact` API, which we are going to send...
+Finally, we are going to create and export our `counterContract` using the `createContact` API, which we are going to assign an id that can be the name you want `counter` in this case, we are also going to assign an address of instantiated contract on the blockchain and don't forget to assign the definition `counterDef`.
 
 {% code title="src/contracts/counter.js" %}
 ```js
@@ -132,9 +132,13 @@ export const counterContract = createContract({
 ```
 {% endcode %}
 
+{% hint style="info" %}
+Learn more about contract definitions [here](https://docs.griptapejs.com/guide/interacting-with-contracts.html#contract-definitions)
+{% endhint %}
+
 ### Build the application
 
-To Start Building Our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./contracts/counter'`. Then We Need to Import `Boostrap` and `onaccountavailable` from `"@ stakeordie / griptape.js"`.
+To start building our application, first we need to import the contract that we created a few steps before `countercontract` from `'./contracts/counter'`. Then we need to import `Bootstrap` and `onaccountavailable` from `"@ stakeordie / griptape.js"`.
 
 {% code title="src/App.vue" %}
 ```jsx
@@ -143,7 +147,7 @@ import { bootstrap } from '@stakeordie/griptape.js'
 ```
 {% endcode %}
 
-Now we are going to build the `getCount` function, which contains an asynchronous request to the contract `counterContract` in which it specifically requests the `getCount` query, once we have the response of this request, we can assign the value to `setCount` state.
+Now we are going to build the `getCount` function, which contains an asynchronous request to the contract `counterContract` in which it specifically requests the `getCount` query, once we have the response of this request, we can assign the value to `this.count` variable.
 
 {% code title="App.vue" %}
 ```jsx
@@ -154,7 +158,19 @@ async getCount() {
 ```
 {% endcode %}
 
-Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` Contract and returns the result of it.
+Let's add a \`onAccountAvailable\` to update the UI when the app is connected.
+
+```javascript
+export default {
+    mounted(){
+    onAccountAvailable(()=>{
+      this.isConnected= true;
+    })
+  }
+}
+```
+
+Then, we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` Contract and returns the result of it.
 
 {% code title="App.vue" %}
 ```jsx
@@ -166,33 +182,40 @@ async incrementCount() {
 ```
 {% endcode %}
 
-And adding \[] to our application we can see the full `src/App.js` code:
+And we can see the full `src/App.js` code:
 
 {% code title="App.js" %}
 ```jsx
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
-    <p>Your count is: {{ count }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="getCount">Get count</button>
-    <button @click="incrementCount">
-      <span v-if="loading">Loading...</span>
-      <span v-else>Increment by 1</span>
-    </button>
+    <h1>Hello, Contracts!</h1>
+      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+      <button
+        @click="connect"
+        :disabled="isConnected">
+        Bootstrap
+      </button>
+      <p>Your count is: {{count}}</p>
+      <button @click="incrementCount">{{loading ? 'Loading...' : 'Increment by 1'}}</button>
+      <button @click="getCount">Get count</button>
   </div>
 </template>
 
 <script>
 import { counterContract } from './contracts/counter';
-import { bootstrap } from '@stakeordie/griptape.js';
+import { bootstrap, onAccountAvailable } from '@stakeordie/griptape.js';
 
 export default {
   data: () => ({
     count: '',
-    loading: false
+    loading: false,
+    isConnected: false
   }),
-
+  mounted(){
+    onAccountAvailable(()=>{
+      this.isConnected= true;
+    })
+  },
   methods: {
     async getCount() {
       const response = await counterContract.getCount();

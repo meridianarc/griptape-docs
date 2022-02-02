@@ -1,16 +1,12 @@
 # Hello, Events
 
-{% hint style="info" %}
-Read the code for this tutorial [here](https://github.com/stakeordie/griptape-tutorials/tree/main/vue/hello-events)
-{% endhint %}
-
 ### Overview
 
-In this tutorial we are going to build a simple application that will allow you to connect to Keplr, you will also have to create a viewing key to be able to see your balance, just as we have done in other examples. But now we will use events to detect if you switch accounts, which is very important to know.
+a
 
 ### Requirements
 
-For this tutorial you will need to have a Vue app created. You can find how to do it [here](https://cli.vuejs.org/guide/creating-a-project.html). Also, install your dependencies and install Griptape:
+For this tutorial you will need to have a Vue app created. You can find how to do it <mark style="color:red;">here</mark>. Also, install your dependencies and install Griptape:
 
 ```bash
 # With npm
@@ -24,8 +20,8 @@ yarn && yarn add @stakeordie/griptape.js
 
 This tutorial consist of these steps:
 
-1. Grip your application
-2. Bootstrap the application
+1. Grip you application
+2. Boostrap the application
 3. Create a contract definition
 4. Build the application
 
@@ -43,7 +39,7 @@ import {
 {% endcode %}
 
 {% hint style="info" %}
-You can check how to grip your app [here](hello-griptape.md#grip-an-application)
+<mark style="color:red;">You can check how to grip your app, Here</mark>
 {% endhint %}
 
 ### Bootstrap the application
@@ -51,14 +47,10 @@ You can check how to grip your app [here](hello-griptape.md#grip-an-application)
 Open up `App.vue` and add a button to bootstrap the application.
 
 {% hint style="info" %}
-You can check how to grip your app [here](hello-griptape.md#bootstrap-your-application)
+<mark style="color:red;">You can check how to grip your app, Here</mark>
 {% endhint %}
 
 ### Create a contract definition
-
-In order to interact with a contract, you first need to create its definition. First we need to import `createContract` and `snip20Def` APIs from `@stakeordie/griptape.js`to our file `src/contracts/sscrt.js` Once that is done, we create the definition `sscrt` to which we are going to assign an id that can be the name you want, we are also going to assign an address of instantiated contract on the blockchain.
-
-Finally, Griptape has SNIP-20 compliant contract definitions, so you don't need to write it yourself.
 
 {% code title="src/contracts/sscrt.js" %}
 ```jsx
@@ -75,13 +67,9 @@ export const sscrt = createContract({
 ```
 {% endcode %}
 
-{% hint style="info" %}
-Learn more about contract definitions [here](https://docs.griptapejs.com/guide/interacting-with-contracts.html#contract-definitions)
-{% endhint %}
-
 ### Build the application
 
-To build this application we must import `boostrap`, `viewingKeyManager`, `onAccountAvailable`, `onAccountChange` and `coinConvert` APIs from `@stakeordie/griptape.js`, in addition to importing the definition of the contract `sscrt` that we have just created.
+To build this application, we must import `boostrap`, `viewingKeyManager`, `onAccountAvailable`, `onAccountChange` and `coinConvert` APIs from `@stakeordie/griptape.js`, in addition to importing the definition of the contract `sscrt` that we have just created.
 
 {% code title="src/App.vue" %}
 ```jsx
@@ -96,37 +84,31 @@ import { sscrt } from './contracts/sscrt';
 ```
 {% endcode %}
 
-Now, you may notice that we are using the event `onAccountAvailable`, where you can call the `viewingKeyManager` from our contract `sscrt` to know if we already have a viewing key. If that's the case, the key is assigned to `this.viewingKey` variable.&#x20;
+Now, you may notice that we are using the event `onAccountAvailable` <mark style="color:red;">it is...</mark>, where you can call the `viewingKeyManager` from our contract `sscrt` to know if we already have a viewing key. If that's the case, the key is assigned to `setViewingKey` state and the function `getBalance` is called, <mark style="color:red;">of which we will talk later.</mark>
 
 {% code title="src/App.vue" %}
 ```jsx
-onAccountAvailable(async () => {
-      this.isConnected = true;
+onAccountAvailable(() => {
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
-        await this.getBalance();
       }
     });
 ```
 {% endcode %}
 
-Now, in order to detect when changing the account, we have the event `onAccountChange`, then we show an alert that says it has changed the account, and we will assign it the false value to the `this.isAccountChanged` variable.
+Now, in order to detect when changing the account, we have the event `onAccountChange`, <mark style="color:red;">which serves ...</mark> Then we show an alert that says it has changed the account, and we will assign it the false value to the `setIsAccountChanged` state.
 
-{% code title="src/App.vue" %}
+{% code title="src/App.js" %}
 ```jsx
-onAccountChange(() => {
+nAccountChange(() => {
     alert("You have changed your account, please refresh this page.");
     this.isAccountChanged = false;
 });
 ```
 {% endcode %}
 
-### Viewing Keys
-
-To create a viewing key, we're going to make an asynchronous request to `sscrt.createViewingKey()`, if this doesn't return a response, the function ends. If it is the case and if it returns a response then, we parse the result.&#x20;
-
-Now we send our contract `sscrt` and our  `key`. We also need to check if a viewing key already exists so we can add it by `viewingKeyManager.add()` or replace it by `viewingKeyManager.set()`with the new key.
+viewinkeys...
 
 {% code title="src/App.vue" %}
 ```jsx
@@ -153,12 +135,12 @@ Now we send our contract `sscrt` and our  `key`. We also need to check if a view
 {% endcode %}
 
 {% hint style="info" %}
-Learn more about viewing keys [here](hello-viewing-keys.md)
+to see viewing keys here
 {% endhint %}
 
 After having our viewing key, we want to see our balance. For that reason, we create the function `getBalance`, within the function, we can see that we make an asynchronous request to obtain the value of our viewing key.
 
-If we do not have a viewing key the function ends, but if this is the case, where we have a viewing key, then we went to consult our amount In `sscrt.getBalance()`, then we convert our `amount` with the function `coinConvert` where ... and finally we assign the value of `balance` to the variable `this.balance`.
+If we do not have a viewing key the function ends, but if this is the case, where we have a viewing key, then we went to consult our amount In `sscrt.getBalance()`, then we convert our `amount` with the function `coinConvert` where ... and finally we assign the value of `balance` the state `setCoins`.
 
 {% code title="src/App.vue" %}
 ```jsx
@@ -177,20 +159,23 @@ Finally, joining all our code we have the full application.
 ```jsx
 <template>
   <div>
-     <h1>Hello, Events!</h1>
-      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
-      <button
-        @click="connect"
-        :disabled="isConnected">
-        Bootstrap
-      </button>
-      <p>Your balance is: {{balance}}</p>
-      <button @click="createViewingKey">{{loading ? 'Loading...' : 'Create Viewing Key'}}</button>
-      <button :hidden="isAccountChanged" @click="reload">Refresh</button>
+    <h1>Hello, Griptape!</h1>
+    <p>Your viewing key is: {{ viewingKey }}</p>
+    <p>Your balance is: {{ balance }}</p>
+    <button @click="connect">Connect</button>
+    <button @click="createViewingKey">
+      <span v-if="loading">Loading...</span>
+      <span v-else>Create Viewing Key</span>
+    </button>
+    <button @click="getBalance">Get balance</button>
+    <br>
+    <br>
+    <button :hidden="isAccountChanged" @click="reload">Refresh</button>
   </div>
 </template>
 
 <script>
+
 import {
   viewingKeyManager,
   coinConvert,
@@ -207,17 +192,14 @@ export default {
       balance: '',
       loading: false,
       isAccountChanged:true,
-      isConnected:false
     }
   },
 
   mounted() {
-    onAccountAvailable(async () => {
-      this.isConnected = true;
+    onAccountAvailable(() => {
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
-        await this.getBalance();
       }
     });
     onAccountChange(() => {
@@ -235,12 +217,9 @@ export default {
 
       try {
         const result = await sscrt.createViewingKey();
-
         if (result.isEmpty()) return;
-
         const { create_viewing_key: { key } } = result.parse();
         const currentKey = viewingKeyManager.get(sscrt.at);
-        
         if (currentKey) {
           viewingKeyManager.set(sscrt, key);
         } else {
@@ -259,9 +238,7 @@ export default {
 
     async getBalance() {
       const key = viewingKeyManager.get(sscrt.at);
-      
       if (!key) return;
-
       const { balance: { amount } } = await sscrt.getBalance();
       const balance = coinConvert(amount, '6', 'human');
       this.balance = balance;
@@ -269,4 +246,5 @@ export default {
   }
 }
 </script>
+
 ```

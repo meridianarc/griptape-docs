@@ -25,7 +25,7 @@ yarn && yarn add @stakeordie/griptape.js
 This tutorial consist of these steps:
 
 1. Grip you application
-2. Bootstrap the application
+2. Boostrap the application
 3. Create a contract definition
 4. Build the application
 
@@ -134,7 +134,7 @@ export const counterContract = createContract({
 
 ### Build the application
 
-To start building our application, first we need to import the contract that we created a few steps before `countercontract` from `'./contracts/counter'`. Then we need to import `Bootstrap` and `onaccountavailable` from `"@ stakeordie / griptape.js"`.
+To Start Building Our Application, first we need to import the contract that we created a few steps before `countercontract` from `'./contracts/counter'`. Then We Need to Import `Boostrap` and `onaccountavailable` from `"@ stakeordie / griptape.js"`.
 
 {% code title="src/App.vue" %}
 ```jsx
@@ -154,19 +154,7 @@ async getCount() {
 ```
 {% endcode %}
 
-Let's add a \`onAccountAvailable\` to update the UI when the app is connected.
-
-```javascript
-export default {
-    mounted(){
-    onAccountAvailable(()=>{
-      this.isConnected= true;
-    })
-  }
-}
-```
-
-Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` contract and returns the result of it.
+Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` Contract and returns the result of it.
 
 {% code title="App.vue" %}
 ```jsx
@@ -184,34 +172,27 @@ And adding \[] to our application we can see the full `src/App.js` code:
 ```jsx
 <template>
   <div>
-    <h1>Hello, Contracts!</h1>
-      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
-      <button
-        @click="connect"
-        :disabled="isConnected">
-        Bootstrap
-      </button>
-      <p>Your count is: {{count}}</p>
-      <button @click="incrementCount">{{loading ? 'Loading...' : 'Increment by 1'}}</button>
-      <button @click="getCount">Get count</button>
+    <h1>Hello, Griptape!</h1>
+    <p>Your count is: {{ count }}</p>
+    <button @click="connect">Connect</button>
+    <button @click="getCount">Get count</button>
+    <button @click="incrementCount">
+      <span v-if="loading">Loading...</span>
+      <span v-else>Increment by 1</span>
+    </button>
   </div>
 </template>
 
 <script>
 import { counterContract } from './contracts/counter';
-import { bootstrap, onAccountAvailable } from '@stakeordie/griptape.js';
+import { bootstrap } from '@stakeordie/griptape.js';
 
 export default {
   data: () => ({
     count: '',
-    loading: false,
-    isConnected: false
+    loading: false
   }),
-  mounted(){
-    onAccountAvailable(()=>{
-      this.isConnected= true;
-    })
-  },
+
   methods: {
     async getCount() {
       const response = await counterContract.getCount();

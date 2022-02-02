@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this tutorial we show you how to create Permits for authenticating a SNIP-20 contract. When you finish this Hello Permit tutorial you will have a web app connected to `pulsar-2` with the ability to query the `sSCRT` balance using permits. Creating permits and connecting the app to `Keplr`.
+In this tutorial we show you how to create Permits for authenticating a SNIP-20 contract.When you finish this Hello Permit tutorial you will have a web app connected to `pulsar-2` with the ability to query the `sSCRT` balance using permits. Creating permits and connecting the app to `Keplr`.
 
 
 
@@ -10,7 +10,7 @@ In this tutorial we show you how to create Permits for authenticating a SNIP-20 
 
 In order to go through this tutorial you'll need to have a Vue app created. You can find how to do it [here](https://cli.vuejs.org/guide/creating-a-project.html). Also, install your dependencies and install Griptape.
 
-```typescript
+```
 # With npm
 npm install && npm install @stakeordie/griptape.js
 
@@ -192,16 +192,14 @@ export default {
     return {
       isPermit: '',
       loadingBalance: '',
-      loading: false,
-      isConnected: false
+      loading: false
     }
   },
   mounted() {
     onAccountAvailable(() => {
       this.isPermit = hasPermit(sscrt);
-      this.isConnected = true;
     })
-  }
+  },
 }
 ```
 
@@ -292,13 +290,12 @@ Finally just show the information:
 ```html
 <template>
   <div>
-      <h1>Hello, Permits!</h1>
-      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
-      <button :disabled="isConnected" @click="connect">Bootstrap</button>
+      <h1>Hello, Griptape!</h1>
       <p>You have permit?: {{isPermit ? 'Yes' : 'No'}}</p>
       <p>Your balance is: {{balance}}</p>
-      <button :disabled="!isConnected" @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
-      <button :disabled="!isPermit" @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
+      <button @click="connect">Connect</button>
+      <button @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
+      <button @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
   </div>
 </template>
 ```
@@ -308,13 +305,12 @@ Finally just show the information:
 ```javascript
 <template>
   <div>
-      <h1>Hello, Permits!</h1>
-      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
-      <button :disabled="isConnected" @click="connect">Bootstrap</button>
+      <h1>Hello, Griptape!</h1>
       <p>You have permit?: {{isPermit ? 'Yes' : 'No'}}</p>
       <p>Your balance is: {{balance}}</p>
-      <button :disabled="!isConnected" @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
-      <button :disabled="!isPermit" @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
+      <button @click="connect">Connect</button>
+      <button @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
+      <button @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
   </div>
 </template>
 
@@ -333,15 +329,13 @@ export default {
     return {
       isPermit: '',
       loadingBalance: '',
-      loading: false,
-      isConnected: false
+      loading: false
     }
   },
 
   mounted() {
     onAccountAvailable(() => {
       this.isPermit = hasPermit(sscrt);
-      this.isConnected = true;
     })
   },
 

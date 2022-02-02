@@ -132,12 +132,14 @@ Let's get our hands dirty a bit! It's time to actually show something interestin
 //all griptape.js imports here...
 
 export  default {
-	data() {
-		return {
-			address:  '',
-			balance:  ''
-		}
-	// ...methods
+  data() {
+    return {
+      address: '',
+      balance: '',
+      isConnected: false
+    }
+  }
+  // ...methods
 },
 ```
 
@@ -162,11 +164,12 @@ Now, we are going to add one of our events API `onAccountAvailable` to get the b
 export default{
 	//... data
 	mounted() {
-		onAccountAvailable(() => {
-			this.address = getAddress();
-			this.setBalance();
-		});
-	},
+          onAccountAvailable(() => {
+            this.isConnected=true;
+            this.address = getAddress();
+            this.setBalance();
+          });
+        },
 	//... methods
 }
 ```
@@ -175,12 +178,13 @@ Finally just show the information.
 
 ```html
 <template>
-	<div>
-		<h1>Hello, Griptape!</h1>
-		<button @click="connect">Connect</button>
-		<p>Your address is: {{ address }}</p>
-		<p>You balance is: {{ balance }}</p>
-	</div>
+  <div>
+    <h1>Hello, Griptape!</h1>
+    <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+    <button @click="connect">Connect</button>
+    <p>Your address is: {{ address }}</p>
+    <p>You balance is: {{ balance }}</p>
+  </div>
 </template>
 ```
 

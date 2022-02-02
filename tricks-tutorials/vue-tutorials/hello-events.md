@@ -89,6 +89,7 @@ Now, you may notice that we are using the event `onAccountAvailable` <mark style
 {% code title="src/App.vue" %}
 ```jsx
 onAccountAvailable(() => {
+      this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
@@ -101,7 +102,7 @@ Now, in order to detect when changing the account, we have the event `onAccountC
 
 {% code title="src/App.js" %}
 ```jsx
-nAccountChange(() => {
+onAccountChange(() => {
     alert("You have changed your account, please refresh this page.");
     this.isAccountChanged = false;
 });
@@ -159,23 +160,20 @@ Finally, joining all our code we have the full application.
 ```jsx
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
-    <p>Your viewing key is: {{ viewingKey }}</p>
-    <p>Your balance is: {{ balance }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="createViewingKey">
-      <span v-if="loading">Loading...</span>
-      <span v-else>Create Viewing Key</span>
-    </button>
-    <button @click="getBalance">Get balance</button>
-    <br>
-    <br>
-    <button :hidden="isAccountChanged" @click="reload">Refresh</button>
+     <h1>Hello, Events!</h1>
+      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+      <button
+        @click="connect"
+        :disabled="isConnected">
+        Bootstrap
+      </button>
+      <p>Your balance is: {{balance}}</p>
+      <button @click="createViewingKey">{{loading ? 'Loading...' : 'Create Viewing Key'}}</button>
+      <button :hidden="isAccountChanged" @click="reload">Refresh</button>
   </div>
 </template>
 
 <script>
-
 import {
   viewingKeyManager,
   coinConvert,
@@ -192,14 +190,17 @@ export default {
       balance: '',
       loading: false,
       isAccountChanged:true,
+      isConnected:false
     }
   },
 
   mounted() {
-    onAccountAvailable(() => {
+    onAccountAvailable(async () => {
+      this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
+        await this.getBalance();
       }
     });
     onAccountChange(() => {
@@ -216,15 +217,27 @@ export default {
       this.loading = true;
 
       try {
+        // Execute `create_viewing_key` message on sscrt contract.
         const result = await sscrt.createViewingKey();
+
+        // Validate if response is empty.
         if (result.isEmpty()) return;
+
+        // In case is not empty, parse the result.
         const { create_viewing_key: { key } } = result.parse();
+
+        // Check if there's already a viewing key.
         const currentKey = viewingKeyManager.get(sscrt.at);
+
+        // If there is, update the viewing key using the `set`
+        // function. Otherwise, add it.
         if (currentKey) {
           viewingKeyManager.set(sscrt, key);
         } else {
           viewingKeyManager.add(sscrt, key);
         }
+
+        // Update UI.
         this.viewingKey = key;
       } catch (e) {
         // ignore for now
@@ -237,8 +250,13 @@ export default {
     },
 
     async getBalance() {
+      // Get the viewing key from the manager.
       const key = viewingKeyManager.get(sscrt.at);
+
+      // Do nothing if we don't have a viewing key.
       if (!key) return;
+
+      // In case we have a viewing key, fetch the balance.
       const { balance: { amount } } = await sscrt.getBalance();
       const balance = coinConvert(amount, '6', 'human');
       this.balance = balance;

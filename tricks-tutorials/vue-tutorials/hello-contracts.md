@@ -154,6 +154,18 @@ async getCount() {
 ```
 {% endcode %}
 
+Let's add a \`onAccountAvailable\` to update the UI when the app is connected.
+
+```javascript
+export default {
+    mounted(){
+    onAccountAvailable(()=>{
+      this.isConnected= true;
+    })
+  }
+}
+```
+
 Now we are going to create the `incrementCount` function that asynchronously makes the `incrementCount` request to the `counterContract` contract and returns the result of it.
 
 {% code title="App.vue" %}
@@ -172,27 +184,34 @@ And adding \[] to our application we can see the full `src/App.js` code:
 ```jsx
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
-    <p>Your count is: {{ count }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="getCount">Get count</button>
-    <button @click="incrementCount">
-      <span v-if="loading">Loading...</span>
-      <span v-else>Increment by 1</span>
-    </button>
+    <h1>Hello, Contracts!</h1>
+      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+      <button
+        @click="connect"
+        :disabled="isConnected">
+        Bootstrap
+      </button>
+      <p>Your count is: {{count}}</p>
+      <button @click="incrementCount">{{loading ? 'Loading...' : 'Increment by 1'}}</button>
+      <button @click="getCount">Get count</button>
   </div>
 </template>
 
 <script>
 import { counterContract } from './contracts/counter';
-import { bootstrap } from '@stakeordie/griptape.js';
+import { bootstrap, onAccountAvailable } from '@stakeordie/griptape.js';
 
 export default {
   data: () => ({
     count: '',
-    loading: false
+    loading: false,
+    isConnected: false
   }),
-
+  mounted(){
+    onAccountAvailable(()=>{
+      this.isConnected= true;
+    })
+  },
   methods: {
     async getCount() {
       const response = await counterContract.getCount();

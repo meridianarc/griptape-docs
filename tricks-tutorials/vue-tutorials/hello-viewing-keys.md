@@ -26,16 +26,16 @@ This tutorial consist of these steps.
 
 1. Grip an application.
 2. Creating contract definition.
-3. Import neccesary Griptape APIs and Contract Definition.
+3. Import necessary Griptape APIs and Contract Definition.
 4. Bootstrap app.
 5. Creating Permit.
 6. Get Balance.
 
 > Checkout the full example in our repo [here](https://github.com/stakeordie/griptape-tutorials/tree/main/vue/hello-viewing-keys)
 
-## Grip an application
+### Grip an application
 
-As you may know the first thing that we need to do is **Grip** our application, in this case our app is in `src/main.js`. This is how our `main.js` should look like.
+As you may know the first thing that we need to do is _grip_ our application, in this case our app is in `src/main.js`. This is how our `main.js` should look like.
 
 ```typescript
 import { createApp } from 'vue'
@@ -134,17 +134,20 @@ import { sscrt } from  './contracts/sscrt';
 
 Before bootstrapping our app, we are going to define what our data object should look like and use one of our events APIs, `onAccountAvailable` explained in tutorials before (more info in `Hello, Events`).
 
-```typescript
+```javascript
 export default {
   data() {
     return {
       viewingKey: '',
       balance: '',
-      loading: false
+      loading: false,
+      isConnected: false
     }
   },
+
   mounted() {
     onAccountAvailable(() => {
+      this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
@@ -243,33 +246,35 @@ Finally just show the information.
 ```html
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
+    <h1>Hello, Viewing Keys!</h1>
+    <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+    <button @click="connect">Bootstrap</button>
     <p>Your viewing key is: {{ viewingKey }}</p>
     <p>Your balance is: {{ balance }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="createViewingKey">
+    <button :disabled="!isConnected"  @click="createViewingKey">
       <span v-if="loading">Loading...</span>
-      <span v-else>Create Viewing Key</span>
+      <span  v-else>Create Viewing Key</span>
     </button>
-    <button @click="getBalance">Get balance</button>
+    <button :disabled="!viewingKey" @click="getBalance">Get balance</button>
   </div>
 </template>
 ```
 
 ### Final view of `src/App.vue`
 
-```typescript
+```javascript
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
+    <h1>Hello, Viewing Keys!</h1>
+    <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+    <button @click="connect">Bootstrap</button>
     <p>Your viewing key is: {{ viewingKey }}</p>
     <p>Your balance is: {{ balance }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="createViewingKey">
+    <button :disabled="!isConnected"  @click="createViewingKey">
       <span v-if="loading">Loading...</span>
-      <span v-else>Create Viewing Key</span>
+      <span  v-else>Create Viewing Key</span>
     </button>
-    <button @click="getBalance">Get balance</button>
+    <button :disabled="!viewingKey" @click="getBalance">Get balance</button>
   </div>
 </template>
 
@@ -287,12 +292,14 @@ export default {
     return {
       viewingKey: '',
       balance: '',
-      loading: false
+      loading: false,
+      isConnected: false
     }
   },
 
   mounted() {
     onAccountAvailable(() => {
+      this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;

@@ -11,7 +11,7 @@ description: >-
 When you finish this Hello Griptape you will have a web app connected to `pulsar-2` with the ability to get the user's balance and address, as well as a button to connect in case the user hasn't connected yet.
 
 {% hint style="info" %}
-info Checkout the full example in our repo [here](https://github.com/stakeordie/griptape-tutorials/tree/main/vue/hello-griptape)
+Checkout the full example in our repo [here](https://github.com/stakeordie/griptape-tutorials/tree/main/vue/hello-griptape)
 {% endhint %}
 
 ## Requirements
@@ -50,7 +50,7 @@ import {
 We assumed you are using **Keplr** as wallet. Griptape has only support with Keplr at this point. The Griptape team is working looking froward to support as many wallets as the Cosmos Ecosystem requires
 {% endhint %}
 
-Now, as you may know we need a rest url to connect to, let's add it.
+Now, as you may know we need a REST URL to connect to, let's add it.
 
 ```javascript
 const  restUrl = 'https://api.pulsar.griptapejs.com';
@@ -79,7 +79,7 @@ gripApp(restUrl, provider, runApp);
 
 ## Bootstrap your application
 
-Now that we have your gripped our application we need to **bootstrap** it. Bootstrap creates a `signing client` able to encrypt and decrypt transactions. If don't **bootstrap** the app we won't be able to get the wallet address and execute messages.
+Now that we have your gripped our application we need to **bootstrap** it. Bootstrap creates a `signing client` able to encrypt and decrypt transactions. If you don't **bootstrap** the app we won't be able to get the wallet address and execute messages.
 
 Now on, let's move to start working in `src/App.vue`. As our first step we need to import `bootstrap` api from `@stakeordie/griptape.js`. Copy the example below.
 
@@ -126,22 +126,24 @@ import {
 
 ## Get and render the user's address and balance
 
-Let's get our hand dirty a bit, it's time to actually show something interesting for example the balance and address of the wallet. First let's set our data structure.
+Let's get our hands dirty a bit! It's time to actually show something interesting for example the balance and address of the wallet. First let's set our data structure.
 
 ```javascript
 //all griptape.js imports here...
 
 export  default {
-	data() {
-		return {
-			address:  '',
-			balance:  ''
-		}
-	// ...methods
+  data() {
+    return {
+      address: '',
+      balance: '',
+      isConnected: false
+    }
+  }
+  // ...methods
 },
 ```
 
-Next, let's create a re-usable function to get the native balance , this function should in the `methods` object.
+Next, let's create a re-usable function to get the native balance, this function should be in the `methods` object.
 
 ```javascript
 export default{
@@ -162,11 +164,12 @@ Now, we are going to add one of our events API `onAccountAvailable` to get the b
 export default{
 	//... data
 	mounted() {
-		onAccountAvailable(() => {
-			this.address = getAddress();
-			this.setBalance();
-		});
-	},
+          onAccountAvailable(() => {
+            this.isConnected=true;
+            this.address = getAddress();
+            this.setBalance();
+          });
+        },
 	//... methods
 }
 ```
@@ -175,12 +178,13 @@ Finally just show the information.
 
 ```html
 <template>
-	<div>
-		<h1>Hello, Griptape!</h1>
-		<button @click="connect">Connect</button>
-		<p>Your address is: {{ address }}</p>
-		<p>You balance is: {{ balance }}</p>
-	</div>
+  <div>
+    <h1>Hello, Griptape!</h1>
+    <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+    <button @click="connect">Connect</button>
+    <p>Your address is: {{ address }}</p>
+    <p>You balance is: {{ balance }}</p>
+  </div>
 </template>
 ```
 

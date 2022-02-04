@@ -10,7 +10,7 @@ In this tutorial we show you how to create [viewing keys](https://scrt.network/a
 
 In order to go through this tutorial you'll need to have a Vue app created. You can find how to do it [here](https://cli.vuejs.org/guide/creating-a-project.html). Also, install your dependencies and install Griptape.
 
-```
+```typescript
 # With npm
 npm install && npm install @stakeordie/griptape.js
 
@@ -26,18 +26,18 @@ This tutorial consist of these steps.
 
 1. Grip an application.
 2. Creating contract definition.
-3. Import neccesary Griptape APIs and Contract Definition.
+3. Import necessary Griptape APIs and Contract Definition.
 4. Bootstrap app.
-5. Creating Permit .
+5. Creating Permit.
 6. Get Balance.
 
 > Checkout the full example in our repo [here](https://github.com/stakeordie/griptape-tutorials/tree/main/vue/hello-viewing-keys)
 
-## Grip an application
+### Grip an application
 
-As you may know the first thing that we need to do is **Grip** our application, in this case our app is in `src/main.js`. This is how our `main.js` should look like.
+As you may know the first thing that we need to do is _grip_ our application, in this case our app is in `src/main.js`. This is how our `main.js` should look like.
 
-```js
+```typescript
 import { createApp } from 'vue'
 import App from './App.vue'
 import {
@@ -67,7 +67,7 @@ mkdir contracts && touch ./contracts/sscrt.js
 
 Now let's move and start working in `src/contracts/sscrt.js`, we need to import some APIs from Griptape.
 
-```js
+```typescript
 import {
   createContract,
   snip20Def
@@ -83,7 +83,7 @@ Brief explanation of Griptape APIs imported.
 
 Finally we just need to create our contract and export it.
 
-```js
+```typescript
 export const sscrt = createContract({
   id: 'sscrt',
   at: 'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
@@ -101,7 +101,7 @@ Brief explanation of `createContract` API. This function receives a obj with thr
 
 This is what your `src/contracts/sscrt.js` should look like.
 
-```js
+```typescript
 import {
   createContract,
   snip20Def
@@ -118,7 +118,7 @@ export const sscrt = createContract({
 
 Okay, now that we have **Grip** our app and created our contract definition, let's import some APIs in `src/App.vue`.
 
-```js
+```typescript
 import {
 	viewingKeyManager,
 	coinConvert,
@@ -132,19 +132,22 @@ import { sscrt } from  './contracts/sscrt';
 
 ## Bootstrap app
 
-Before boostrapping our app, we are going to define what our data object should look like and use one of our events APIs, `onAccountAvailable` explained in tutorials before (more info in `Hello, Events`).
+Before bootstrapping our app, we are going to define what our data object should look like and use one of our events APIs, `onAccountAvailable` explained in tutorials before (more info in `Hello, Events`).
 
-```js
+```javascript
 export default {
   data() {
     return {
       viewingKey: '',
       balance: '',
-      loading: false
+      loading: false,
+      isConnected: false
     }
   },
+
   mounted() {
     onAccountAvailable(() => {
+      this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
@@ -158,7 +161,7 @@ export default {
 
 Now, let's create a simple function to connect the app.
 
-```js
+```typescript
 export default {
 	// ...data
 	//...mounted
@@ -176,7 +179,7 @@ With Griptape creating a permit is very easy, `viewingKeyManager` is an API that
 
 We are going to create a simple util function to create a viewing key. like the following.
 
-```js
+```typescript
 export default {
 	// ...data
 	//...mounted
@@ -214,9 +217,9 @@ export default {
 
 ## Get Balance
 
-In order to get the balance of a SNIP-20 you must provide a viewing key and as you see in the example below we don't pass in any viewing key, Griptape already does it internally, like magic !
+In order to get the balance of a SNIP-20 you must provide a viewing key and as you see in the example below we don't pass in any viewing key, Griptape already does it internally, like magic!
 
-```js
+```typescript
 export default {
 	// ...data
 	//...mounted
@@ -243,33 +246,35 @@ Finally just show the information.
 ```html
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
+    <h1>Hello, Viewing Keys!</h1>
+    <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+    <button @click="connect">Bootstrap</button>
     <p>Your viewing key is: {{ viewingKey }}</p>
     <p>Your balance is: {{ balance }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="createViewingKey">
+    <button :disabled="!isConnected"  @click="createViewingKey">
       <span v-if="loading">Loading...</span>
-      <span v-else>Create Viewing Key</span>
+      <span  v-else>Create Viewing Key</span>
     </button>
-    <button @click="getBalance">Get balance</button>
+    <button :disabled="!viewingKey" @click="getBalance">Get balance</button>
   </div>
 </template>
 ```
 
 ### Final view of `src/App.vue`
 
-```js
+```javascript
 <template>
   <div>
-    <h1>Hello, Griptape!</h1>
+    <h1>Hello, Viewing Keys!</h1>
+    <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+    <button @click="connect">Bootstrap</button>
     <p>Your viewing key is: {{ viewingKey }}</p>
     <p>Your balance is: {{ balance }}</p>
-    <button @click="connect">Connect</button>
-    <button @click="createViewingKey">
+    <button :disabled="!isConnected"  @click="createViewingKey">
       <span v-if="loading">Loading...</span>
-      <span v-else>Create Viewing Key</span>
+      <span  v-else>Create Viewing Key</span>
     </button>
-    <button @click="getBalance">Get balance</button>
+    <button :disabled="!viewingKey" @click="getBalance">Get balance</button>
   </div>
 </template>
 
@@ -287,12 +292,14 @@ export default {
     return {
       viewingKey: '',
       balance: '',
-      loading: false
+      loading: false,
+      isConnected: false
     }
   },
 
   mounted() {
     onAccountAvailable(() => {
+      this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;

@@ -29,7 +29,7 @@ Once you have a front-end application ready, install Griptape.js by running one 
 
 ```typescript
 # Using yarn
-yarn add @stakeordie/griptape.js
+https://app.gitbook.com/o/GLSgx73nAdKsmMXmSr2x/s/4NbLjav05P7TMFZTw3KC/getting-started
 
 # or npm
 npm install @stakeordie/griptape.js

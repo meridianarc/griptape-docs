@@ -4,20 +4,20 @@ Griptape has SNIP-20 and SNIP-721 compliant contract definitions, so you don't n
 
 ```typescript
 import {
-  createContract,
+  createContractClient,
   Snip20Contract
   Snip721Contract,
   snip20Def,
   snip721Def,
 } from '@stakeordie/griptape.js'
 
-const anSnip20 = createContract<Snip20Contract>({
+const anSnip20 = createContractClient<Snip20Contract>({
   id: '...',
   at: '...',
   definition: snip20Def
 });
 
-const anSnip721 = createContract<Snip721Contract>({
+const anSnip721 = createContractClient<Snip721Contract>({
   id: '...',
   at: '...',
   definition: snip721Def

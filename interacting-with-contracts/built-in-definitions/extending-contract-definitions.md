@@ -16,7 +16,7 @@ const myDef = { ... };
 // `Snip20Def` plus all queries and messages from `myDef`
 const extendedDef = extendContract(snip20Def, myDef);
 
-createContract({
+createContractClient({
   ...
   definition: extendedDef
 });

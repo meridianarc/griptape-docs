@@ -6,7 +6,7 @@
 * [🗞 Interacting with Contracts](interacting-with-contracts/README.md)
   * [Contract Definitions](interacting-with-contracts/contract-definitions/README.md)
     * [More on Definitions](interacting-with-contracts/contract-definitions/more-on-definitions.md)
-  * [Creating Contracts](interacting-with-contracts/creating-contracts.md)
+  * [Creating Contract Clients](interacting-with-contracts/creating-contract-clients.md)
   * [Built-In Definitions](interacting-with-contracts/built-in-definitions/README.md)
   * [Extending Contract Definitions](interacting-with-contracts/built-in-definitions/extending-contract-definitions.md)
   * [Contract Registry](interacting-with-contracts/contract-registry.md)

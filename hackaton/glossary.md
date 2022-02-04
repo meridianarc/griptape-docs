@@ -4,18 +4,14 @@ description: We will be adding to this page throughout the month.
 
 # Glossary
 
-
-
-
-
-Contracts
+### Contracts
 
 * Auctions-Factory
   * code\_id: 2496
 * Auctions
   * code\_id: 2760
 
-Tokens
+### Tokens
 
 * secretSCRT
   * label: sSCRT

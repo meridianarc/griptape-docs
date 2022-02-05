@@ -69,14 +69,14 @@ Now let's move and start working in `src/contracts/sscrt.js`, we need to import 
 
 ```typescript
 import {
-  createContract,
+  createContractClient,
   snip20Def
 } from '@stakeordie/griptape.js';
 ```
 
 Brief explanation of Griptape APIs imported.
 
-* **createContract :** Help us create an object based on a definition passed in as a parameter.
+* **createContractClient :** Help us create an object based on a definition passed in as a parameter.
 * **snip20Def :** Is a pre-defined contract definition following Secret Network [reference](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md).
 
 ### Creating contract
@@ -84,14 +84,14 @@ Brief explanation of Griptape APIs imported.
 Finally we just need to create our contract and export it.
 
 ```typescript
-export const sscrt = createContract({
+export const sscrt = createContractClient({
   id: 'sscrt',
   at: 'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
   definition: snip20Def
 });
 ```
 
-Brief explanation of `createContract` API. This function receives a obj with three values.
+Brief explanation of `createContractClient` API. This function receives a obj with three values.
 
 * **id :** Custom id you want to called the contract, is up to you but shouldn't be two or more contracts with same ids, this will cause conflicts.
 * **at :** Contract address to use.
@@ -103,11 +103,11 @@ This is what your `src/contracts/sscrt.js` should look like.
 
 ```typescript
 import {
-  createContract,
+  createContractClient,
   snip20Def
 } from '@stakeordie/griptape.js';
 
-export const sscrt = createContract({
+export const sscrt = createContractClient({
   id: 'sscrt',
   at: 'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
   definition: snip20Def
@@ -141,18 +141,23 @@ export default {
       viewingKey: '',
       balance: '',
       loading: false,
-      isConnected: false
+      isConnected: false,
+      removeOnAccountAvailable:null
     }
   },
 
   mounted() {
-    onAccountAvailable(() => {
+    this.removeOnAccountAvailable = onAccountAvailable(() => {
       this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
       }
     });
+  },
+
+  unmounted(){
+    this.removeOnAccountAvailable();
   }
 }
 ```
@@ -293,18 +298,22 @@ export default {
       viewingKey: '',
       balance: '',
       loading: false,
-      isConnected: false
+      isConnected: false,
+      removeOnAccountAvailable:null
     }
   },
 
-  mounted() {
-    onAccountAvailable(() => {
+ mounted() {
+    this.removeOnAccountAvailable = onAccountAvailable(() => {
       this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
       }
     });
+  },
+  unmounted(){
+    this.removeOnAccountAvailable();
   },
 
   methods: {

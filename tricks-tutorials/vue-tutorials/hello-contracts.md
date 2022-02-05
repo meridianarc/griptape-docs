@@ -56,12 +56,12 @@ You can check how to boostrap your app [here](hello-griptape.md#bootstrap-your-a
 
 ### Create a contract definition
 
-If we go to the `src/contracts/counter.js` file, you can see that the first thing we need to do is import `createContract` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
+If we go to the `src/contracts/counter.js` file, you can see that the first thing we need to do is import `createContractClient` from `@stakeordie/griptape.js`. Thus begins the definition of our contract.
 
 {% code title="src/contracts/counter.js" %}
 ```javascript
 import {
-  createContract
+  createContractClient
 } from '@stakeordie/griptape.js';
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ import {
 After that, we need to create the contract definition called `counterDef` the contract definition includes the `messages` part, which is everything we are going to write in the blockchain and the `queries` part, basically everything we are going to read from the blockchain.
 
 {% code title="src/contracts/counter.js" %}
-```js
+```javascript
 const counterDef = {
   messages: {
     incrementCount() {
@@ -89,11 +89,11 @@ const counterDef = {
 ```
 {% endcode %}
 
-Finally, we are going to create and export our `counterContract` using the `createContact` API, which we are going to assign an id that can be the name you want `counter` in this case, we are also going to assign an address of instantiated contract on the blockchain and don't forget to assign the definition `counterDef`.
+Finally, we are going to create and export our `counterContract` using the `createContactClient` API, which we are going to assign an id that can be the name you want `counter` in this case, we are also going to assign an address of instantiated contract on the blockchain and don't forget to assign the definition `counterDef`.
 
 {% code title="src/contracts/counter.js" %}
 ```js
-export const counterContract = createContract({
+export const counterContract = createContractClient({
   id: 'counter',
   at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
   definition: counterDef
@@ -105,7 +105,7 @@ Once we have performed the steps above, the code should be seen as follows:
 
 {% code title="src/contracts/counter.js" %}
 ```jsx
-import { createContract } from '@stakeordie/griptape.js';
+import { createContractClient } from '@stakeordie/griptape.js';
 
 const counterDef = {
   messages: {
@@ -123,7 +123,7 @@ const counterDef = {
   }
 };
 
-export const counterContract = createContract({
+export const counterContract = createContractClient({
   id: 'counter',
   at: 'secret1vk6j69amm37zkhgqgtvjkymjeee4yhxvmmyxja',
   definition: counterDef
@@ -162,11 +162,14 @@ Let's add a \`onAccountAvailable\` to update the UI when the app is connected.
 
 ```javascript
 export default {
-    mounted(){
-    onAccountAvailable(()=>{
+  mounted(){
+    this.removeOnAccountAvailable = onAccountAvailable(()=>{
       this.isConnected= true;
     })
-  }
+  },
+  unmounted(){
+    this.removeOnAccountAvailable()
+  },
 }
 ```
 
@@ -209,12 +212,16 @@ export default {
   data: () => ({
     count: '',
     loading: false,
-    isConnected: false
+    isConnected: false,
+    removeOnAccountAvailable:null
   }),
   mounted(){
-    onAccountAvailable(()=>{
+    this.removeOnAccountAvailable = onAccountAvailable(()=>{
       this.isConnected= true;
     })
+  },
+  unmounted(){
+    this.removeOnAccountAvailable()
   },
   methods: {
     async getCount() {

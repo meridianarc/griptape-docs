@@ -136,7 +136,8 @@ export  default {
     return {
       address: '',
       balance: '',
-      isConnected: false
+      isConnected: false,
+      removeOnAccountAvailable: null, 
     }
   }
   // ...methods
@@ -163,12 +164,16 @@ Now, we are going to add one of our events API `onAccountAvailable` to get the b
 ```javascript
 export default{
 	//... data
-	mounted() {
-          onAccountAvailable(() => {
+        mounted() {
+          this.removeOnAccountAvailable = onAccountAvailable(() => {
             this.isConnected=true;
             this.address = getAddress();
             this.setBalance();
           });
+        },
+      
+        unmounted(){
+          this.removeOnAccountAvailable();
         },
 	//... methods
 }

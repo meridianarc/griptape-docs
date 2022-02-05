@@ -56,18 +56,18 @@ You can check how to grip your app [here](hello-griptape.md#bootstrap-your-appli
 
 ### Create a contract definition
 
-In order to interact with a contract, you first need to create its definition. First we need to import `createContract` and `snip20Def` APIs from `@stakeordie/griptape.js`to our file `src/contracts/sscrt.js` Once that is done, we create the definition `sscrt` to which we are going to assign an id that can be the name you want, we are also going to assign an address of instantiated contract on the blockchain.
+In order to interact with a contract, you first need to create its definition. First we need to import `createContractClient` and `snip20Def` APIs from `@stakeordie/griptape.js`to our file `src/contracts/sscrt.js` Once that is done, we create the definition `sscrt` to which we are going to assign an id that can be the name you want, we are also going to assign an address of instantiated contract on the blockchain.
 
 Finally, Griptape has SNIP-20 compliant contract definitions, so you don't need to write it yourself.
 
 {% code title="src/contracts/sscrt.js" %}
 ```jsx
 import {
-  createContract,
+  createContractClient,
   snip20Def
 } from '@stakeordie/griptape.js';
 
-export const sscrt = createContract({
+export const sscrt = createContractClient({
   id: 'sscrt',
   at: 'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
   definition: snip20Def
@@ -100,14 +100,14 @@ Now, you may notice that we are using the event `onAccountAvailable`, where you 
 
 {% code title="src/App.vue" %}
 ```jsx
-onAccountAvailable(async () => {
+this.removeOnAccountAvailable = onAccountAvailable(async () => {
       this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
         this.viewingKey = key;
         await this.getBalance();
       }
-    });
+ });
 ```
 {% endcode %}
 
@@ -115,9 +115,9 @@ Now, in order to detect when changing the account, we have the event `onAccountC
 
 {% code title="src/App.vue" %}
 ```jsx
-onAccountChange(() => {
-    alert("You have changed your account, please refresh this page.");
-    this.isAccountChanged = false;
+this.removeOnAccountChange = onAccountChange(() => {
+      alert("You have changed your account, please refresh this page.");
+      this.isAccountChanged = false;
 });
 ```
 {% endcode %}
@@ -207,12 +207,14 @@ export default {
       balance: '',
       loading: false,
       isAccountChanged:true,
-      isConnected:false
+      isConnected:false,
+      removeOnAccountAvailable: null,
+      removeOnAccountChange: null,
     }
   },
 
   mounted() {
-    onAccountAvailable(async () => {
+    this.removeOnAccountAvailable = onAccountAvailable(async () => {
       this.isConnected = true;
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
@@ -220,12 +222,15 @@ export default {
         await this.getBalance();
       }
     });
-    onAccountChange(() => {
+    this.removeOnAccountChange = onAccountChange(() => {
       alert("You have changed your account, please refresh this page.");
       this.isAccountChanged = false;
     });
   },
-
+  unmounted(){
+    this.removeOnAccountAvailable();
+    this.removeOnAccountChange();
+  },
   methods: {
     reload(){
       window.location.reload()

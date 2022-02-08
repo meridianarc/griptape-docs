@@ -77,28 +77,24 @@ Open up `src/App.js` and add a button to bootstrap the application.
 {% code title="src/App.js" %}
 ```jsx
 import React, { useState, useEffect } from "react";
-import {
-  bootstrap,
-  onAccountAvailable
-} from "@stakeordie/griptape.js";
+import { bootstrap, onAccountAvailable } from "@stakeordie/griptape.js";
 
 function App() {
   const [isConnected, setIsConnected] = useState(false);
-
   useEffect(() => {
-    onAccountAvailable(() => {
+    const removeOnAccountAvailable = onAccountAvailable(() => {
       setIsConnected(true);
     });
-  }, []);
 
+    return () => {
+        removeOnAccountAvailable
+    }
+  }, []);
   return (
     <>
       <h1>Hello, Transactions!</h1>
-      <p>Is connected? { isConnected ? "Yes": "No" }</p>
-      <button
-        onClick={() => bootstrap()}
-        disabled={isConnected}
-      >
+      <p>Is connected? {isConnected ? "Yes" : "No"}</p>
+      <button onClick={() => bootstrap()} disabled={isConnected}>
         Bootstrap
       </button>
     </>
@@ -116,11 +112,11 @@ Create a new directory in the `src` directory called `contracts` and add a new f
 {% code title="src/contracts/sscrt.js" %}
 ```javascript
 import {
-  createContract,
+  createContractClient,
   snip20Def
 } from "@stakeordie/griptape.js";
 
-export const sscrt = createContract({
+export const sscrt = createContractClient({
   id: "sscrt",
   at: "secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg",
   definition: snip20Def
@@ -149,14 +145,18 @@ function App() {
     useState(false);
 
   useEffect(() => {
-    onAccountAvailable(() => {
+    const removeOnAccountAvailable = onAccountAvailable(() => {
       setIsConnected(true);
       hasViewingKey();
     });
 
-    onViewingKeyCreated(() => {
+    const removeOnViewingKeyCreated = onViewingKeyCreated(() => {
       hasViewingKey();
     });
+    return () => {
+      removeOnAccountAvailable();
+      removeOnViewingKeyCreated();
+    }
   }, []);
 
   async function createViewingKey() {
@@ -234,14 +234,18 @@ function App() {
   const [balance, setBalance] = useState("");
 
   useEffect(() => {
-    onAccountAvailable(() => {
+    const removeOnAccountAvailable = onAccountAvailable(() => {
       setIsConnected(true);
       hasViewingKey();
     });
 
-    onViewingKeyCreated(() => {
+    const removeOnViewingKeyCreated = onViewingKeyCreated(() => {
       hasViewingKey();
     });
+    return () => {
+      removeOnAccountAvailable();
+      removeOnViewingKeyCreated();
+    }
   }, []);
 
   async function createViewingKey() {
@@ -341,14 +345,18 @@ function App() {
   const [amount, setAmount] = useState(0);
 
   useEffect(() => {
-    onAccountAvailable(() => {
+    const removeOnAccountAvailable = onAccountAvailable(() => {
       setIsConnected(true);
       hasViewingKey();
     });
 
-    onViewingKeyCreated(() => {
+    const removeOnViewingKeyCreated = onViewingKeyCreated(() => {
       hasViewingKey();
     });
+    return () => {
+      removeOnAccountAvailable();
+      removeOnViewingKeyCreated();
+    }
   }, []);
 
   async function createViewingKey() {

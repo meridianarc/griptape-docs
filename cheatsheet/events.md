@@ -1,61 +1,61 @@
 # Events
 
-### `onAccountAvailable(EventCallback)`
+### `onAccountAvailable(`[`EventCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)`):` [`CleanListenerCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)``
 
 **Arguments:**
 
-* {CleanListenerCallback}
+* {[EventCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)}
 
-**Returns:** Nothing.
+**Returns:**
 
-**Description:** `account` event gets triggered when the Account Provider has an account ready.
+* {[CleanEventListenerCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)}
 
-### `onAccountChange(EventCallback)`
+**Description:** Event handler that listens when the Keplr extension has loaded and an address is available.
 
-**Arguments:**
-
-* {CleanListenerCallback}
-
-**Returns:** Nothing.
-
-**Description:** `account-change` events gets triggered when the account change on the Account Provider.
-
-### `onAccountNotAvailable(EventCallback)`
+### `onAccountChange(`[`EventCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)`):` [`CleanListenerCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)``
 
 **Arguments:**
 
-* {CleanListenerCallback}
+* {[EventCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)}
 
-**Returns:** Nothing.
+**Returns:**
 
-**Description:** `account-not-available` events gets triggered when the account is not available on the Account Provider.
+* {[CleanEventListenerCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)}
 
-### `onAccountDisconnect(EventCallback)`
+**Description:** Event handler that listens when switching accounts and a new account gets selected.
 
-**Arguments:**
-
-* {CleanListenerCallback}
-
-**Returns:** Nothing.
-
-**Description:** `shutdown`events gets triggered when the account disconnects from the Account Provider.
-
-### `onViewingKeyCreated(EventCallback)`
+### `onAccountNotAvailable(`[`EventCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)`):` [`CleanListenerCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)``
 
 **Arguments:**
 
-* {CleanListenerCallback}
+* {[EventCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)}
 
-**Returns:** Nothing.
+**Returns:**
 
-**Description:** `viewing-key-created`events gets triggered when a viewing key is created.
+* {[CleanEventListenerCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)}
 
-### `onViewingKeyReady(EventCallback)`
+**Description:** Event handler that listens and executes if the Keplr extension is not installed.
+
+### `onAccountDisconnect(`[`EventCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)`):` [`CleanListenerCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)``
 
 **Arguments:**
 
-* {CleanListenerCallback}
+* {[EventCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)}
 
-**Returns:** Nothing.
+**Returns:**
 
-**Description:** `viewing-key-ready`events gets triggered when a viewing key is ready.
+* {[CleanEventListenerCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)}
+
+**Description:** Event handler that listens when the `shutdown` function gets called.
+
+### `onViewingKeyCreated(`[`EventCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)`):` [`CleanListenerCallback`](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)``
+
+**Arguments:**
+
+* {[EventCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L16)}
+
+**Returns:**
+
+* {[CleanEventListenerCallback](https://github.com/stakeordie/griptape.js/blob/main/src/events/index.ts#L17)}
+
+**Description:** Event handler that listens when a new viewing key is created using the `viewingKeyManager.add()` or `keplrViewingKeyManger.add()` methods.

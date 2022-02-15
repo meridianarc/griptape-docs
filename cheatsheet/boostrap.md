@@ -18,7 +18,7 @@ Nothing.
 
 #### Description
 
-Grips an application by providing the configuration&#x20;
+_Grips_ an application by providing the configuration&#x20;
 
 ### `bootstrap`
 

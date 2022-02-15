@@ -69,18 +69,18 @@ You can check how to boostrap your app [here](hello-griptape.md#bootstrap-your-a
 
 ### Create a contract definition
 
-In order to interact with a contract, you first need to create its definition. First we need to import `createContract` and `snip20Def` APIs from `@stakeordie/griptape.js`to our file `src/contracts/sscrt.js` Once that is done, we create the definition `sscrt` to which we are going to assign an id that can be the name you want, we are also going to assign an address of instantiated contract on the blockchain.
+In order to interact with a contract, you first need to create its definition. First we need to import `createContractClient` and `snip20Def` APIs from `@stakeordie/griptape.js`to our file `src/contracts/sscrt.js` Once that is done, we create the definition `sscrt` to which we are going to assign an id that can be the name you want, we are also going to assign an address of instantiated contract on the blockchain.
 
 Finally, Griptape has SNIP-20 compliant contract definitions, so you don't need to write it yourself.
 
 {% code title="src/contracts/sscrt.js" %}
 ```jsx
 import {
-  createContract,
+  createContractClient,
   snip20Def
 } from '@stakeordie/griptape.js';
 
-export const sscrt = createContract({
+export const sscrt = createContractClient({
   id: 'sscrt',
   at: 'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
   definition: snip20Def
@@ -113,7 +113,7 @@ Now, you may notice that we are using the event `onAccountAvailable`where you ca
 
 {% code title="src/App.js" %}
 ```jsx
-onAccountAvailable(() => {
+const removeAccountAvailableListener = onAccountAvailable(() => {
   const key = viewingKeyManager.get(sscrt.at);
   if (key) {
     setViewingKey(key);
@@ -126,7 +126,7 @@ Now, in order to detect when changing the account, we have the event `onAccountC
 
 {% code title="src/App.js" %}
 ```jsx
-onAccountChange(() => {
+const removeAccountChangeListener = onAccountChange(() => {
     alert("You have changed your account, please refresh this page.")
     setIsAccountChanged(false);
 });
@@ -213,7 +213,7 @@ function App() {
   var [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    onAccountAvailable(() => {
+    const removeAccountAvailableListener = onAccountAvailable(() => {
       setIsConnected(true);
       const key = viewingKeyManager.get(sscrt.at);
       if (key) {
@@ -222,10 +222,15 @@ function App() {
       }
     });
 
-    onAccountChange(() => {
+    const removeAccountChangeListener = onAccountChange(() => {
       alert("You have changed your account, please refresh this page.")
       setIsAccountChanged(false);
     });
+  
+    return ()=> {
+      removeAccountAvailableListener();
+      removeAccountChangeListener();
+    }
   }, []);
 
   const createViewingKey = async () => {

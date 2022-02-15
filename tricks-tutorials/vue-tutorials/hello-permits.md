@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this tutorial we show you how to create Permits for authenticating a SNIP-20 contract.When you finish this Hello Permit tutorial you will have a web app connected to `pulsar-2` with the ability to query the `sSCRT` balance using permits. Creating permits and connecting the app to `Keplr`.
+In this tutorial we show you how to create Permits for authenticating a SNIP-20 contract. When you finish this Hello Permit tutorial you will have a web app connected to `pulsar-2` with the ability to query the `sSCRT` balance using permits. Creating permits and connecting the app to `Keplr`.
 
 
 
@@ -10,7 +10,7 @@ In this tutorial we show you how to create Permits for authenticating a SNIP-20 
 
 In order to go through this tutorial you'll need to have a Vue app created. You can find how to do it [here](https://cli.vuejs.org/guide/creating-a-project.html). Also, install your dependencies and install Griptape.
 
-```
+```typescript
 # With npm
 npm install && npm install @stakeordie/griptape.js
 
@@ -81,7 +81,7 @@ Now let's move and start working in `src/contracts/sscrt.js`, we need to import 
 
 ```javascript
 import {
-    createContract,
+    createContractClient,
     snip20Def,
     extendContract
 } from  '@stakeordie/griptape.js';
@@ -89,7 +89,7 @@ import {
 
 Brief explanation of Griptape APIs imported.
 
-* **createContract :** Help us create an object based on a definition passed in as a parameter.
+* **createContractClient :** Help us create an object based on a definition passed in as a parameter.
 * **snip20Def :** Is a pre-defined contract definition following Secret Network [reference](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md).
 * **extendContract :** API created to create a single contract definition binding two definition, similarly to inheritance in POO.
 
@@ -121,7 +121,7 @@ In a contract definition there are `queries` and `messages`. Both are objects wi
 Finally we just need to create our contract and export it.
 
 ```javascript
-export  const  sscrt = createContract({
+export  const  sscrt = createContractClient({
 	id:  'sscrt',
 	at:  'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
 	definition:  extendContract(snip20Def, sscrt_permit)
@@ -140,7 +140,7 @@ This is what your `src/contracts/sscrt.js` should look like.
 
 ```javascript
 import {
-	createContract,
+	createContractClient,
 	snip20Def,
 	extendContract
 } from  '@stakeordie/griptape.js';  
@@ -156,7 +156,7 @@ const  sscrt_permit = {
 	}
 }
 
-export  const  sscrt = createContract({
+export  const  sscrt = createContractClient({
 	id:  'sscrt',
 	at:  'secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg',
 	definition:  extendContract(snip20Def, sscrt_permit)
@@ -192,13 +192,19 @@ export default {
     return {
       isPermit: '',
       loadingBalance: '',
-      loading: false
+      loading: false,
+      isConnected: false,
+      removeOnAccountAvailable:null,
     }
   },
   mounted() {
-    onAccountAvailable(() => {
+    this.removeOnAccountAvailable = onAccountAvailable(() => {
       this.isPermit = hasPermit(sscrt);
+      this.isConnected = true;
     })
+  },
+  unmounted(){
+    this.removeOnAccountAvailable();
   },
 }
 ```
@@ -238,7 +244,7 @@ export default {
 	methods:{
 		// ... more methods
 		
-		async createPermit() {
+	async createPermit() {
 	      this.loading = true;
 	      try {
 	        // Execute `enablePermit` message on sscrt contract.
@@ -290,12 +296,13 @@ Finally just show the information:
 ```html
 <template>
   <div>
-      <h1>Hello, Griptape!</h1>
+      <h1>Hello, Permits!</h1>
+      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+      <button :disabled="isConnected" @click="connect">Bootstrap</button>
       <p>You have permit?: {{isPermit ? 'Yes' : 'No'}}</p>
       <p>Your balance is: {{balance}}</p>
-      <button @click="connect">Connect</button>
-      <button @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
-      <button @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
+      <button :disabled="!isConnected" @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
+      <button :disabled="!isPermit" @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
   </div>
 </template>
 ```
@@ -305,12 +312,13 @@ Finally just show the information:
 ```javascript
 <template>
   <div>
-      <h1>Hello, Griptape!</h1>
+      <h1>Hello, Permits!</h1>
+      <p>Is connected? {{isConnected ? "Yes" : "No"}}</p>
+      <button :disabled="isConnected" @click="connect">Bootstrap</button>
       <p>You have permit?: {{isPermit ? 'Yes' : 'No'}}</p>
       <p>Your balance is: {{balance}}</p>
-      <button @click="connect">Connect</button>
-      <button @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
-      <button @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
+      <button :disabled="!isConnected" @click="createPermit">{{loading ? 'Loading...' : 'Create Permit'}}</button>
+      <button :disabled="!isPermit" @click="getBalance">{{loadingBalance ? 'Loading...' : 'Get Balance'}}</button>
   </div>
 </template>
 
@@ -329,14 +337,20 @@ export default {
     return {
       isPermit: '',
       loadingBalance: '',
-      loading: false
+      loading: false,
+      isConnected: false,
+      removeOnAccountAvailable:null,
     }
   },
 
   mounted() {
-    onAccountAvailable(() => {
+    this.removeOnAccountAvailable = onAccountAvailable(() => {
       this.isPermit = hasPermit(sscrt);
+      this.isConnected = true;
     })
+  },
+  unmounted(){
+    this.removeOnAccountAvailable();
   },
 
   methods: {

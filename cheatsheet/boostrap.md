@@ -8,7 +8,7 @@ gripApp(Config | string, AccountProviderGetter, () => void): Promise<void>
 
 #### **Arguments**
 
-* {[Config](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/bootstrap.ts#L35)}: Configuration object.
+* {[Config](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/bootstrap.ts#L35)}: Configuration object or the REST URL of the node you want to connect to.
 * {[AccountProviderGetter](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/bootstrap.ts#L46)}: An account provider getter.
 * {Function}: A `runApp` function.
 

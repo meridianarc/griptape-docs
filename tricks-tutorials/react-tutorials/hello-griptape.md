@@ -158,14 +158,10 @@ Now, we are going to add one of our events API `onAccountAvailable` to get the b
 
 ```javascript
 useEffect(() => {
-	const removeOnAccountAvailable = onAccountAvailable(() => {
+	onAccountAvailable(() => {
 		setAddress(getAddress());
 		getBalance();
 	})
-	
-	return () => {
-		removeOnAccountAvailable()
-	};
 }, []);
 ```
 

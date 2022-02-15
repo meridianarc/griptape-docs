@@ -20,9 +20,9 @@ description: We will be adding to this page throughout the month.
   * Decimals: 6
   * Notes
     * Convert SCRT to sSCRT
-      * secretcli tx compute execute secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg '{"deposit":{}}' --amount uscrt --from
+      * secretcli tx compute execute secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg '{"deposit":{\}}' --amount uscrt --from
     * Convert sSCRT to SCRT
-      * secretcli tx compute execute secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg '{"redeem":{"amount":""}}' --from
+      * secretcli tx compute execute secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg '{"redeem":{"amount":""\}}' --from
 * Plan B
   * label: plan\_b
   * symbol: PLNB

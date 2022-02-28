@@ -61,7 +61,7 @@ await sefi.getTransferHistory(20);
 ```
 
 {% hint style="info" %}
-Defining the context for all your `queries` and `messages` is a good practice even if you don't use them. You can also use `_` as an identifier to express what is not being used by that `query` or `message`:
+Defining the context for all your `queries` and `messages` is required even if you don't use it. As a good practice, for a unused context, name the identifier `_` to express what is not being used by that `query` or `message`:
 
 ```typescript
  getAllowance(

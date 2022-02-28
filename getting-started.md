@@ -8,7 +8,7 @@ description: >-
 
 ### Introduction
 
-Griptape is a framework for developing decentralized web applications in Secret Network. Griptape will take care mostly of what all of the application has in common, in an opinionated and structured way. Here is a summary of some of the main features of Griptape:
+Griptape is a framework for developing decentralized web applications in Secret Network. Griptape will take care mostly of what all of the applications has in common, in an opinionated and structured way. Here is a summary of some of the main features of Griptape:
 
 * Connect a regular web application to the blockchain
 * Interact with deployed contracts on Secret Network
@@ -29,13 +29,13 @@ Once you have a front-end application ready, install Griptape.js by running one 
 
 ```typescript
 # Using yarn
-https://app.gitbook.com/o/GLSgx73nAdKsmMXmSr2x/s/4NbLjav05P7TMFZTw3KC/getting-started
+yarn add @stakeordie/griptape.js
 
 # or npm
 npm install @stakeordie/griptape.js
 ```
 
-### Getting Started: Grip and app
+### Grip an app
 
 A _gripped_ application is a term we use to describe an application whose bootstrap process is handled by Griptape. _Grip_ your app by adding this to your main entry point file (commonly `main.js` or `index.js`):
 

@@ -76,3 +76,33 @@ function runApp() {
 ```
 
 Now you are ready! You can start developing your dApp.
+
+### Grip an app with a config object
+
+In the same `index.js` file you can also add a `config` object that is used to set custom fees, for this you need to create a config object and inside it, add the `restUrl` and `defaultFees` object.
+
+Then use the `config` as a parameter to the  `gripApp` function.
+
+```jsx
+import {
+  gripApp,
+  getKeplrAccountProvider
+} from '@stakeordie/griptape.js';
+
+const config = {
+  restUrl: 'https://api.pulsar.griptapejs.com',
+  defaultFees: {
+    upload: 500000,
+    init: 100000,
+    exec: 200000,
+    send: 100000
+  }
+};
+
+const provider = getKeplrAccountProvider();
+function runApp() {
+  // Bootstrap your app here!
+}
+
+gripApp(config, provider, runApp);
+```

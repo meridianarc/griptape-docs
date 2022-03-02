@@ -104,3 +104,19 @@ const def = {
 }
 ```
 
+### More on Defining Queries
+
+Height is an autoincrementable in the blockchain and serves as a reference point in time. Some queries need it, fot those who needs this data there is a function that comes in the `context`, `withHeigth` wich recieves a function that receives height and returns the JSON that you want to query.
+
+```jsx
+const def = {
+    queries: {
+      getBalanceWithHeight({withHeight,permit}){
+        return withHeight(height => {
+          const query = { balance: { height } }
+          return {
+            with_permit: { query, permit }
+      }
+    }
+  }
+```

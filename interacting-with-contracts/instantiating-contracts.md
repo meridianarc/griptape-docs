@@ -6,7 +6,7 @@ Use the `instantiateContract` function and you will get a _created_ for free:
 
 ```typescript
 await instantiateContract<Counter>({
-  id: 'counter',
+  id:'counter'
   codeId: 50,
   definition: counterDef,
   label: 'griptape.js-counter-01',

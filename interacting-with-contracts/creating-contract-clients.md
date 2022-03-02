@@ -1,4 +1,4 @@
-# Creating Contracts
+# Creating Contract Clients
 
 Once we have a contract definition, we can _create_ a _client contract_. Creating a _client contract_ in Griptape is simply using the `createContractClient` function and pass in the following data:
 
@@ -20,7 +20,6 @@ const secretCounterDef: ContractDefinition = {
 };
 
 const secretCounter = createContractClient<SecretCounter>({
-  id: 'counter',
   at: 'secret1w97ynhe099cs5p433dvlaqhsxrszudz2n3f56h',
   definition: secretCounterDef
 });

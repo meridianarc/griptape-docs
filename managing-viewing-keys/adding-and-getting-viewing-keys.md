@@ -1,8 +1,4 @@
----
-description: Manages your Viewing Key
----
-
-# Viewing Key Manager
+# Adding and getting viewing keys
 
 {% hint style="danger" %}
 It's important to mention that when interacting with contracts, viewing keys exposed by the `Context`should be registered using the `viewingKeyManager` in order for queries to have the viewing key available.

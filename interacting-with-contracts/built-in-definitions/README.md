@@ -12,13 +12,11 @@ import {
 } from '@stakeordie/griptape.js'
 
 const anSnip20 = createContractClient<Snip20Contract>({
-  id: '...',
   at: '...',
   definition: snip20Def
 });
 
 const anSnip721 = createContractClient<Snip721Contract>({
-  id: '...',
   at: '...',
   definition: snip721Def
 });

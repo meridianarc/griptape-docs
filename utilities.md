@@ -25,3 +25,28 @@ const address = 'secret1jajwgdsfv8e88utlgxjndlvcm8aldyn3ecsk72'
 bech32(walletAddress, 16) // secret1j...n3ecsk72
 bech32(walletAddress, 24) // secret1jajwg...aldyn3ecsk72
 ```
+
+## Accounts
+
+Here are some features that will help you get information about the account that is connected to your app.
+
+The `getAddress()` function is imported directly from `'@stakeordie/griptape.js'` and it's enough to declare a variable and assign the result of this function. `getAddress()` will help you know the `address` of the account connected to your application.
+
+```javascript
+import { getAddress } from '@stakeordie/griptape.js'
+const address = getAddress()
+```
+
+If you want to know the more information about the account connected to your application, the function `getWalletInfo()` should suffice.
+
+```javascript
+import { getWalletInfo } from '@stakeordie/griptape.js'
+const walletInfo = getWalletInfo()
+```
+
+To find out if you have an available account connected to your application, you can use the `isAccountAvailable()` function which will return a boolean value depending on the status of the account.
+
+```javascript
+import { isAccountAvailable} from '@stakeordie/griptape.js'
+const isAvailable = isAccountAvailable()
+```

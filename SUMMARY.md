@@ -23,6 +23,7 @@
   * [Viewing Keys](cheatsheet/viewing-keys.md)
   * [Permits](cheatsheet/permits.md)
   * [Events](cheatsheet/events.md)
+  * [Utilities](cheatsheet/utilities.md)
 * [🐝 Tricks Tutorials](tricks-tutorials/README.md)
   * [React Tutorials](tricks-tutorials/react-tutorials/README.md)
     * [Hello, Griptape](tricks-tutorials/react-tutorials/hello-griptape.md)

@@ -1,10 +1,10 @@
 # Permits
 
-### `enablePermit(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)`, string[])`
+### `enablePermit(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)`, string[])`
 
 **Arguments:**&#x20;
 
-* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)}: a contract specification object&#x20;
+* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)}: a contract specification object&#x20;
 * {string\[]}: string permissions array.
 
 **Returns:** Nothing.
@@ -13,11 +13,11 @@
 
 Finally, the permit is added to the local storage.
 
-### `hasPermit(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)`)`
+### `hasPermit(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)`)`
 
 **Arguments:**&#x20;
 
-* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)}: a contract specification object.
+* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)}: a contract specification object.
 
 **Returns:** Nothing.
 

@@ -2,11 +2,11 @@
 
 ## KeplrViewingKeyManager
 
-### `add(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)`)`
+### `add(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)`)`
 
 **Arguments:**&#x20;
 
-* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)}:  a contract specification object.
+* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)}:  a contract specification object.
 
 **Returns:** {string} : key.
 
@@ -24,11 +24,11 @@
 
 ## ViewingKeyManager
 
-### `add(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)`, string)`
+### `add(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)`, string)`
 
 **Arguments:**&#x20;
 
-* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)}:  a contract specification object
+* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)}:  a contract specification object
 * {string} : a key.
 
 **Returns:** {string} : key value.
@@ -43,11 +43,11 @@
 
 **Usage:** This function gets the `key` for the received `address` or `id`.
 
-### `set(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)`, string)`
+### `set(`[`BaseContract`](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)`, string)`
 
 **Arguments:**&#x20;
 
-* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/permits.ts#L5)}:  a contract specification object
+* {[BaseContract](https://github.com/stakeordie/griptape.js/blob/c9ac1e366497acaafbdde70defa258a7051c46db/src/contracts/types.ts#L45)}:  a contract specification object
 * {string}: a key.
 
 **Returns:** Nothing.

@@ -4,7 +4,7 @@
 
 1. Install Keplr
 2. Add `pulsar-2` to Keplr
-3. Create an account and send funds using the [faucet](https://faucet.secrettestnet.io)
+3. Create an account and send funds using the [faucet](https://faucet.secrettestnet.io/)
 4. Add custom SNIP-20 tokens to Keplr
 5. Install `secretcli` and connect it to `pulsar-2`
 6. Instantiate the `auction-factory` contract
@@ -25,7 +25,7 @@ Keep your mnemonic at hand, you will need it later on in this guide.
 
 {% embed url="https://drive.google.com/file/d/1i0nqv4d4Jyv0C2ces1_1Z9Ae_SxeXc4z/view?usp=sharing" %}
 
-### Create an account and send funds using the [faucet](https://faucet.secrettestnet.io)
+### Create an account and send funds using the [faucet](https://faucet.secrettestnet.io/)
 
 Once you have Keplr installed and an account created, you con now send test tokens to your account. In order to send these tokens you will need to go the the [faucet](https://faucet.secrettestnet.io) and paste your account address there. (There are reports that the faucet may be down, lets us know if you need test SCRT and we will send)
 

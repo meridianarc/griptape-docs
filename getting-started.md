@@ -54,7 +54,7 @@ function runApp() {
 gripApp(restUrl, provider, runApp);
 ```
 
-`runApp` is a function able to bootstrap your front-end application, e.g. for [Vue.js](https://vuejs.org) the implementation looks like this:
+`runApp` is a function able to bootstrap your front-end application, e.g. for [Vue.js](https://vuejs.org/) the implementation looks like this:
 
 ```typescript
 function runApp() {
@@ -62,7 +62,7 @@ function runApp() {
 }
 ```
 
-Or in [React](https://reactjs.org), like this:
+Or in [React](https://reactjs.org/), like this:
 
 ```typescript
 function runApp() {

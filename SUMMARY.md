@@ -12,7 +12,7 @@
   * [Contract Registry](interacting-with-contracts/contract-registry.md)
   * [Instantiating Contracts](interacting-with-contracts/instantiating-contracts.md)
 * [🔑 Using Viewing Keys and Permits](managing-viewing-keys/README.md)
-  * [Adding and getting viewing keys](managing-viewing-keys/adding-and-getting-viewing-keys.md)
+  * [Using the viewing key manager](managing-viewing-keys/using-the-viewing-key-manager.md)
   * [Using Keplr with Griptape](managing-viewing-keys/using-keplr-with-griptape.md)
   * [Managing Permits](managing-viewing-keys/managing-permits.md)
 * [🕢 Handling Events](events.md)

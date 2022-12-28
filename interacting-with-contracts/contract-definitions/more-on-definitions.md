@@ -1,7 +1,3 @@
----
-description: This section goes over some advanced features for interacting with contracts.
----
-
 # More on Definitions
 
 ### Introducing Context
